@@ -1,0 +1,14 @@
+{
+  "scan_timestamp": "2025-06-20 04:11:18 PDT",
+  "success_rate": 100.0,
+  "total_passed": 17,
+  "total_tests": 17,
+  "status": "EXCELLENT",
+  "average_response_ms": 40.8,
+  "components": {
+    "core_system": "4/4",
+    "api_endpoints": "6/6",
+    "laboratory": "4/4",
+    "files": "3/3"
+  }
+}

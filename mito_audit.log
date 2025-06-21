@@ -1,0 +1,198 @@
+2025-06-20 06:19:27,907 - MITO_AUDIT - INFO - Starting MITO Engine Comprehensive Audit...
+2025-06-20 06:19:27,907 - MITO_AUDIT - INFO - ============================================================
+2025-06-20 06:19:27,907 - MITO_AUDIT - INFO - Testing file existence...
+2025-06-20 06:19:27,908 - MITO_AUDIT - INFO - ✓ File app.py: PASSED - Size: 153802 bytes
+2025-06-20 06:19:27,908 - MITO_AUDIT - INFO - ✓ File main.py: PASSED - Size: 278 bytes
+2025-06-20 06:19:27,908 - MITO_AUDIT - INFO - ✓ File config.py: PASSED - Size: 1573 bytes
+2025-06-20 06:19:27,909 - MITO_AUDIT - INFO - ✓ File models.py: PASSED - Size: 5091 bytes
+2025-06-20 06:19:27,909 - MITO_AUDIT - INFO - ✓ File ai_providers.py: PASSED - Size: 13021 bytes
+2025-06-20 06:19:27,910 - MITO_AUDIT - INFO - ✓ File mito_agent.py: PASSED - Size: 29176 bytes
+2025-06-20 06:19:27,910 - MITO_AUDIT - INFO - ✓ File mito_weights.py: PASSED - Size: 8192 bytes
+2025-06-20 06:19:27,910 - MITO_AUDIT - INFO - ✓ File memory_manager.py: PASSED - Size: 15886 bytes
+2025-06-20 06:19:27,911 - MITO_AUDIT - INFO - ✓ File notification_manager.py: PASSED - Size: 14948 bytes
+2025-06-20 06:19:27,911 - MITO_AUDIT - INFO - ✓ File admin_auth.py: PASSED - Size: 5613 bytes
+2025-06-20 06:19:27,911 - MITO_AUDIT - INFO - ✓ File api_usage.py: PASSED - Size: 8289 bytes
+2025-06-20 06:19:27,912 - MITO_AUDIT - INFO - ✓ File unified_request_processor.py: PASSED - Size: 13765 bytes
+2025-06-20 06:19:27,912 - MITO_AUDIT - INFO - Testing module imports...
+2025-06-20 06:19:30,351 - mito_weights - INFO - MITO Weights Manager initialized - 16 modules, 13 weight categories
+2025-06-20 06:19:30,363 - mito_agent - INFO - MITO Agent initialized with full autonomy
+2025-06-20 06:19:30,364 - mito_agent - INFO - MITO starting autonomous operation mode
+2025-06-20 06:19:30,381 - notification_manager - INFO - NOTIFICATION: Task Started: system_initialization
+2025-06-20 06:19:30,381 - mito_agent - INFO - Task added to MITO queue: system_initialization (Priority: urgent)
+2025-06-20 06:19:30,415 - notification_manager - INFO - NOTIFICATION: Task Started: capability_check
+2025-06-20 06:19:30,416 - mito_agent - INFO - Task added to MITO queue: capability_check (Priority: high)
+2025-06-20 06:19:30,435 - notification_manager - INFO - NOTIFICATION: Task Started: provider_optimization
+2025-06-20 06:19:30,438 - mito_agent - INFO - Task added to MITO queue: provider_optimization (Priority: medium)
+2025-06-20 06:19:30,458 - notification_manager - INFO - NOTIFICATION: Task Started: knowledge_indexing
+2025-06-20 06:19:30,459 - mito_agent - INFO - Task added to MITO queue: knowledge_indexing (Priority: medium)
+2025-06-20 06:19:30,480 - notification_manager - INFO - NOTIFICATION: Task Started: user_greeting
+2025-06-20 06:19:30,480 - mito_agent - INFO - Task added to MITO queue: user_greeting (Priority: high)
+2025-06-20 06:19:30,480 - mito_agent - INFO - MITO scheduled 5 startup tasks for immediate execution
+2025-06-20 06:19:30,486 - mito_agent - INFO - MITO Agent fully operational with autonomous capabilities including: file processing, code generation, system optimization, proactive assistance, API management, and continuous learning
+2025-06-20 06:19:30,510 - notification_manager - INFO - NOTIFICATION: MITO Autonomous Agent Ready
+2025-06-20 06:19:30,511 - app - INFO - MITO Agent initialized with full autonomy
+2025-06-20 06:19:30,521 - app - INFO - MITO Engine v1.2.0 initialized
+2025-06-20 06:19:30,522 - app - INFO - Available AI providers: {'openai': {'name': 'OpenAI GPT-3.5', 'available': True, 'model': 'gpt-3.5-turbo', 'status': 'configured'}, 'llama': {'name': 'LLaMA 3', 'available': True, 'model': 'llama-3-70b-8192', 'status': 'configured'}, 'claude': {'name': 'Claude', 'available': False, 'model': 'claude-3-opus-20240229', 'status': 'missing_api_key'}, 'local': {'name': 'Local Fallback', 'available': True, 'model': 'MITO Local Response Generator', 'status': 'always_available'}}
+2025-06-20 06:19:30,522 - app - INFO - MITO modules loaded: 16
+2025-06-20 06:19:30,569 - MITO_AUDIT - INFO - ✓ Import app: PASSED - Attributes: 165
+2025-06-20 06:19:30,572 - MITO_AUDIT - INFO - ✓ Import config: PASSED - Attributes: 11
+2025-06-20 06:19:30,573 - MITO_AUDIT - INFO - ✓ Import models: PASSED - Attributes: 16
+2025-06-20 06:19:30,573 - MITO_AUDIT - INFO - ✓ Import ai_providers: PASSED - Attributes: 20
+2025-06-20 06:19:30,574 - MITO_AUDIT - INFO - ✓ Import mito_agent: PASSED - Attributes: 23
+2025-06-20 06:19:30,574 - MITO_AUDIT - INFO - ✓ Import mito_weights: PASSED - Attributes: 18
+2025-06-20 06:19:30,708 - MITO_AUDIT - INFO - ✓ Import memory_manager: PASSED - Attributes: 22
+2025-06-20 06:19:30,708 - MITO_AUDIT - INFO - ✓ Import notification_manager: PASSED - Attributes: 24
+2025-06-20 06:19:30,708 - MITO_AUDIT - INFO - ✓ Import admin_auth: PASSED - Attributes: 20
+2025-06-20 06:19:30,709 - MITO_AUDIT - INFO - ✓ Import api_usage: PASSED - Attributes: 19
+2025-06-20 06:19:30,709 - MITO_AUDIT - INFO - Testing environment variables...
+2025-06-20 06:19:30,709 - MITO_AUDIT - INFO - ✓ ENV DATABASE_URL: PASSED - Length: 115
+2025-06-20 06:19:30,710 - MITO_AUDIT - INFO - ✓ ENV OPENAI_API_KEY: PASSED - Length: 164
+2025-06-20 06:19:30,710 - MITO_AUDIT - INFO - ✓ ENV PGDATABASE: PASSED - Length: 6
+2025-06-20 06:19:30,710 - MITO_AUDIT - INFO - ✓ ENV PGHOST: PASSED - Length: 49
+2025-06-20 06:19:30,711 - MITO_AUDIT - INFO - ✓ ENV PGUSER: PASSED - Length: 12
+2025-06-20 06:19:30,711 - MITO_AUDIT - INFO - ✓ ENV PGPASSWORD: PASSED - Length: 16
+2025-06-20 06:19:30,711 - MITO_AUDIT - INFO - ✓ ENV PGPORT: PASSED - Length: 4
+2025-06-20 06:19:30,711 - MITO_AUDIT - INFO - Testing Python dependencies...
+2025-06-20 06:19:30,712 - MITO_AUDIT - INFO - ✓ Package flask: PASSED - Available
+2025-06-20 06:19:30,712 - MITO_AUDIT - INFO - ✓ Package flask_sqlalchemy: PASSED - Available
+2025-06-20 06:19:30,712 - MITO_AUDIT - INFO - ✓ Package psycopg2: PASSED - Available
+2025-06-20 06:19:30,713 - MITO_AUDIT - INFO - ✓ Package openai: PASSED - Available
+2025-06-20 06:19:31,499 - MITO_AUDIT - INFO - ✓ Package anthropic: PASSED - Available
+2025-06-20 06:19:31,501 - MITO_AUDIT - INFO - ✓ Package requests: PASSED - Available
+2025-06-20 06:19:31,506 - MITO_AUDIT - INFO - ✓ Package gunicorn: PASSED - Available
+2025-06-20 06:19:31,506 - MITO_AUDIT - INFO - ✓ Package werkzeug: PASSED - Available
+2025-06-20 06:19:31,569 - MITO_AUDIT - INFO - ✓ Package marshmallow: PASSED - Available
+2025-06-20 06:19:31,583 - MITO_AUDIT - INFO - ✓ Package bcrypt: PASSED - Available
+2025-06-20 06:19:31,593 - MITO_AUDIT - INFO - ✓ Package cryptography: PASSED - Available
+2025-06-20 06:19:31,593 - MITO_AUDIT - INFO - Testing AI providers...
+2025-06-20 06:19:31,594 - MITO_AUDIT - INFO - ✓ AI Provider openai: PASSED - configured
+2025-06-20 06:19:31,594 - MITO_AUDIT - INFO - ✓ AI Provider llama: PASSED - configured
+2025-06-20 06:19:31,595 - MITO_AUDIT - ERROR - ✗ AI Provider claude: FAILED - missing_api_key
+2025-06-20 06:19:31,595 - MITO_AUDIT - INFO - ✓ AI Provider local: PASSED - always_available
+2025-06-20 06:19:32,947 - memory_manager - INFO - MITO memory database initialized
+2025-06-20 06:19:32,950 - ai_providers - INFO - AI generation request - Provider: local, Prompt length: 11
+2025-06-20 06:19:33,714 - MITO_AUDIT - INFO - ✓ AI Generation: PASSED - Response length: 76
+2025-06-20 06:19:33,714 - MITO_AUDIT - INFO - Testing database connection...
+2025-06-20 06:19:34,333 - MITO_AUDIT - INFO - ✓ Database Connection: PASSED - PostgreSQL PostgreSQL 16.9 on x...
+2025-06-20 06:19:34,333 - MITO_AUDIT - INFO - Testing MITO Agent...
+2025-06-20 06:19:34,334 - MITO_AUDIT - ERROR - ✗ MITO Agent: FAILED - cannot import name 'MITOAgent' from 'mito_agent' (/home/runner/workspace/mito_agent.py)
+2025-06-20 06:19:34,334 - MITO_AUDIT - INFO - Testing memory system...
+2025-06-20 06:19:34,335 - MITO_AUDIT - ERROR - ✗ Memory System: FAILED - cannot import name 'MemoryManager' from 'memory_manager' (/home/runner/workspace/memory_manager.py)
+2025-06-20 06:19:34,335 - MITO_AUDIT - INFO - Testing notification system...
+2025-06-20 06:19:34,341 - MITO_AUDIT - ERROR - ✗ Notification System: FAILED - NotificationManager.create_notification() got an unexpected keyword argument 'type'
+2025-06-20 06:19:34,341 - MITO_AUDIT - INFO - Testing admin authentication...
+2025-06-20 06:19:34,342 - MITO_AUDIT - INFO - ✓ Admin Auth Wrong Password: PASSED - Correctly rejected wrong password
+2025-06-20 06:19:34,342 - MITO_AUDIT - ERROR - ✗ Admin Auth: FAILED - Working outside of request context.
+
+This typically means that you attempted to use functionality that needed
+an active HTTP request. Consult the documentation on testing for
+information about how to avoid this problem.
+2025-06-20 06:19:34,343 - MITO_AUDIT - INFO - Testing API usage tracking...
+2025-06-20 06:19:34,344 - MITO_AUDIT - INFO - ✓ API Usage Logging: PASSED - Usage logged successfully
+2025-06-20 06:19:34,345 - MITO_AUDIT - INFO - ✓ API Usage Summary: PASSED - Summary keys: ['period_days', 'total_requests', 'total_cost', 'average_cost_per_request', 'provider_breakdown']
+2025-06-20 06:19:34,345 - MITO_AUDIT - INFO - Testing file permissions...
+2025-06-20 06:19:34,347 - MITO_AUDIT - INFO - ✓ File Permissions app.py: PASSED - R:True, W:True
+2025-06-20 06:19:34,348 - MITO_AUDIT - INFO - ✓ File Permissions main.py: PASSED - R:True, W:True
+2025-06-20 06:19:34,348 - MITO_AUDIT - INFO - ✓ File Permissions mito_audit_test.py: PASSED - R:True, W:True
+2025-06-20 06:19:34,349 - MITO_AUDIT - INFO - Testing security configurations...
+2025-06-20 06:19:34,350 - MITO_AUDIT - INFO - ✓ Security .env: PASSED - Contains sensitive data: True
+2025-06-20 06:19:34,354 - MITO_AUDIT - INFO - ✓ Security config.py: PASSED - Contains sensitive data: True
+2025-06-20 06:19:34,356 - MITO_AUDIT - INFO - ✓ Security Environment Usage: PASSED - Uses environment variables
+2025-06-20 06:19:34,356 - MITO_AUDIT - INFO - Running performance tests...
+2025-06-20 06:19:34,356 - MITO_AUDIT - INFO - ✓ Performance Import: PASSED - Import time: 0.00s
+2025-06-20 06:19:34,358 - MITO_AUDIT - INFO - ✓ Performance File I/O: PASSED - I/O time: 0.001s
+2025-06-20 06:19:34,360 - MITO_AUDIT - INFO - Audit complete! Success rate: 91.8%
+2025-06-20 06:19:34,361 - MITO_AUDIT - INFO - Reports saved: mito_audit_report.json, MITO_AUDIT_REPORT.md
+2025-06-20 06:22:25,579 - MITO_AUDIT - INFO - Starting MITO Engine Comprehensive Audit...
+2025-06-20 06:22:25,580 - MITO_AUDIT - INFO - ============================================================
+2025-06-20 06:22:25,580 - MITO_AUDIT - INFO - Testing file existence...
+2025-06-20 06:22:25,583 - MITO_AUDIT - INFO - ✓ File app.py: PASSED - Size: 153802 bytes
+2025-06-20 06:22:25,590 - MITO_AUDIT - INFO - ✓ File main.py: PASSED - Size: 278 bytes
+2025-06-20 06:22:25,591 - MITO_AUDIT - INFO - ✓ File config.py: PASSED - Size: 1573 bytes
+2025-06-20 06:22:25,591 - MITO_AUDIT - INFO - ✓ File models.py: PASSED - Size: 5091 bytes
+2025-06-20 06:22:25,592 - MITO_AUDIT - INFO - ✓ File ai_providers.py: PASSED - Size: 13021 bytes
+2025-06-20 06:22:25,592 - MITO_AUDIT - INFO - ✓ File mito_agent.py: PASSED - Size: 29591 bytes
+2025-06-20 06:22:25,592 - MITO_AUDIT - INFO - ✓ File mito_weights.py: PASSED - Size: 8192 bytes
+2025-06-20 06:22:25,592 - MITO_AUDIT - INFO - ✓ File memory_manager.py: PASSED - Size: 17788 bytes
+2025-06-20 06:22:25,598 - MITO_AUDIT - INFO - ✓ File notification_manager.py: PASSED - Size: 14948 bytes
+2025-06-20 06:22:25,601 - MITO_AUDIT - INFO - ✓ File admin_auth.py: PASSED - Size: 5613 bytes
+2025-06-20 06:22:25,601 - MITO_AUDIT - INFO - ✓ File api_usage.py: PASSED - Size: 8289 bytes
+2025-06-20 06:22:25,602 - MITO_AUDIT - INFO - ✓ File unified_request_processor.py: PASSED - Size: 13765 bytes
+2025-06-20 06:22:25,602 - MITO_AUDIT - INFO - Testing module imports...
+2025-06-20 06:22:27,674 - mito_weights - INFO - MITO Weights Manager initialized - 16 modules, 13 weight categories
+2025-06-20 06:22:27,696 - app - ERROR - Failed to initialize MITO Agent modules: cannot import name 'MitoAgent' from 'mito_agent' (/home/runner/workspace/mito_agent.py)
+2025-06-20 06:22:27,713 - app - INFO - MITO Engine v1.2.0 initialized
+2025-06-20 06:22:27,714 - app - INFO - Available AI providers: {'openai': {'name': 'OpenAI GPT-3.5', 'available': True, 'model': 'gpt-3.5-turbo', 'status': 'configured'}, 'llama': {'name': 'LLaMA 3', 'available': True, 'model': 'llama-3-70b-8192', 'status': 'configured'}, 'claude': {'name': 'Claude', 'available': False, 'model': 'claude-3-opus-20240229', 'status': 'missing_api_key'}, 'local': {'name': 'Local Fallback', 'available': True, 'model': 'MITO Local Response Generator', 'status': 'always_available'}}
+2025-06-20 06:22:27,714 - app - INFO - MITO modules loaded: 16
+2025-06-20 06:22:27,744 - MITO_AUDIT - INFO - ✓ Import app: PASSED - Attributes: 164
+2025-06-20 06:22:27,748 - MITO_AUDIT - INFO - ✓ Import config: PASSED - Attributes: 11
+2025-06-20 06:22:27,750 - MITO_AUDIT - INFO - ✓ Import models: PASSED - Attributes: 16
+2025-06-20 06:22:27,756 - MITO_AUDIT - INFO - ✓ Import ai_providers: PASSED - Attributes: 20
+2025-06-20 06:22:27,761 - MITO_AUDIT - INFO - ✓ Import mito_agent: PASSED - Attributes: 23
+2025-06-20 06:22:27,762 - MITO_AUDIT - INFO - ✓ Import mito_weights: PASSED - Attributes: 18
+2025-06-20 06:22:27,849 - MITO_AUDIT - INFO - ✓ Import memory_manager: PASSED - Attributes: 22
+2025-06-20 06:22:27,851 - MITO_AUDIT - INFO - ✓ Import notification_manager: PASSED - Attributes: 24
+2025-06-20 06:22:27,851 - MITO_AUDIT - INFO - ✓ Import admin_auth: PASSED - Attributes: 20
+2025-06-20 06:22:27,852 - MITO_AUDIT - INFO - ✓ Import api_usage: PASSED - Attributes: 19
+2025-06-20 06:22:27,852 - MITO_AUDIT - INFO - Testing environment variables...
+2025-06-20 06:22:27,853 - MITO_AUDIT - INFO - ✓ ENV DATABASE_URL: PASSED - Length: 115
+2025-06-20 06:22:27,854 - MITO_AUDIT - INFO - ✓ ENV OPENAI_API_KEY: PASSED - Length: 164
+2025-06-20 06:22:27,854 - MITO_AUDIT - INFO - ✓ ENV PGDATABASE: PASSED - Length: 6
+2025-06-20 06:22:27,855 - MITO_AUDIT - INFO - ✓ ENV PGHOST: PASSED - Length: 49
+2025-06-20 06:22:27,855 - MITO_AUDIT - INFO - ✓ ENV PGUSER: PASSED - Length: 12
+2025-06-20 06:22:27,856 - MITO_AUDIT - INFO - ✓ ENV PGPASSWORD: PASSED - Length: 16
+2025-06-20 06:22:27,856 - MITO_AUDIT - INFO - ✓ ENV PGPORT: PASSED - Length: 4
+2025-06-20 06:22:27,857 - MITO_AUDIT - INFO - Testing Python dependencies...
+2025-06-20 06:22:27,857 - MITO_AUDIT - INFO - ✓ Package flask: PASSED - Available
+2025-06-20 06:22:27,857 - MITO_AUDIT - INFO - ✓ Package flask_sqlalchemy: PASSED - Available
+2025-06-20 06:22:27,858 - MITO_AUDIT - INFO - ✓ Package psycopg2: PASSED - Available
+2025-06-20 06:22:27,858 - MITO_AUDIT - INFO - ✓ Package openai: PASSED - Available
+2025-06-20 06:22:28,322 - MITO_AUDIT - INFO - ✓ Package anthropic: PASSED - Available
+2025-06-20 06:22:28,323 - MITO_AUDIT - INFO - ✓ Package requests: PASSED - Available
+2025-06-20 06:22:28,326 - MITO_AUDIT - INFO - ✓ Package gunicorn: PASSED - Available
+2025-06-20 06:22:28,326 - MITO_AUDIT - INFO - ✓ Package werkzeug: PASSED - Available
+2025-06-20 06:22:28,342 - MITO_AUDIT - INFO - ✓ Package marshmallow: PASSED - Available
+2025-06-20 06:22:28,346 - MITO_AUDIT - INFO - ✓ Package bcrypt: PASSED - Available
+2025-06-20 06:22:28,352 - MITO_AUDIT - INFO - ✓ Package cryptography: PASSED - Available
+2025-06-20 06:22:28,355 - MITO_AUDIT - INFO - Testing AI providers...
+2025-06-20 06:22:28,356 - MITO_AUDIT - INFO - ✓ AI Provider openai: PASSED - configured
+2025-06-20 06:22:28,357 - MITO_AUDIT - INFO - ✓ AI Provider llama: PASSED - configured
+2025-06-20 06:22:28,358 - MITO_AUDIT - ERROR - ✗ AI Provider claude: FAILED - missing_api_key
+2025-06-20 06:22:28,358 - MITO_AUDIT - INFO - ✓ AI Provider local: PASSED - always_available
+2025-06-20 06:22:28,358 - ai_providers - WARNING - Memory system unavailable: cannot import name 'MITOMemoryManager' from 'memory_manager' (/home/runner/workspace/memory_manager.py)
+2025-06-20 06:22:28,360 - ai_providers - INFO - AI generation request - Provider: local, Prompt length: 11
+2025-06-20 06:22:29,351 - MITO_AUDIT - INFO - ✓ AI Generation: PASSED - Response length: 96
+2025-06-20 06:22:29,352 - MITO_AUDIT - INFO - Testing database connection...
+2025-06-20 06:22:30,437 - MITO_AUDIT - INFO - ✓ Database Connection: PASSED - PostgreSQL PostgreSQL 16.9 on x...
+2025-06-20 06:22:30,437 - MITO_AUDIT - INFO - Testing MITO Agent...
+2025-06-20 06:22:30,437 - mito_agent - INFO - MITO Agent initialized with full autonomy
+2025-06-20 06:22:30,437 - MITO_AUDIT - INFO - ✓ MITO Agent Init: PASSED - Agent initialized successfully
+2025-06-20 06:22:30,438 - MITO_AUDIT - INFO - ✓ MITO Agent Status: PASSED - Status: {'status': 'idle', 'current_task': None, 'queue_length': 0, 'autonomy_level': 'full', 'capabilities': {'api_management': True, 'auto_switching': True, 'task_planning': True, 'error_recovery': True, 'resource_optimization': True, 'system_monitoring': True, 'decision_making': True, 'learning': True}, 'decision_threshold': 'critical'}
+2025-06-20 06:22:30,438 - MITO_AUDIT - INFO - Testing memory system...
+2025-06-20 06:22:33,338 - memory_manager - INFO - MITO memory database initialized
+2025-06-20 06:22:34,040 - MITO_AUDIT - INFO - ✓ Memory Add: PASSED - Memory ID: 7
+2025-06-20 06:22:34,733 - MITO_AUDIT - INFO - ✓ Memory Retrieve: PASSED - Memory retrieved successfully
+2025-06-20 06:22:35,407 - MITO_AUDIT - INFO - ✓ Memory Delete: PASSED - Memory deleted successfully
+2025-06-20 06:22:35,407 - MITO_AUDIT - INFO - Testing notification system...
+2025-06-20 06:22:35,437 - notification_manager - INFO - NOTIFICATION: Audit Test
+2025-06-20 06:22:35,437 - MITO_AUDIT - INFO - ✓ Notification Create: PASSED - Notification ID: notif_1750400555_674
+2025-06-20 06:22:35,438 - MITO_AUDIT - INFO - ✓ Notification Retrieve: PASSED - Found 675 notifications
+2025-06-20 06:22:35,438 - MITO_AUDIT - INFO - Testing admin authentication...
+2025-06-20 06:22:35,454 - MITO_AUDIT - INFO - ✓ Admin Auth Wrong Password: PASSED - Correctly rejected wrong password
+2025-06-20 06:22:35,454 - MITO_AUDIT - INFO - ✓ Admin Auth Status: PASSED - Logged in: False
+2025-06-20 06:22:35,455 - MITO_AUDIT - INFO - Testing API usage tracking...
+2025-06-20 06:22:35,456 - MITO_AUDIT - INFO - ✓ API Usage Logging: PASSED - Usage logged successfully
+2025-06-20 06:22:35,458 - MITO_AUDIT - INFO - ✓ API Usage Summary: PASSED - Summary keys: ['period_days', 'total_requests', 'total_cost', 'average_cost_per_request', 'provider_breakdown']
+2025-06-20 06:22:35,458 - MITO_AUDIT - INFO - Testing file permissions...
+2025-06-20 06:22:35,459 - MITO_AUDIT - INFO - ✓ File Permissions app.py: PASSED - R:True, W:True
+2025-06-20 06:22:35,460 - MITO_AUDIT - INFO - ✓ File Permissions main.py: PASSED - R:True, W:True
+2025-06-20 06:22:35,460 - MITO_AUDIT - INFO - ✓ File Permissions mito_audit_test.py: PASSED - R:True, W:True
+2025-06-20 06:22:35,461 - MITO_AUDIT - INFO - Testing security configurations...
+2025-06-20 06:22:35,462 - MITO_AUDIT - INFO - ✓ Security .env: PASSED - Contains sensitive data: True
+2025-06-20 06:22:35,464 - MITO_AUDIT - INFO - ✓ Security config.py: PASSED - Contains sensitive data: True
+2025-06-20 06:22:35,465 - MITO_AUDIT - INFO - ✓ Security Environment Usage: PASSED - Uses environment variables
+2025-06-20 06:22:35,466 - MITO_AUDIT - INFO - Running performance tests...
+2025-06-20 06:22:35,466 - MITO_AUDIT - INFO - ✓ Performance Import: PASSED - Import time: 0.00s
+2025-06-20 06:22:35,468 - MITO_AUDIT - INFO - ✓ Performance File I/O: PASSED - I/O time: 0.002s
+2025-06-20 06:22:35,470 - MITO_AUDIT - INFO - Audit complete! Success rate: 98.5%
+2025-06-20 06:22:35,471 - MITO_AUDIT - INFO - Reports saved: mito_audit_report.json, MITO_AUDIT_REPORT.md

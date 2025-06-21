@@ -1,0 +1,164 @@
+{
+  "timestamp": "2025-06-20T06:22:25.579472",
+  "version": "1.2.0",
+  "tests_run": 65,
+  "tests_passed": 64,
+  "tests_failed": 1,
+  "errors": [
+    "AI Provider claude: missing_api_key"
+  ],
+  "warnings": [],
+  "modules": {
+    "app": {
+      "importable": true,
+      "attributes": 164,
+      "docstring": "\nMITO Engine - AI Agent & Tool Creator\nName: MITO Engine\nVersion: 1.2.0\nCreated by: Daniel Guzman\nContact: guzman.danield@outlook.com\nDescription: AI Agent & Tool Creator\n"
+    },
+    "config": {
+      "importable": true,
+      "attributes": 11,
+      "docstring": "\nMITO Engine - AI Agent & Tool Creator\nName: MITO Engine\nVersion: 1.2.0\nCreated by: Daniel Guzman\nContact: guzman.danield@outlook.com\nDescription: AI Agent & Tool Creator\n"
+    },
+    "models": {
+      "importable": true,
+      "attributes": 16,
+      "docstring": "\nMITO Engine - AI Agent & Tool Creator\nName: MITO Engine\nVersion: 1.2.0\nCreated by: Daniel Guzman\nContact: guzman.danield@outlook.com\nDescription: AI Agent & Tool Creator\n"
+    },
+    "ai_providers": {
+      "importable": true,
+      "attributes": 20,
+      "docstring": "\nMITO Engine - AI Agent & Tool Creator\nName: MITO Engine\nVersion: 1.2.0\nCreated by: Daniel Guzman\nContact: guzman.danield@outlook.com\nDescription: AI Agent & Tool Creator\n"
+    },
+    "mito_agent": {
+      "importable": true,
+      "attributes": 23,
+      "docstring": "\nMITO Engine - AI Agent & Tool Creator\nName: MITO Engine\nVersion: 1.2.0\nCreated by: Daniel Guzman\nContact: guzman.danield@outlook.com\nDescription: AI Agent & Tool Creator\n"
+    },
+    "mito_weights": {
+      "importable": true,
+      "attributes": 18,
+      "docstring": "\nMITO Engine - AI Agent & Tool Creator\nName: MITO Engine\nVersion: 1.2.0\nCreated by: Daniel Guzman\nContact: guzman.danield@outlook.com\nDescription: AI Agent & Tool Creator\n"
+    },
+    "memory_manager": {
+      "importable": true,
+      "attributes": 22,
+      "docstring": "\nMITO Memory Management System\nHandles conversation memory, context retention, and memory adjustment\n"
+    },
+    "notification_manager": {
+      "importable": true,
+      "attributes": 24,
+      "docstring": "\nMITO Engine - AI Agent & Tool Creator\nName: MITO Engine\nVersion: 1.2.0\nCreated by: Daniel Guzman\nContact: guzman.danield@outlook.com\nDescription: AI Agent & Tool Creator\n"
+    },
+    "admin_auth": {
+      "importable": true,
+      "attributes": 20,
+      "docstring": "\nMITO Engine - Admin Authentication System\nProtects administrative functions with password authentication\n"
+    },
+    "api_usage": {
+      "importable": true,
+      "attributes": 19,
+      "docstring": "\nMITO Engine - AI Agent & Tool Creator\nName: MITO Engine\nVersion: 1.2.0\nCreated by: Daniel Guzman\nContact: guzman.danield@outlook.com\nDescription: AI Agent & Tool Creator\n"
+    }
+  },
+  "files": {
+    "app.py": {
+      "exists": true,
+      "size": 153802,
+      "readable": true
+    },
+    "main.py": {
+      "exists": true,
+      "size": 278,
+      "readable": true
+    },
+    "config.py": {
+      "exists": true,
+      "size": 1573,
+      "readable": true
+    },
+    "models.py": {
+      "exists": true,
+      "size": 5091,
+      "readable": true
+    },
+    "ai_providers.py": {
+      "exists": true,
+      "size": 13021,
+      "readable": true
+    },
+    "mito_agent.py": {
+      "exists": true,
+      "size": 29591,
+      "readable": true
+    },
+    "mito_weights.py": {
+      "exists": true,
+      "size": 8192,
+      "readable": true
+    },
+    "memory_manager.py": {
+      "exists": true,
+      "size": 17788,
+      "readable": true
+    },
+    "notification_manager.py": {
+      "exists": true,
+      "size": 14948,
+      "readable": true
+    },
+    "admin_auth.py": {
+      "exists": true,
+      "size": 5613,
+      "readable": true
+    },
+    "api_usage.py": {
+      "exists": true,
+      "size": 8289,
+      "readable": true
+    },
+    "unified_request_processor.py": {
+      "exists": true,
+      "size": 13765,
+      "readable": true
+    }
+  },
+  "apis": {
+    "ai_providers": {
+      "openai": {
+        "name": "OpenAI GPT-3.5",
+        "available": true,
+        "model": "gpt-3.5-turbo",
+        "status": "configured"
+      },
+      "llama": {
+        "name": "LLaMA 3",
+        "available": true,
+        "model": "llama-3-70b-8192",
+        "status": "configured"
+      },
+      "claude": {
+        "name": "Claude",
+        "available": false,
+        "model": "claude-3-opus-20240229",
+        "status": "missing_api_key"
+      },
+      "local": {
+        "name": "Local Fallback",
+        "available": true,
+        "model": "MITO Local Response Generator",
+        "status": "always_available"
+      }
+    }
+  },
+  "database": {
+    "connected": true,
+    "version": "PostgreSQL 16.9 on x86_64-pc-linux-gnu, compiled by gcc (Debian 10.2.1-6) 10.2.1 20210110, 64-bit"
+  },
+  "performance": {
+    "import_time": 1.6689300537109375e-06,
+    "file_io_time": 0.0015759468078613281
+  },
+  "security": {},
+  "total_time": 9.889324426651001,
+  "success_rate": 98.46153846153847
+}

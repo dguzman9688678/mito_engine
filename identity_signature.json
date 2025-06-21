@@ -1,0 +1,2385 @@
+{
+  "signatures": [
+    {
+      "signature_id": "3ecbb17b-263d-4376-94d6-4853ec5ff007",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "8b3026c455658c4fe7f53c1e2002df1de737b0653d7ba7b07b7362fce0d854dc",
+      "created_at": "2025-06-20T12:28:42.530150"
+    },
+    {
+      "signature_id": "e04cfc58-7522-400e-b20f-99e38d96be69",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "1a5e5c8c4d8e4f2184ad497315fc311cbb51bae762898ec4b077320cc83c032f",
+      "created_at": "2025-06-20T12:30:50.679086"
+    },
+    {
+      "signature_id": "f5444216-3260-4061-86ad-f581f9f01486",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "2ad1f1568a53393c1353422e7489fe457e55bd0e6e3f1be23a35ed84fa769c40",
+      "created_at": "2025-06-20T12:30:58.299223"
+    },
+    {
+      "signature_id": "cb71afde-f476-4c78-98ad-5729b6e26325",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "ea19c32020eb8eec299b935609ec6a9f1f1aaaff4060006871e5729970be6e01",
+      "created_at": "2025-06-20T12:36:54.717105"
+    },
+    {
+      "signature_id": "cf0ead45-3482-43e0-9183-49589be71858",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "3a41f518a68b412b7ba542661c31bdb83dfca46d3a8c77d93c3b735e002a8f8b",
+      "created_at": "2025-06-20T12:37:06.138900"
+    },
+    {
+      "signature_id": "475b529a-9642-4d08-9251-9fafdfbdf7dd",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "8885adcf827e89be020a922b4961c6756e3a7cae2f8690ed3bfc81b1378704d4",
+      "created_at": "2025-06-20T12:39:23.720864"
+    },
+    {
+      "signature_id": "b3320231-2bee-4ebe-9283-b3d8dc9390a2",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "c3819bfda65359851f3e48ef66ffa5d4b47de965740bc9edb5bf9a645fab3c1c",
+      "created_at": "2025-06-20T12:41:34.951787"
+    },
+    {
+      "signature_id": "09f9fb99-9e44-4776-b3a6-57910813e06f",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "7e6b6eed4b2c795f7362c29695aed205a8da7f3df727230b5bd8453a3d277c56",
+      "created_at": "2025-06-20T12:46:59.944631"
+    },
+    {
+      "signature_id": "b43d2c95-ee1c-41e9-bd64-830504b02c52",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "e1a4a22702b3615b6328194793247fe9733c5589715bc2c0d2bc9435f06b81e5",
+      "created_at": "2025-06-20T12:53:11.366814"
+    },
+    {
+      "signature_id": "a40c245d-ab69-4046-982b-2f939f056d82",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "1053ea8a64a9abd376053106b5685408470ba313758110b1a3456e4e783a723b",
+      "created_at": "2025-06-20T13:00:04.599552"
+    },
+    {
+      "signature_id": "cea05cac-5f43-40d1-80cd-4bb6d93ef6c5",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "d55b580b64860a07610621510488fcb136283c3e6e1e3bcb6e0f14d615fcc265",
+      "created_at": "2025-06-20T13:05:34.086962"
+    },
+    {
+      "signature_id": "56b568f2-135d-40e9-8f96-7fd52373e3ad",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "4e2fe27f64474c4ceb1f22e7bd87fe429aaea74b64ef5068b3ee43fc81e2af67",
+      "created_at": "2025-06-20T13:06:30.430714"
+    },
+    {
+      "signature_id": "2eb457f1-df0d-4fff-a5f1-4a8e4e7e285b",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "482c60acda1a40cd191c9ce82c6742254b1e4fb754b13fa3bcccebc65c6acf1a",
+      "created_at": "2025-06-20T13:11:24.452251"
+    },
+    {
+      "signature_id": "0f21c9e2-59c3-4656-9e0b-882a0f139c18",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "15255b9a0fb12c0b27dd90c1942ed9af415a39efbe8accc91aa66d6c0666dc8c",
+      "created_at": "2025-06-20T13:11:39.173023"
+    },
+    {
+      "signature_id": "c6e6de45-faec-43e3-b9f2-15cefde48723",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "3c337477570ca8dbbaf781d6599674db87a81732198b908c499f3dcc586a3aa2",
+      "created_at": "2025-06-20T13:14:59.038791"
+    },
+    {
+      "signature_id": "989d4f19-fdcf-4348-b00e-67985fa30c79",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "e19d87da310d74b62fa19c07a523bd410daca4150af71ae67e254877c596be83",
+      "created_at": "2025-06-20T13:21:02.502374"
+    },
+    {
+      "signature_id": "f32d37a6-e8e1-4bdb-ab46-b3bf9e72314e",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "e760aa51e14a4543cc600c36f878ab66067d5667a5b9f2f04650ab15d8a7b8af",
+      "created_at": "2025-06-20T13:26:08.891386"
+    },
+    {
+      "signature_id": "bca51d19-93b0-498b-a94e-a00b621c379f",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "b39e21ab6110685f110db0a01dd239180e9621e1df33bc6300aaf128009e34c2",
+      "created_at": "2025-06-20T13:28:34.503795"
+    },
+    {
+      "signature_id": "f29ba61a-1f34-4613-bb0f-8a608a2a61fe",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "6689eb3f65f6ccc35036c379cadbb8f11b9b171e92a12665050ef651cfe106e3",
+      "created_at": "2025-06-21T02:47:59.314320"
+    },
+    {
+      "signature_id": "afa09078-7cbc-4b61-a100-6adb81fafabb",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "ab6cd58bbb81148d12c0eccebea36cb683480955fa385f8762fda899716261ec",
+      "created_at": "2025-06-21T03:26:17.992593"
+    },
+    {
+      "signature_id": "a31d1f03-6461-4282-83b4-408263ed5a0c",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "28e151d2d634150e10870649b8fba1219299f022758e39769b66aad71813547c",
+      "created_at": "2025-06-21T03:27:18.874271"
+    },
+    {
+      "signature_id": "1348a932-dc9a-46b7-93fd-63d9f4c52ad7",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "2e5fbbbd92e47bea3613103591987d233a22f3a438f40f1aabc44667bd751625",
+      "created_at": "2025-06-21T03:31:10.811620"
+    },
+    {
+      "signature_id": "73872c0c-25b5-4ece-aaf1-cea540642564",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "364a99e9511321369773039fd83751e32ac5881b1af4de156f9060379d4cb1bf",
+      "created_at": "2025-06-21T03:31:38.991628"
+    },
+    {
+      "signature_id": "61983e4b-5f01-4b7f-95d8-ca570b7106a8",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "ad8c80c1d7e189dafd55495dce2c8b39482a07582ea0e125ae18a7fccfc13a7c",
+      "created_at": "2025-06-21T03:38:20.674979"
+    },
+    {
+      "signature_id": "e501b9f0-8752-4844-9538-0b89752dd593",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "780ba45ba0bdf314edb5a802fa16f8f38bc0313549768097aeefd84647c1750b",
+      "created_at": "2025-06-21T03:40:15.159443"
+    },
+    {
+      "signature_id": "bc498a7a-8c79-47d2-a2b2-09a0aed39752",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "81bd3257c0c7aec9df606e93083317e1eea70767123dd3fd9da65b3cbcef216f",
+      "created_at": "2025-06-21T03:40:22.002562"
+    },
+    {
+      "signature_id": "15eedfc0-42d2-49dd-93f4-09f7bdcf3a37",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "d646b975c65a6c8b9904a02c06eba58e22b0645d3fd7ae093a1a1dabd1d8b2d1",
+      "created_at": "2025-06-21T03:42:50.815609"
+    },
+    {
+      "signature_id": "bc13de2b-9390-4428-a412-fdc85a4fee51",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "78b039b17cf926d1accf0438ee7c5c120975216275a0aded93a2284d9bab6629",
+      "created_at": "2025-06-21T03:43:25.435859"
+    },
+    {
+      "signature_id": "17d939b2-3c5a-4a7e-a79c-2623353b503a",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "90256e5731c885a03a5556e6a5e633c5efedb666a372ed5685a141a18d59e5d6",
+      "created_at": "2025-06-21T03:43:53.899717"
+    },
+    {
+      "signature_id": "46860f4c-8fb9-4ffe-8634-3fcef13938ca",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "d39d22be784ec81c7a6c8595accb162c91ea5d355ca5e1bd3d5e97a43a049431",
+      "created_at": "2025-06-21T03:44:13.160937"
+    },
+    {
+      "signature_id": "6e6c4165-00cb-4809-9d08-a003dc2f203d",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "7bea3a95854d86b77391f5a28d676294c2f3e838f756a7b15a6e704f72626a7f",
+      "created_at": "2025-06-21T03:44:17.030843"
+    },
+    {
+      "signature_id": "ab5c666c-64c9-4f9a-a010-6fac0d17cf14",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "17005d4cf65c867e7747bda13e9d08341d879f4df6e31edcbc7c6f2457d7bb18",
+      "created_at": "2025-06-21T03:44:25.473604"
+    },
+    {
+      "signature_id": "3b54fd2c-9761-44ae-ab3e-f76f083f2965",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "7e3f7a847d0ab0d46751a304d05ee3021b22bb726689571e2f0c1290c71f1e26",
+      "created_at": "2025-06-21T03:44:36.982626"
+    },
+    {
+      "signature_id": "a61d8fb5-5772-485a-be32-681664ef596e",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "0ad40af8d9a82a2da448acf4c34f714aac06b1f1f53e54821dff6bb4e5a2eec0",
+      "created_at": "2025-06-21T03:44:44.612606"
+    },
+    {
+      "signature_id": "ded74683-793e-46a9-bd65-b2477be981e6",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "02a91d05f79676738a0fa0530d7ee567d5ea13f76636806a5cbd76c1d454b6a8",
+      "created_at": "2025-06-21T03:45:00.985054"
+    },
+    {
+      "signature_id": "c34b84fb-443b-4906-b2b2-c7043be5c8c4",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "be70beb8d2f63d79fdff6bebad8d6c87fd362be2dbdf3a5f0bcba5bf809d62df",
+      "created_at": "2025-06-21T03:45:06.303753"
+    },
+    {
+      "signature_id": "8ed80b40-01f5-4dda-849e-db6ccfe28429",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "0aba15ca4c8b69cf7c91b812357dfef41e25af0bde7ff726d26f25968b512d44",
+      "created_at": "2025-06-21T03:47:03.532410"
+    },
+    {
+      "signature_id": "a2b61083-e5ee-4742-8e22-b884c8a1dc28",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "00d6df34f05ae90a70614032f53a1c6dc1373639ff879083c850e90b717016db",
+      "created_at": "2025-06-21T03:47:15.018010"
+    },
+    {
+      "signature_id": "e0c5878b-d51f-4295-816a-5528366b31ce",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "80883718fec11e47bb3ede1e61a0993776941b7f6a22e76f575a2d929a024de4",
+      "created_at": "2025-06-21T03:49:59.736059"
+    },
+    {
+      "signature_id": "76d6369f-e5f3-4f01-a5ce-c6c96c4a7418",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "f2242afa2dda396454fda6b4406c7ec4debdc0ff417b93f8c63138a94d50d2d4",
+      "created_at": "2025-06-21T03:51:04.826680"
+    },
+    {
+      "signature_id": "1dc15d1b-d2ba-43da-a482-d87235d11126",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "82921cc5786a31966a3d58e585dfa1ba9c810f64d32c463c54b182031ca79910",
+      "created_at": "2025-06-21T03:51:08.824941"
+    },
+    {
+      "signature_id": "c8420ab3-d7e9-447a-8b7b-db5f2b1a3be8",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "b2b7bcbc0c92d8751c44accf424aab7e4e49316d38438e9aef381e890ee1561b",
+      "created_at": "2025-06-21T03:53:22.746762"
+    },
+    {
+      "signature_id": "f998070c-e111-4be1-a4fa-00c377c880f1",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "b921f84d80b6c814615a7339b4cb73a7f920e5dfca0c9eec4d510bdc074f970b",
+      "created_at": "2025-06-21T03:54:00.541185"
+    },
+    {
+      "signature_id": "0a336e94-78a6-4268-8b50-afa572b325a9",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "2c648628d817aba6299d44ac363b8a0064d91d13710ab72dad68d31d04ed7502",
+      "created_at": "2025-06-21T03:54:03.739732"
+    },
+    {
+      "signature_id": "af8b3902-d1b6-46a1-a800-79cc5cf962b8",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "197f9f295785f7f9d5a784e9ecaa9bf26bddbdd2aab9835589a1f29f2cc61bdc",
+      "created_at": "2025-06-21T03:56:16.424113"
+    },
+    {
+      "signature_id": "abd21241-3d59-4d7d-91d4-77d6dbd46396",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "841bc53d7a590dd8c74c747d6995a92fa40335de95b6fa6ed5a0cd7e52329aaf",
+      "created_at": "2025-06-21T04:13:53.372851"
+    },
+    {
+      "signature_id": "e576a9a5-88ee-49cb-985f-90916a892467",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "c60d2c60467a96414c61fb42a382732db5fdcbfc0393d720a38ce4785de7492b",
+      "created_at": "2025-06-21T04:14:31.503508"
+    },
+    {
+      "signature_id": "b4d2ed8f-02d6-44da-924a-b8cced0953bb",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "d8c93fe69b41a7e5f7d043987cd977245c8064004eec672fdb8f2e6bc741c708",
+      "created_at": "2025-06-21T04:14:47.282103"
+    },
+    {
+      "signature_id": "4df31eaa-58a1-46a0-bc65-71399b588c93",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "8c29ffe65e13c35dc4370cd57142efb8f3c83d7960ff0da68e2608c970763b55",
+      "created_at": "2025-06-21T04:15:09.400296"
+    },
+    {
+      "signature_id": "f3762256-051f-4a3f-94eb-9983ab42f435",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "ef1d8cdceb7fbdbb50b29c9659b45fa16b10b7b31a1147443440485f12dad9dd",
+      "created_at": "2025-06-21T05:00:11.315808"
+    },
+    {
+      "signature_id": "1c0e22aa-71c5-44df-82de-d990a1930a56",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "0409f595ddaeeb55050c6bdf16ee20f85539de4aa3505c6c904257c6141decf9",
+      "created_at": "2025-06-21T05:00:33.808548"
+    },
+    {
+      "signature_id": "af101dc7-325d-41f4-a163-5300d84d840e",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "1764bc0c8459a213e17bd3597f5ec61ee971c5b793004e6776a975d90e2f711d",
+      "created_at": "2025-06-21T05:00:48.201698"
+    },
+    {
+      "signature_id": "8cd5dec5-c449-4bfc-bc52-b57d1a996069",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "39076514c81f13fa741397f3a6797b09594b884ab3850e3c1285b0552bf62fd1",
+      "created_at": "2025-06-21T05:01:20.205890"
+    },
+    {
+      "signature_id": "8ded4438-fc23-46a9-8e1c-2b2e467ee715",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "d83abb1d71055962f8c4610aec3ebc5accb952aec2c43fba186cd62b96b82e86",
+      "created_at": "2025-06-21T05:04:20.949862"
+    },
+    {
+      "signature_id": "a4f196a5-9cfa-481c-a18e-1d43139874cb",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "6a2904f17d06a66fb476e1ec1abdf907781d36faf08e8d9f3ee67678dc8015d0",
+      "created_at": "2025-06-21T05:07:13.592934"
+    },
+    {
+      "signature_id": "0a4a739f-01ce-46f1-8f5d-39b6b0283197",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "975107b11f2f2e0379be412c43dca29670050166bf0e1e13ee26d9234ee94bb1",
+      "created_at": "2025-06-21T05:11:33.230085"
+    },
+    {
+      "signature_id": "eec60549-6c0a-4e9a-9201-ff6fd7578220",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "91ab63779be2be695fca7097853d43d9d33927c895f2922e26654e64ca9d4eaf",
+      "created_at": "2025-06-21T05:14:59.764142"
+    },
+    {
+      "signature_id": "01e07295-447a-4ff7-892b-3f8ed296a540",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "197352a1adb07500ead24491cea562741ad548f23171af7815300457b3a79d3b",
+      "created_at": "2025-06-21T05:16:11.423673"
+    },
+    {
+      "signature_id": "c9483a89-cdc4-4727-9a12-6662c207debf",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "34e3a14b972dea9b309dbf934c22fd3bc78eeb986358d133c9e1624d64f0f3fa",
+      "created_at": "2025-06-21T05:19:23.059167"
+    },
+    {
+      "signature_id": "0d7f218e-08cd-4b27-b67f-b19c5cf242f5",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "da6d27e54ad8febbf24f8beb1f6f679745353d00a88a626eae85f99244de29cf",
+      "created_at": "2025-06-21T05:24:27.555414"
+    },
+    {
+      "signature_id": "6540db55-8f81-4163-82db-361922bfcce7",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "e0c6aa77e3baafd1d46754de75ae2a6467a079e37f211679a22c98014429398c",
+      "created_at": "2025-06-21T05:24:42.755411"
+    },
+    {
+      "signature_id": "d65d510a-d064-481e-b466-2bc0e494a258",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "b5aeb835bc21ddc460ed07740e1f09c4c5fa076b0d43be06d972639310e0404a",
+      "created_at": "2025-06-21T05:27:16.366597"
+    },
+    {
+      "signature_id": "f41bae78-2725-4bfd-ae6f-7659bc41d27c",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "4dbd6c6eb3e4277954e619d227ca98f8fc867984b8c45d6e1300cd75250d31a7",
+      "created_at": "2025-06-21T05:27:20.268051"
+    },
+    {
+      "signature_id": "30204540-f383-4fe9-a044-bab55bedb8a8",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "49014427e89f5dd43d5786ddadf8f11c7a289cfe3f05cb16c3d4358fddee0c7d",
+      "created_at": "2025-06-21T05:30:10.788687"
+    },
+    {
+      "signature_id": "69f8c53c-bf01-42dc-926d-9191e3b9de51",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "963da568f9384dd3418cb6491cdbb40d43b189e843962fdfc029231f39600484",
+      "created_at": "2025-06-21T05:30:23.629167"
+    },
+    {
+      "signature_id": "7e7fef11-341e-46c2-906e-1b97b45ac899",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "6227800331d086f16e16220fe34fee59d3f0f013fca4be715d2c7cd131f64cc1",
+      "created_at": "2025-06-21T05:38:12.340202"
+    },
+    {
+      "signature_id": "52cd8bee-d70c-4685-8a45-e5952527072b",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "af802ae72d0b057eddbc02f146dda8b63414873701176a09b782e40051783045",
+      "created_at": "2025-06-21T05:41:51.842433"
+    },
+    {
+      "signature_id": "9636186e-05aa-432c-8b64-19afa85d1b4b",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "8807c829a1ddad4712d14c0a478ea51e81a825de3461768029df32a49954264f",
+      "created_at": "2025-06-21T05:42:00.873478"
+    },
+    {
+      "signature_id": "080326a4-b5c4-423e-a98c-1879147cebc9",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "06b7eaae0e6f0ec16af02f3ad0078f5e8240c822594fe88ff414ab3e8e33d9fe",
+      "created_at": "2025-06-21T05:45:03.656771"
+    },
+    {
+      "signature_id": "d09d1b74-48dc-4512-a84a-5f20439d2d83",
+      "persona_name": "MITO Engine Assistant",
+      "traits": [
+        "intelligent",
+        "helpful",
+        "efficient",
+        "professional",
+        "adaptive",
+        "security-conscious"
+      ],
+      "communication_style": "professional_friendly",
+      "expertise_domains": [
+        "software_development",
+        "ai_integration",
+        "project_management",
+        "database_operations",
+        "deployment_automation"
+      ],
+      "personalization_data": {
+        "creator": "Daniel Guzman",
+        "contact": "guzman.danield@outlook.com",
+        "version": "1.2.0",
+        "capabilities": [
+          "code_generation",
+          "file_management",
+          "terminal_operations",
+          "database_queries",
+          "project_deployment"
+        ]
+      },
+      "security_hash": "2a50bd3e9a291b6cf8e1897dfa9e68adbfedc45718298eab0ae1334bde97b143",
+      "created_at": "2025-06-21T06:21:00.678356"
+    }
+  ],
+  "last_updated": "2025-06-21T06:21:00.681783"
+}

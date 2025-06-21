@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MITO Code Editor & Flow Designer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/codemirror.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/theme/monokai.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        .header {
+            background: rgba(0,0,0,0.3);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #4a90e2;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4a90e2;
+        }
+        
+        .main-container {
+            display: flex;
+            height: calc(100vh - 70px);
+        }
+        
+        .sidebar {
+            width: 300px;
+            background: rgba(0,0,0,0.4);
+            border-right: 2px solid #4a90e2;
+            overflow-y: auto;
+        }
+        
+        .file-tree {
+            padding: 20px;
+        }
+        
+        .file-item {
+            padding: 8px 12px;
+            margin: 2px 0;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+        
+        .file-item:hover {
+            background: rgba(74, 144, 226, 0.2);
+            border-color: #4a90e2;
+        }
+        
+        .file-item.active {
+            background: #4a90e2;
+            color: white;
+        }
+        
+        .editor-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .editor-tabs {
+            background: rgba(0,0,0,0.3);
+            padding: 10px 20px;
+            display: flex;
+            gap: 10px;
+            border-bottom: 1px solid #4a90e2;
+        }
+        
+        .tab {
+            padding: 8px 16px;
+            background: rgba(74, 144, 226, 0.2);
+            border: 1px solid #4a90e2;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .tab.active {
+            background: #4a90e2;
+            color: white;
+        }
+        
+        .editor-pane {
+            flex: 1;
+            position: relative;
+        }
+        
+        .CodeMirror {
+            height: 100% !important;
+            font-size: 14px;
+        }
+        
+        .mermaid-container {
+            flex: 1;
+            background: white;
+            position: relative;
+            display: none;
+        }
+        
+        .mermaid-editor {
+            height: 50%;
+            border-bottom: 2px solid #4a90e2;
+        }
+        
+        .mermaid-preview {
+            height: 50%;
+            padding: 20px;
+            overflow: auto;
+            background: #f8f9fa;
+        }
+        
+        .toolbar {
+            padding: 10px 20px;
+            background: rgba(0,0,0,0.3);
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        
+        .btn {
+            padding: 8px 16px;
+            background: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: #357abd;
+            transform: translateY(-1px);
+        }
+        
+        .file-list {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        .file-list h3 {
+            color: #4a90e2;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .new-file-input {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid #4a90e2;
+            border-radius: 4px;
+            color: white;
+        }
+        
+        .new-file-input::placeholder {
+            color: rgba(255,255,255,0.6);
+        }
+        
+        .status-bar {
+            background: rgba(0,0,0,0.4);
+            padding: 8px 20px;
+            font-size: 12px;
+            border-top: 1px solid #4a90e2;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">MITO Code Editor & Flow Designer</div>
+        <div class="toolbar">
+            <button class="btn" onclick="newFile()">New File</button>
+            <button class="btn" onclick="saveFile()">Save</button>
+            <button class="btn" onclick="toggleView()">Toggle Flow View</button>
+            <button class="btn" onclick="exportProject()">Export Project</button>
+        </div>
+    </div>
+    
+    <div class="main-container">
+        <div class="sidebar">
+            <div class="file-tree">
+                <h3>Project Files</h3>
+                <input type="text" class="new-file-input" placeholder="New file name..." onkeypress="handleNewFile(event)">
+                <div class="file-list" id="fileList">
+                    <!-- Files will be populated here -->
+                </div>
+            </div>
+        </div>
+        
+        <div class="editor-container">
+            <div class="editor-tabs" id="editorTabs">
+                <!-- Tabs will be populated here -->
+            </div>
+            
+            <div class="editor-pane" id="codeEditor">
+                <textarea id="editor"></textarea>
+            </div>
+            
+            <div class="mermaid-container" id="mermaidContainer">
+                <div class="mermaid-editor">
+                    <textarea id="mermaidEditor" placeholder="Enter Mermaid diagram code here..."></textarea>
+                </div>
+                <div class="mermaid-preview" id="mermaidPreview">
+                    <div id="mermaidOutput"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="status-bar" id="statusBar">
+        Ready - MITO Code Editor v1.0
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/mode/python/python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/mode/css/css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/mode/htmlmixed/htmlmixed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/mode/xml/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/addon/edit/closebrackets.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/addon/edit/matchbrackets.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    
+    <script>
+        let codeEditor, mermaidEditor;
+        let currentFiles = new Map();
+        let activeFile = null;
+        let isFlowView = false;
+        
+        // Initialize editors
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize CodeMirror
+            codeEditor = CodeMirror.fromTextArea(document.getElementById('editor'), {
+                theme: 'monokai',
+                lineNumbers: true,
+                autoCloseBrackets: true,
+                matchBrackets: true,
+                indentUnit: 4,
+                tabSize: 4,
+                mode: 'python'
+            });
+            
+            // Initialize Mermaid editor
+            mermaidEditor = CodeMirror.fromTextArea(document.getElementById('mermaidEditor'), {
+                theme: 'monokai',
+                lineNumbers: true,
+                mode: 'text'
+            });
+            
+            // Initialize Mermaid
+            mermaid.initialize({ 
+                startOnLoad: true,
+                theme: 'default',
+                themeVariables: {
+                    primaryColor: '#4a90e2',
+                    primaryTextColor: '#2c3e50'
+                }
+            });
+            
+            loadProjectFiles();
+            
+            // Auto-update mermaid preview
+            mermaidEditor.on('change', updateMermaidPreview);
+            
+            // Update status bar
+            codeEditor.on('change', function() {
+                updateStatusBar();
+            });
+        });
+        
+        function loadProjectFiles() {
+            fetch('/api/get-project-files')
+                .then(response => response.json())
+                .then(data => {
+                    populateFileList(data.files || []);
+                })
+                .catch(error => {
+                    console.error('Error loading files:', error);
+                    // Load default files
+                    const defaultFiles = [
+                        'app.py', 'main.py', 'models.py', 'ai_providers.py', 
+                        'memory_manager.py', 'mito_agent.py', 'config.py',
+                        'templates/giant_workbench.html', 'static/style.css'
+                    ];
+                    populateFileList(defaultFiles);
+                });
+        }
+        
+        function populateFileList(files) {
+            const fileList = document.getElementById('fileList');
+            fileList.innerHTML = '';
+            
+            files.forEach(file => {
+                const fileItem = document.createElement('div');
+                fileItem.className = 'file-item';
+                fileItem.textContent = file;
+                fileItem.onclick = () => openFile(file);
+                fileList.appendChild(fileItem);
+            });
+        }
+        
+        function openFile(filename) {
+            // Remove active class from all items
+            document.querySelectorAll('.file-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Add active class to clicked item
+            event.target.classList.add('active');
+            
+            // Load file content
+            fetch(`/api/get-file-content?file=${encodeURIComponent(filename)}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        currentFiles.set(filename, data.content);
+                        activeFile = filename;
+                        codeEditor.setValue(data.content);
+                        
+                        // Set appropriate mode
+                        const mode = getFileMode(filename);
+                        codeEditor.setOption('mode', mode);
+                        
+                        updateTabs();
+                        updateStatusBar();
+                    }
+                })
+                .catch(error => {
+                    console.error('Error loading file:', error);
+                    updateStatusBar('Error loading file: ' + filename);
+                });
+        }
+        
+        function getFileMode(filename) {
+            const ext = filename.split('.').pop().toLowerCase();
+            const modes = {
+                'py': 'python',
+                'js': 'javascript',
+                'html': 'htmlmixed',
+                'css': 'css',
+                'json': 'javascript',
+                'md': 'markdown',
+                'txt': 'text'
+            };
+            return modes[ext] || 'text';
+        }
+        
+        function newFile() {
+            const input = document.querySelector('.new-file-input');
+            input.focus();
+        }
+        
+        function handleNewFile(event) {
+            if (event.key === 'Enter') {
+                const filename = event.target.value.trim();
+                if (filename) {
+                    createNewFile(filename);
+                    event.target.value = '';
+                }
+            }
+        }
+        
+        function createNewFile(filename) {
+            currentFiles.set(filename, '');
+            activeFile = filename;
+            codeEditor.setValue('');
+            
+            // Add to file list
+            const fileList = document.getElementById('fileList');
+            const fileItem = document.createElement('div');
+            fileItem.className = 'file-item active';
+            fileItem.textContent = filename;
+            fileItem.onclick = () => openFile(filename);
+            fileList.appendChild(fileItem);
+            
+            updateTabs();
+            updateStatusBar();
+        }
+        
+        function saveFile() {
+            if (!activeFile) {
+                updateStatusBar('No active file to save');
+                return;
+            }
+            
+            const content = codeEditor.getValue();
+            
+            fetch('/api/save-file', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    filename: activeFile,
+                    content: content
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    currentFiles.set(activeFile, content);
+                    updateStatusBar('File saved: ' + activeFile);
+                } else {
+                    updateStatusBar('Error saving file: ' + (data.error || 'Unknown error'));
+                }
+            })
+            .catch(error => {
+                console.error('Error saving file:', error);
+                updateStatusBar('Error saving file');
+            });
+        }
+        
+        function toggleView() {
+            isFlowView = !isFlowView;
+            const codeEditor = document.getElementById('codeEditor');
+            const mermaidContainer = document.getElementById('mermaidContainer');
+            
+            if (isFlowView) {
+                codeEditor.style.display = 'none';
+                mermaidContainer.style.display = 'flex';
+                mermaidContainer.style.flexDirection = 'column';
+                updateMermaidPreview();
+            } else {
+                codeEditor.style.display = 'block';
+                mermaidContainer.style.display = 'none';
+            }
+        }
+        
+        function updateMermaidPreview() {
+            const mermaidCode = mermaidEditor.getValue();
+            const output = document.getElementById('mermaidOutput');
+            
+            if (mermaidCode.trim()) {
+                try {
+                    output.innerHTML = '<div class="mermaid">' + mermaidCode + '</div>';
+                    mermaid.init(undefined, output.querySelector('.mermaid'));
+                } catch (error) {
+                    output.innerHTML = '<div style="color: red;">Error: ' + error.message + '</div>';
+                }
+            } else {
+                output.innerHTML = '<div style="color: #666;">Enter Mermaid diagram code to see preview</div>';
+            }
+        }
+        
+        function updateTabs() {
+            const tabsContainer = document.getElementById('editorTabs');
+            tabsContainer.innerHTML = '';
+            
+            currentFiles.forEach((content, filename) => {
+                const tab = document.createElement('div');
+                tab.className = 'tab' + (filename === activeFile ? ' active' : '');
+                tab.textContent = filename;
+                tab.onclick = () => switchToFile(filename);
+                tabsContainer.appendChild(tab);
+            });
+        }
+        
+        function switchToFile(filename) {
+            if (currentFiles.has(filename)) {
+                activeFile = filename;
+                codeEditor.setValue(currentFiles.get(filename));
+                
+                const mode = getFileMode(filename);
+                codeEditor.setOption('mode', mode);
+                
+                updateTabs();
+                updateStatusBar();
+            }
+        }
+        
+        function updateStatusBar(message) {
+            const statusBar = document.getElementById('statusBar');
+            if (message) {
+                statusBar.textContent = message;
+            } else if (activeFile) {
+                const lines = codeEditor.lineCount();
+                const cursor = codeEditor.getCursor();
+                statusBar.textContent = `${activeFile} | Line ${cursor.line + 1}, Column ${cursor.ch + 1} | ${lines} lines`;
+            } else {
+                statusBar.textContent = 'Ready - MITO Code Editor v1.0';
+            }
+        }
+        
+        function exportProject() {
+            const projectData = {
+                files: Object.fromEntries(currentFiles),
+                metadata: {
+                    exported: new Date().toISOString(),
+                    editor: 'MITO Code Editor v1.0'
+                }
+            };
+            
+            const blob = new Blob([JSON.stringify(projectData, null, 2)], {
+                type: 'application/json'
+            });
+            
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'mito-project-export.json';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            updateStatusBar('Project exported successfully');
+        }
+        
+        // Auto-save functionality
+        setInterval(() => {
+            if (activeFile && codeEditor.getValue() !== currentFiles.get(activeFile)) {
+                currentFiles.set(activeFile, codeEditor.getValue());
+                updateStatusBar('Auto-saved');
+            }
+        }, 30000); // Auto-save every 30 seconds
+    </script>
+</body>
+</html>

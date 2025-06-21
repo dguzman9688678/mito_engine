@@ -1,0 +1,1727 @@
+{
+  "verification_timestamp": "2025-06-20T10:36:10.487992",
+  "base_url": "http://localhost:5000",
+  "total_links_tested": 281,
+  "working_links": 246,
+  "broken_links": 35,
+  "success_rate": 87.54448398576513,
+  "status": "WARNING",
+  "detailed_results": {
+    "working_links": [
+      {
+        "page": "main_dashboard",
+        "url": "/",
+        "status_code": 200
+      },
+      {
+        "page": "main_dashboard",
+        "type": "external",
+        "url": "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css",
+        "status_code": 200
+      },
+      {
+        "page": "main_dashboard",
+        "type": "external",
+        "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css",
+        "status_code": 200
+      },
+      {
+        "page": "main_dashboard",
+        "type": "external",
+        "url": "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css",
+        "status_code": 200
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "toggleNotifications()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "toggleChat()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "toggleSettings()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "toggleFullscreen()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "saveWorkspace()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "toggleTheme()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "switchTool(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "switchTool(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "switchTool(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "switchTool(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "switchTool(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "switchTool(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "switchTool(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "switchTool(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "switchTool(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "switchTool(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "switchTool(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "switchTool(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "switchTool(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "switchTool(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "switchTool(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "switchTool(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "switchTool(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "switchTool(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "switchTool(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "switchTool(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "switchTool(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "switchTool(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "testCollaboration()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "deployToProduction()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "generateCustomAI()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "minimizeChat()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "toggleChat()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "sendChatMessage()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "if(event.target === this) closeSettings()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "closeSettings()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "uploadFilesToMito()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "clearFileUpload()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "togglePlugin(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "togglePlugin(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "togglePlugin(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "configureAPI(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "configureAPI(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "configureAPI(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "configureAPI(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "closeSettings()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "saveSettings()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "document.getElementById(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "refreshKnowledgeBase()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "closeFiles()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "markAllNotificationsRead()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "closeNotifications()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "markPhaseComplete()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "skipToPhase()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "addCustomPhase()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "generateCode()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "switchCollabMode(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "switchCollabMode(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "switchCollabMode(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "switchCollabMode(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "requestMitoHelp()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "generateContent()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "improveContent()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "reviewContent()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "saveCollabSession()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "exportCollabWork()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "shareCollabSession()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "clearCollabWorkspace()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "generateCollabImage()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "removePackage(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "generateCompleteCode()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "startTraining()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "analyzeSentiment()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "extractEntities()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "classifyText()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "selectTemplate(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "selectTemplate(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "selectTemplate(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "createFromTemplate()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "buildAgent()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "selectNode(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "selectNode(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "selectNode(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "selectNode(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "addEcosystemNode()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "connectNodes()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "deployEcosystem()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "openCodeEditor()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "createNewFile()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "loadProjectFiles()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "savAllFiles()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "selectFile(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "selectFile(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "selectFile(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "selectFile(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "selectFile(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "selectFile(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "createMermaidDiagram(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "createMermaidDiagram(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "createMermaidDiagram(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "viewMermaidFlow()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "toggleCodeView()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "toggleMermaidView()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "togglePreview()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "contextCopy()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "contextCut()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "contextPaste()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "contextSelectAll()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "contextSave()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "uploadFiles()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "createNewFile()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "showConverter()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "selectFile(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "selectFile(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "selectFile(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "selectFile(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "selectFile(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "selectFile(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "selectFile(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "convertFile()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "hideConverter()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "saveFile()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "downloadFile()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "editFile()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "downloadConverted()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "convertFile()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "downloadConverted()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "selectTable(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "selectTable(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "selectTable(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "createTable()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "executeQuery()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "clearQuery()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "deployToCloud()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "installPlugin(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "installPlugin(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "configureAPI(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "connectAPI(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "connectAPI(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "connectAPI(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "saveAPIConfig(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "generateCustomAI()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "restoreAutoSave()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "dismissAutoSave()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "markNotificationRead(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "downloadImage(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "generateImage()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "setPrompt(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "setPrompt(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "setPrompt(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "setPrompt(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "setPrompt(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "openFullWhiteboard()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "setWhiteboardTool(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "setWhiteboardTool(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "clearWhiteboard()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "saveWhiteboardImage()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "addWhiteboardText()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "addWhiteboardShape(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "addWhiteboardShape(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "addWhiteboardShape(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "addWhiteboardShape(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "clearTerminal()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "newTerminalTab()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "runQuickCommand(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "runQuickCommand(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "runQuickCommand(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "runQuickCommand(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "runQuickCommand(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "runQuickCommand(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "installPackages()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "uninstallPackages()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "updatePackages()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "removePackage(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "removePackage(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "removePackage(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "sendAPIRequest()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "saveAPIRequest()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "loadAPIPreset()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "loadHistoryItem(0)",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "loadPreset(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "markNotificationRead(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "processText(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "processText(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "processText(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "processText(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "processText(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "processText(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "loadKnowledgeCategory(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "loadKnowledgeCategory(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "loadKnowledgeCategory(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "loadKnowledgeCategory(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "loadTemplateCategory(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "loadTemplateCategory(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "loadTemplateCategory(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "loadTemplateCategory(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "buildAgent()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "onclick",
+        "code": "executeCommand()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "lab_mode",
+        "url": "/lab-mode",
+        "status_code": 200
+      },
+      {
+        "page": "lab_mode",
+        "type": "internal",
+        "url": "/",
+        "status_code": 200
+      },
+      {
+        "page": "lab_mode",
+        "type": "onclick",
+        "code": "switchTab(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "lab_mode",
+        "type": "onclick",
+        "code": "switchTab(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "lab_mode",
+        "type": "onclick",
+        "code": "switchTab(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "lab_mode",
+        "type": "onclick",
+        "code": "switchTab(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "lab_mode",
+        "type": "onclick",
+        "code": "switchTab(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "lab_mode",
+        "type": "onclick",
+        "code": "switchTab(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "lab_mode",
+        "type": "onclick",
+        "code": "createNewFile()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "lab_mode",
+        "type": "onclick",
+        "code": "openFile(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "lab_mode",
+        "type": "onclick",
+        "code": "openFile(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "lab_mode",
+        "type": "onclick",
+        "code": "openFile(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "lab_mode",
+        "type": "onclick",
+        "code": "saveFile()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "lab_mode",
+        "type": "onclick",
+        "code": "runCode()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "lab_mode",
+        "type": "onclick",
+        "code": "formatCode()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "lab_mode",
+        "type": "onclick",
+        "code": "copyCodeContent()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "lab_mode",
+        "type": "onclick",
+        "code": "copySelectedText()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "lab_mode",
+        "type": "onclick",
+        "code": "pasteFromClipboard()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "lab_mode",
+        "type": "onclick",
+        "code": "validateSystemIntegrity()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "lab_mode",
+        "type": "onclick",
+        "code": "exportSystemReport()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "lab_mode",
+        "type": "onclick",
+        "code": "clearOutput()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "lab_mode",
+        "type": "onclick",
+        "code": "copyOutputContent()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "health_check",
+        "url": "/health",
+        "status_code": 200
+      },
+      {
+        "page": "api_status",
+        "url": "/api/status",
+        "status_code": 200
+      },
+      {
+        "page": "mobile_interface",
+        "url": "/mobile",
+        "status_code": 200
+      },
+      {
+        "page": "mobile_interface",
+        "type": "onclick",
+        "code": "createProject()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "mobile_interface",
+        "type": "onclick",
+        "code": "showCodeGenerator()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "mobile_interface",
+        "type": "onclick",
+        "code": "deployApp()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "mobile_interface",
+        "type": "onclick",
+        "code": "generateCode()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "mobile_interface",
+        "type": "onclick",
+        "code": "saveCode()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "mobile_interface",
+        "type": "onclick",
+        "code": "modifyCode()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "mobile_interface",
+        "type": "onclick",
+        "code": "sendMessage()",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "mobile_interface",
+        "type": "onclick",
+        "code": "alert(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "mobile_test",
+        "url": "/mobile-test",
+        "status_code": 200
+      },
+      {
+        "page": "mobile_test",
+        "type": "onclick",
+        "code": "alert(",
+        "status": "syntax_ok"
+      },
+      {
+        "page": "api_endpoints",
+        "type": "api",
+        "url": "/api/status",
+        "status_code": 200
+      },
+      {
+        "page": "api_endpoints",
+        "type": "api",
+        "url": "/api/health",
+        "status_code": 200
+      },
+      {
+        "page": "api_endpoints",
+        "type": "api",
+        "url": "/api/providers",
+        "status_code": 200
+      },
+      {
+        "page": "api_endpoints",
+        "type": "api",
+        "url": "/api/lab/status",
+        "status_code": 200
+      },
+      {
+        "page": "api_endpoints",
+        "type": "api",
+        "url": "/api/keys",
+        "status_code": 200
+      },
+      {
+        "page": "api_endpoints",
+        "type": "api",
+        "url": "/api/tools",
+        "status_code": 200
+      },
+      {
+        "page": "api_endpoints",
+        "type": "api",
+        "url": "/api/agents",
+        "status_code": 200
+      },
+      {
+        "page": "api_endpoints",
+        "type": "api",
+        "url": "/api/blueprints",
+        "status_code": 200
+      },
+      {
+        "page": "api_endpoints",
+        "type": "api",
+        "url": "/api/deploy",
+        "status_code": 200
+      }
+    ],
+    "broken_links": [
+      {
+        "page": "main_dashboard",
+        "type": "fragment",
+        "url": "#",
+        "error": "Target element not found"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "fragment",
+        "url": "#",
+        "error": "Target element not found"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "fragment",
+        "url": "#",
+        "error": "Target element not found"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "fragment",
+        "url": "#",
+        "error": "Target element not found"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "fragment",
+        "url": "#",
+        "error": "Target element not found"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "fragment",
+        "url": "#",
+        "error": "Target element not found"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "fragment",
+        "url": "#",
+        "error": "Target element not found"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "fragment",
+        "url": "#",
+        "error": "Target element not found"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "fragment",
+        "url": "#",
+        "error": "Target element not found"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "fragment",
+        "url": "#",
+        "error": "Target element not found"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "fragment",
+        "url": "#",
+        "error": "Target element not found"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "fragment",
+        "url": "#",
+        "error": "Target element not found"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "fragment",
+        "url": "#",
+        "error": "Target element not found"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "fragment",
+        "url": "#",
+        "error": "Target element not found"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "fragment",
+        "url": "#",
+        "error": "Target element not found"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "fragment",
+        "url": "#",
+        "error": "Target element not found"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "fragment",
+        "url": "#",
+        "error": "Target element not found"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "fragment",
+        "url": "#",
+        "error": "Target element not found"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "fragment",
+        "url": "#",
+        "error": "Target element not found"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "fragment",
+        "url": "#",
+        "error": "Target element not found"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "fragment",
+        "url": "#",
+        "error": "Target element not found"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "fragment",
+        "url": "#",
+        "error": "Target element not found"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "fragment",
+        "url": "#",
+        "error": "Target element not found"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "fragment",
+        "url": "#",
+        "error": "Target element not found"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "fragment",
+        "url": "#",
+        "error": "Target element not found"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "fragment",
+        "url": "#",
+        "error": "Target element not found"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "fragment",
+        "url": "#",
+        "error": "Target element not found"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "fragment",
+        "url": "#",
+        "error": "Target element not found"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "fragment",
+        "url": "#",
+        "error": "Target element not found"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "fragment",
+        "url": "#",
+        "error": "Target element not found"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "fragment",
+        "url": "#",
+        "error": "Target element not found"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "fragment",
+        "url": "#",
+        "error": "Target element not found"
+      },
+      {
+        "page": "main_dashboard",
+        "type": "fragment",
+        "url": "#",
+        "error": "Target element not found"
+      },
+      {
+        "page": "api_endpoints",
+        "type": "api",
+        "url": "/api/generate",
+        "status_code": 405,
+        "error": "Unexpected status: 405"
+      },
+      {
+        "page": "api_endpoints",
+        "type": "api",
+        "url": "/api/memory",
+        "status_code": 500,
+        "error": "Unexpected status: 500"
+      }
+    ]
+  },
+  "summary_by_type": {
+    "unknown": {
+      "working": 6,
+      "broken": 0
+    },
+    "external": {
+      "working": 3,
+      "broken": 0
+    },
+    "onclick": {
+      "working": 227,
+      "broken": 0
+    },
+    "internal": {
+      "working": 1,
+      "broken": 0
+    },
+    "api": {
+      "working": 9,
+      "broken": 2
+    },
+    "fragment": {
+      "working": 0,
+      "broken": 33
+    }
+  },
+  "recommendations": [
+    "Add missing anchor targets for 33 fragment links",
+    "Implement 2 missing API endpoints"
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "timestamp": "20250620_112708",
+  "base_url": "https://workspace-dj1guzman1991.replit.app",
+  "summary": {
+    "total": 15,
+    "working": 0,
+    "broken": 15
+  },
+  "results": [
+    {
+      "endpoint": "/",
+      "url": "https://workspace-dj1guzman1991.replit.app/",
+      "status_code": 404,
+      "status": "BROKEN",
+      "response_time": 0.098073,
+      "content_type": "text/plain; charset=utf-8",
+      "size": 9
+    },
+    {
+      "endpoint": "/lab-mode",
+      "url": "https://workspace-dj1guzman1991.replit.app/lab-mode",
+      "status_code": 404,
+      "status": "BROKEN",
+      "response_time": 0.131033,
+      "content_type": "text/plain; charset=utf-8",
+      "size": 9
+    },
+    {
+      "endpoint": "/mobile",
+      "url": "https://workspace-dj1guzman1991.replit.app/mobile",
+      "status_code": 404,
+      "status": "BROKEN",
+      "response_time": 0.09098,
+      "content_type": "text/plain; charset=utf-8",
+      "size": 9
+    },
+    {
+      "endpoint": "/mobile-test",
+      "url": "https://workspace-dj1guzman1991.replit.app/mobile-test",
+      "status_code": 404,
+      "status": "BROKEN",
+      "response_time": 0.052205,
+      "content_type": "text/plain; charset=utf-8",
+      "size": 9
+    },
+    {
+      "endpoint": "/arcsec-identity",
+      "url": "https://workspace-dj1guzman1991.replit.app/arcsec-identity",
+      "status_code": 404,
+      "status": "BROKEN",
+      "response_time": 0.092311,
+      "content_type": "text/plain; charset=utf-8",
+      "size": 9
+    },
+    {
+      "endpoint": "/test-chat",
+      "url": "https://workspace-dj1guzman1991.replit.app/test-chat",
+      "status_code": 404,
+      "status": "BROKEN",
+      "response_time": 0.051233,
+      "content_type": "text/plain; charset=utf-8",
+      "size": 9
+    },
+    {
+      "endpoint": "/api/generate",
+      "url": "https://workspace-dj1guzman1991.replit.app/api/generate",
+      "status_code": 404,
+      "status": "BROKEN",
+      "response_time": 0.0721,
+      "content_type": "text/plain; charset=utf-8",
+      "size": 9
+    },
+    {
+      "endpoint": "/api/arcsec-identity/token",
+      "url": "https://workspace-dj1guzman1991.replit.app/api/arcsec-identity/token",
+      "status_code": 404,
+      "status": "BROKEN",
+      "response_time": 0.050425,
+      "content_type": "text/plain; charset=utf-8",
+      "size": 9
+    },
+    {
+      "endpoint": "/api/arcsec-identity/verify",
+      "url": "https://workspace-dj1guzman1991.replit.app/api/arcsec-identity/verify",
+      "status_code": 404,
+      "status": "BROKEN",
+      "response_time": 0.052059,
+      "content_type": "text/plain; charset=utf-8",
+      "size": 9
+    },
+    {
+      "endpoint": "/static/css/style.css",
+      "url": "https://workspace-dj1guzman1991.replit.app/static/css/style.css",
+      "status_code": 404,
+      "status": "BROKEN",
+      "response_time": 0.095442,
+      "content_type": "text/plain; charset=utf-8",
+      "size": 9
+    },
+    {
+      "endpoint": "/static/js/app.js",
+      "url": "https://workspace-dj1guzman1991.replit.app/static/js/app.js",
+      "status_code": 404,
+      "status": "BROKEN",
+      "response_time": 0.046342,
+      "content_type": "text/plain; charset=utf-8",
+      "size": 9
+    },
+    {
+      "endpoint": "/static/images/logo.png",
+      "url": "https://workspace-dj1guzman1991.replit.app/static/images/logo.png",
+      "status_code": 404,
+      "status": "BROKEN",
+      "response_time": 0.045569,
+      "content_type": "text/plain; charset=utf-8",
+      "size": 9
+    },
+    {
+      "endpoint": "/favicon.ico",
+      "url": "https://workspace-dj1guzman1991.replit.app/favicon.ico",
+      "status_code": 404,
+      "status": "BROKEN",
+      "response_time": 0.046673,
+      "content_type": "text/plain; charset=utf-8",
+      "size": 9
+    },
+    {
+      "endpoint": "/templates/giant_workbench.html",
+      "url": "https://workspace-dj1guzman1991.replit.app/templates/giant_workbench.html",
+      "status_code": 404,
+      "status": "BROKEN",
+      "response_time": 0.052368,
+      "content_type": "text/plain; charset=utf-8",
+      "size": 9
+    },
+    {
+      "endpoint": "/templates/mobile_workbench.html",
+      "url": "https://workspace-dj1guzman1991.replit.app/templates/mobile_workbench.html",
+      "status_code": 404,
+      "status": "BROKEN",
+      "response_time": 0.052111,
+      "content_type": "text/plain; charset=utf-8",
+      "size": 9
+    }
+  ]
+}

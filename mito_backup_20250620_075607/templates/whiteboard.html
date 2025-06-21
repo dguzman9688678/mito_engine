@@ -1,0 +1,665 @@
+<!--
+MITO Engine - AI Agent & Tool Creator
+Name: MITO Engine
+Version: 1.2.0
+Created by: Daniel Guzman
+Contact: guzman.danield@outlook.com
+Description: AI Agent & Tool Creator
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MITO Whiteboard - Interactive Drawing Canvas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-bg: #0f172a;
+            --secondary-bg: #1e293b;
+            --accent-bg: #334155;
+            --text-primary: #f1f5f9;
+            --text-secondary: #cbd5e1;
+            --accent-color: #3b82f6;
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --danger-color: #ef4444;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--primary-bg);
+            color: var(--text-primary);
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .whiteboard-container {
+            display: grid;
+            grid-template-areas: 
+                "toolbar toolbar"
+                "canvas sidebar";
+            grid-template-columns: 1fr 300px;
+            grid-template-rows: 60px 1fr;
+            height: 100vh;
+            gap: 1px;
+            background: var(--primary-bg);
+        }
+
+        .toolbar {
+            grid-area: toolbar;
+            background: var(--secondary-bg);
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-bottom: 1px solid var(--accent-bg);
+        }
+
+        .toolbar h3 {
+            margin: 0;
+            color: var(--text-primary);
+            flex: 1;
+        }
+
+        .tool-group {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .tool-btn {
+            background: var(--accent-bg);
+            border: none;
+            color: var(--text-primary);
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .tool-btn:hover {
+            background: var(--accent-color);
+        }
+
+        .tool-btn.active {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .color-picker {
+            width: 40px;
+            height: 40px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .brush-size {
+            background: var(--accent-bg);
+            border: none;
+            color: var(--text-primary);
+            padding: 8px;
+            border-radius: 6px;
+            width: 80px;
+        }
+
+        .canvas-area {
+            grid-area: canvas;
+            background: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #drawingCanvas {
+            display: block;
+            cursor: crosshair;
+            width: 100%;
+            height: 100%;
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+            background: var(--secondary-bg);
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .sidebar-section {
+            background: var(--accent-bg);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar-section h5 {
+            margin: 0 0 15px 0;
+            color: var(--text-primary);
+        }
+
+        .shape-btn {
+            background: var(--primary-bg);
+            border: 1px solid var(--accent-bg);
+            color: var(--text-primary);
+            padding: 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 5px;
+            width: 60px;
+            height: 60px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .shape-btn:hover {
+            background: var(--accent-color);
+        }
+
+        .layer-item {
+            background: var(--primary-bg);
+            border: 1px solid var(--accent-bg);
+            border-radius: 6px;
+            padding: 10px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .save-input {
+            background: var(--primary-bg);
+            border: 1px solid var(--accent-bg);
+            color: var(--text-primary);
+            padding: 8px 12px;
+            border-radius: 6px;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .btn-primary {
+            background: var(--accent-color);
+            border: none;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .btn-secondary {
+            background: var(--accent-bg);
+            border: none;
+            color: var(--text-primary);
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 5px;
+        }
+
+        .saved-boards {
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .board-item {
+            background: var(--primary-bg);
+            border: 1px solid var(--accent-bg);
+            border-radius: 4px;
+            padding: 8px;
+            margin-bottom: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .board-item:hover {
+            background: var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="whiteboard-container">
+        <!-- Toolbar -->
+        <div class="toolbar">
+            <h3><i class="fas fa-draw-polygon"></i> MITO Whiteboard</h3>
+            
+            <div class="tool-group">
+                <button class="tool-btn active" onclick="setTool('pen')" data-tool="pen">
+                    <i class="fas fa-pen"></i>
+                </button>
+                <button class="tool-btn" onclick="setTool('brush')" data-tool="brush">
+                    <i class="fas fa-paint-brush"></i>
+                </button>
+                <button class="tool-btn" onclick="setTool('eraser')" data-tool="eraser">
+                    <i class="fas fa-eraser"></i>
+                </button>
+                <button class="tool-btn" onclick="setTool('text')" data-tool="text">
+                    <i class="fas fa-font"></i>
+                </button>
+            </div>
+
+            <div class="tool-group">
+                <input type="color" id="colorPicker" class="color-picker" value="#000000" onchange="setColor(this.value)">
+                <input type="range" id="brushSize" class="brush-size" min="1" max="50" value="5" onchange="setBrushSize(this.value)">
+                <span style="font-size: 0.9rem;">Size: <span id="sizeDisplay">5</span>px</span>
+            </div>
+
+            <div class="tool-group">
+                <button class="tool-btn" onclick="clearCanvas()">
+                    <i class="fas fa-trash"></i> Clear
+                </button>
+                <button class="tool-btn" onclick="undoAction()">
+                    <i class="fas fa-undo"></i> Undo
+                </button>
+                <button class="tool-btn" onclick="redoAction()">
+                    <i class="fas fa-redo"></i> Redo
+                </button>
+            </div>
+        </div>
+
+        <!-- Canvas Area -->
+        <div class="canvas-area">
+            <canvas id="drawingCanvas"></canvas>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <!-- Drawing Tools -->
+            <div class="sidebar-section">
+                <h5>Shapes</h5>
+                <div>
+                    <button class="shape-btn" onclick="setTool('rectangle')" title="Rectangle">
+                        <i class="fas fa-square"></i>
+                    </button>
+                    <button class="shape-btn" onclick="setTool('circle')" title="Circle">
+                        <i class="fas fa-circle"></i>
+                    </button>
+                    <button class="shape-btn" onclick="setTool('line')" title="Line">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <button class="shape-btn" onclick="setTool('arrow')" title="Arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Save/Load -->
+            <div class="sidebar-section">
+                <h5>Save & Load</h5>
+                <input type="text" id="boardName" class="save-input" placeholder="Enter board name..." value="My Whiteboard">
+                <button class="btn-primary" onclick="saveWhiteboard()">
+                    <i class="fas fa-save"></i> Save Board
+                </button>
+                <button class="btn-secondary" onclick="exportImage()">
+                    <i class="fas fa-download"></i> Export PNG
+                </button>
+                <button class="btn-secondary" onclick="loadBoards()">
+                    <i class="fas fa-refresh"></i> Refresh List
+                </button>
+            </div>
+
+            <!-- Saved Boards -->
+            <div class="sidebar-section">
+                <h5>Saved Boards</h5>
+                <div id="savedBoards" class="saved-boards">
+                    <div style="text-align: center; color: var(--text-secondary);">Loading...</div>
+                </div>
+            </div>
+
+            <!-- AI Image Generation -->
+            <div class="sidebar-section">
+                <h5>AI Image Generator</h5>
+                <input type="text" id="imagePrompt" class="save-input" placeholder="Describe image to generate...">
+                <button class="btn-primary" onclick="generateAIImage()">
+                    <i class="fas fa-magic"></i> Generate Image
+                </button>
+                <div id="aiImageResult" style="margin-top: 10px;"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Canvas setup
+        const canvas = document.getElementById('drawingCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        // Drawing state
+        let isDrawing = false;
+        let currentTool = 'pen';
+        let currentColor = '#000000';
+        let currentSize = 5;
+        let startX, startY;
+        
+        // History for undo/redo
+        let drawingHistory = [];
+        let historyStep = -1;
+        
+        // Initialize canvas
+        function initCanvas() {
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+            
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+            
+            // Save initial state
+            saveState();
+        }
+
+        // Drawing functions
+        function startDrawing(e) {
+            isDrawing = true;
+            const rect = canvas.getBoundingClientRect();
+            startX = e.clientX - rect.left;
+            startY = e.clientY - rect.top;
+            
+            if (currentTool === 'pen' || currentTool === 'brush' || currentTool === 'eraser') {
+                ctx.beginPath();
+                ctx.moveTo(startX, startY);
+            }
+        }
+
+        function draw(e) {
+            if (!isDrawing) return;
+            
+            const rect = canvas.getBoundingClientRect();
+            const currentX = e.clientX - rect.left;
+            const currentY = e.clientY - rect.top;
+            
+            ctx.lineWidth = currentSize;
+            
+            if (currentTool === 'pen' || currentTool === 'brush') {
+                ctx.globalCompositeOperation = 'source-over';
+                ctx.strokeStyle = currentColor;
+                ctx.lineTo(currentX, currentY);
+                ctx.stroke();
+            } else if (currentTool === 'eraser') {
+                ctx.globalCompositeOperation = 'destination-out';
+                ctx.lineTo(currentX, currentY);
+                ctx.stroke();
+            }
+        }
+
+        function stopDrawing(e) {
+            if (!isDrawing) return;
+            isDrawing = false;
+            
+            const rect = canvas.getBoundingClientRect();
+            const endX = e.clientX - rect.left;
+            const endY = e.clientY - rect.top;
+            
+            if (currentTool === 'rectangle') {
+                drawRectangle(startX, startY, endX, endY);
+            } else if (currentTool === 'circle') {
+                drawCircle(startX, startY, endX, endY);
+            } else if (currentTool === 'line') {
+                drawLine(startX, startY, endX, endY);
+            } else if (currentTool === 'arrow') {
+                drawArrow(startX, startY, endX, endY);
+            }
+            
+            saveState();
+        }
+
+        function drawRectangle(x1, y1, x2, y2) {
+            ctx.globalCompositeOperation = 'source-over';
+            ctx.strokeStyle = currentColor;
+            ctx.lineWidth = currentSize;
+            ctx.strokeRect(x1, y1, x2 - x1, y2 - y1);
+        }
+
+        function drawCircle(x1, y1, x2, y2) {
+            ctx.globalCompositeOperation = 'source-over';
+            ctx.strokeStyle = currentColor;
+            ctx.lineWidth = currentSize;
+            const radius = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+            ctx.beginPath();
+            ctx.arc(x1, y1, radius, 0, 2 * Math.PI);
+            ctx.stroke();
+        }
+
+        function drawLine(x1, y1, x2, y2) {
+            ctx.globalCompositeOperation = 'source-over';
+            ctx.strokeStyle = currentColor;
+            ctx.lineWidth = currentSize;
+            ctx.beginPath();
+            ctx.moveTo(x1, y1);
+            ctx.lineTo(x2, y2);
+            ctx.stroke();
+        }
+
+        function drawArrow(x1, y1, x2, y2) {
+            drawLine(x1, y1, x2, y2);
+            
+            const angle = Math.atan2(y2 - y1, x2 - x1);
+            const arrowLength = 20;
+            
+            ctx.beginPath();
+            ctx.moveTo(x2, y2);
+            ctx.lineTo(x2 - arrowLength * Math.cos(angle - Math.PI / 6), y2 - arrowLength * Math.sin(angle - Math.PI / 6));
+            ctx.moveTo(x2, y2);
+            ctx.lineTo(x2 - arrowLength * Math.cos(angle + Math.PI / 6), y2 - arrowLength * Math.sin(angle + Math.PI / 6));
+            ctx.stroke();
+        }
+
+        // Tool functions
+        function setTool(tool) {
+            currentTool = tool;
+            document.querySelectorAll('.tool-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`[data-tool="${tool}"]`)?.classList.add('active');
+            
+            // Update cursor
+            if (tool === 'eraser') {
+                canvas.style.cursor = 'grab';
+            } else if (tool === 'text') {
+                canvas.style.cursor = 'text';
+            } else {
+                canvas.style.cursor = 'crosshair';
+            }
+        }
+
+        function setColor(color) {
+            currentColor = color;
+        }
+
+        function setBrushSize(size) {
+            currentSize = size;
+            document.getElementById('sizeDisplay').textContent = size;
+        }
+
+        function clearCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            saveState();
+        }
+
+        // History functions
+        function saveState() {
+            historyStep++;
+            if (historyStep < drawingHistory.length) {
+                drawingHistory.length = historyStep;
+            }
+            drawingHistory.push(canvas.toDataURL());
+        }
+
+        function undoAction() {
+            if (historyStep > 0) {
+                historyStep--;
+                restoreState();
+            }
+        }
+
+        function redoAction() {
+            if (historyStep < drawingHistory.length - 1) {
+                historyStep++;
+                restoreState();
+            }
+        }
+
+        function restoreState() {
+            const img = new Image();
+            img.onload = function() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.drawImage(img, 0, 0);
+            };
+            img.src = drawingHistory[historyStep];
+        }
+
+        // Save/Load functions
+        function saveWhiteboard() {
+            const name = document.getElementById('boardName').value || 'Unnamed Board';
+            const drawingData = canvas.toDataURL();
+            
+            fetch('/api/whiteboard/save', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: name,
+                    drawing: drawingData
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Whiteboard saved successfully!');
+                    loadBoards();
+                } else {
+                    alert('Save failed: ' + data.error);
+                }
+            })
+            .catch(error => {
+                alert('Save failed: ' + error);
+            });
+        }
+
+        function loadBoards() {
+            fetch('/api/whiteboard/list')
+                .then(response => response.json())
+                .then(data => {
+                    const container = document.getElementById('savedBoards');
+                    
+                    if (data.whiteboards && data.whiteboards.length > 0) {
+                        container.innerHTML = data.whiteboards.map(board => `
+                            <div class="board-item" onclick="loadBoard('${board.filename.replace('.json', '')}')">
+                                <div style="font-weight: bold;">${board.name}</div>
+                                <div style="font-size: 0.8rem; color: var(--text-secondary);">
+                                    ${new Date(board.created_at).toLocaleDateString()}
+                                </div>
+                            </div>
+                        `).join('');
+                    } else {
+                        container.innerHTML = '<div style="text-align: center; color: var(--text-secondary);">No saved boards</div>';
+                    }
+                })
+                .catch(error => {
+                    document.getElementById('savedBoards').innerHTML = '<div style="color: var(--danger-color);">Failed to load boards</div>';
+                });
+        }
+
+        function loadBoard(name) {
+            fetch(`/api/whiteboard/load/${name}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.drawing) {
+                        const img = new Image();
+                        img.onload = function() {
+                            ctx.clearRect(0, 0, canvas.width, canvas.height);
+                            ctx.drawImage(img, 0, 0);
+                            saveState();
+                        };
+                        img.src = data.drawing;
+                        document.getElementById('boardName').value = data.name;
+                    }
+                })
+                .catch(error => {
+                    alert('Failed to load board: ' + error);
+                });
+        }
+
+        function exportImage() {
+            const link = document.createElement('a');
+            link.download = (document.getElementById('boardName').value || 'whiteboard') + '.png';
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+
+        // AI Image Generation
+        function generateAIImage() {
+            const prompt = document.getElementById('imagePrompt').value;
+            if (!prompt) {
+                alert('Please enter a description for the image');
+                return;
+            }
+            
+            const resultDiv = document.getElementById('aiImageResult');
+            resultDiv.innerHTML = '<div style="text-align: center; color: var(--text-secondary);">Generating...</div>';
+            
+            fetch('/api/generate-image', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    prompt: prompt,
+                    size: '512x512'
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    resultDiv.innerHTML = `
+                        <img src="${data.image_url}" style="width: 100%; border-radius: 6px; margin-bottom: 10px;">
+                        <button class="btn-secondary" onclick="addImageToCanvas('${data.image_url}')">
+                            <i class="fas fa-plus"></i> Add to Canvas
+                        </button>
+                    `;
+                } else {
+                    resultDiv.innerHTML = `<div style="color: var(--danger-color);">Error: ${data.error}</div>`;
+                }
+            })
+            .catch(error => {
+                resultDiv.innerHTML = `<div style="color: var(--danger-color);">Generation failed: ${error}</div>`;
+            });
+        }
+
+        function addImageToCanvas(imageUrl) {
+            const img = new Image();
+            img.crossOrigin = 'anonymous';
+            img.onload = function() {
+                const scale = Math.min(canvas.width / img.width, canvas.height / img.height, 0.5);
+                const width = img.width * scale;
+                const height = img.height * scale;
+                const x = (canvas.width - width) / 2;
+                const y = (canvas.height - height) / 2;
+                
+                ctx.drawImage(img, x, y, width, height);
+                saveState();
+            };
+            img.src = imageUrl;
+        }
+
+        // Event listeners
+        canvas.addEventListener('mousedown', startDrawing);
+        canvas.addEventListener('mousemove', draw);
+        canvas.addEventListener('mouseup', stopDrawing);
+        canvas.addEventListener('mouseout', stopDrawing);
+
+        // Initialize
+        window.addEventListener('load', function() {
+            initCanvas();
+            loadBoards();
+        });
+
+        window.addEventListener('resize', function() {
+            initCanvas();
+        });
+    </script>
+</body>
+</html>

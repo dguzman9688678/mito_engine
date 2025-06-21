@@ -1,0 +1,759 @@
+<!--
+MITO Engine - AI Agent & Tool Creator
+Name: MITO Engine
+Version: 1.2.0
+Created by: Daniel Guzman
+Contact: guzman.danield@outlook.com
+Description: AI Agent & Tool Creator
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MITO Settings - Dashboard Customization</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --text-primary: #f0f6fc;
+            --text-secondary: #8b949e;
+            --text-muted: #6e7681;
+            --accent: #238636;
+            --accent-hover: #2ea043;
+            --border: #30363d;
+            --border-muted: #21262d;
+            --success: #238636;
+            --warning: #d29922;
+            --error: #da3633;
+            --blue: #1f6feb;
+            --purple: #8957e5;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .back-btn {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: all 0.2s ease;
+        }
+
+        .back-btn:hover {
+            background: var(--border);
+        }
+
+        .main-content {
+            padding: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .settings-section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .setting-group {
+            margin-bottom: 2rem;
+        }
+
+        .setting-label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .setting-description {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .theme-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .theme-option {
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            background: var(--bg-tertiary);
+        }
+
+        .theme-option:hover {
+            border-color: var(--accent);
+        }
+
+        .theme-option.active {
+            border-color: var(--accent);
+            background: rgba(35, 134, 54, 0.1);
+        }
+
+        .theme-preview {
+            width: 100%;
+            height: 60px;
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .theme-dark .theme-preview {
+            background: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #21262d 100%);
+        }
+
+        .theme-light .theme-preview {
+            background: linear-gradient(135deg, #ffffff 0%, #f6f8fa 50%, #eaeef2 100%);
+        }
+
+        .theme-blue .theme-preview {
+            background: linear-gradient(135deg, #0c1426 0%, #1f2937 50%, #374151 100%);
+        }
+
+        .theme-purple .theme-preview {
+            background: linear-gradient(135deg, #1a1625 0%, #2d1b69 50%, #553c9a 100%);
+        }
+
+        .theme-name {
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .layout-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+
+        .layout-option {
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            background: var(--bg-tertiary);
+            text-align: center;
+        }
+
+        .layout-option:hover {
+            border-color: var(--accent);
+        }
+
+        .layout-option.active {
+            border-color: var(--accent);
+            background: rgba(35, 134, 54, 0.1);
+        }
+
+        .layout-preview {
+            width: 100%;
+            height: 40px;
+            background: var(--border);
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .layout-sidebar .layout-preview::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 30%;
+            height: 100%;
+            background: var(--accent);
+            border-radius: 4px 0 0 4px;
+        }
+
+        .layout-top .layout-preview::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 30%;
+            background: var(--accent);
+            border-radius: 4px 4px 0 0;
+        }
+
+        .layout-grid .layout-preview::before {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 5px;
+            width: calc(50% - 7.5px);
+            height: calc(50% - 7.5px);
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .layout-grid .layout-preview::after {
+            content: '';
+            position: absolute;
+            right: 5px;
+            bottom: 5px;
+            width: calc(50% - 7.5px);
+            height: calc(50% - 7.5px);
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .component-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .component-item {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .component-info h4 {
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+
+        .component-info p {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .toggle-switch {
+            position: relative;
+            width: 44px;
+            height: 24px;
+            background: var(--border);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .toggle-switch.active {
+            background: var(--accent);
+        }
+
+        .toggle-switch::before {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            transition: transform 0.2s ease;
+        }
+
+        .toggle-switch.active::before {
+            transform: translateX(20px);
+        }
+
+        .color-picker {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .color-option {
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .color-option:hover,
+        .color-option.active {
+            border-color: var(--text-primary);
+            transform: scale(1.1);
+        }
+
+        .save-button {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .save-button:hover {
+            background: var(--accent-hover);
+        }
+
+        .reset-button {
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+            padding: 0.75rem 2rem;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            cursor: pointer;
+            margin-right: 1rem;
+        }
+
+        .preview-section {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .preview-header {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .mini-dashboard {
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1rem;
+            min-height: 200px;
+        }
+
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            color: white;
+            font-weight: 500;
+            z-index: 1000;
+            font-size: 0.875rem;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .notification.show {
+            transform: translateX(0);
+        }
+
+        .notification.success {
+            background: var(--success);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-title">Dashboard Customization</div>
+        <a href="/workbench" class="back-btn">← Back to Workbench</a>
+    </div>
+
+    <div class="main-content">
+        <!-- Theme Settings -->
+        <div class="settings-section">
+            <h2 class="section-title">Theme & Appearance</h2>
+            
+            <div class="setting-group">
+                <label class="setting-label">Color Theme</label>
+                <div class="setting-description">Choose your preferred color scheme</div>
+                <div class="theme-grid">
+                    <div class="theme-option theme-dark active" data-theme="dark">
+                        <div class="theme-preview"></div>
+                        <div class="theme-name">Dark (Default)</div>
+                    </div>
+                    <div class="theme-option theme-light" data-theme="light">
+                        <div class="theme-preview"></div>
+                        <div class="theme-name">Light</div>
+                    </div>
+                    <div class="theme-option theme-blue" data-theme="blue">
+                        <div class="theme-preview"></div>
+                        <div class="theme-name">Blue Dark</div>
+                    </div>
+                    <div class="theme-option theme-purple" data-theme="purple">
+                        <div class="theme-preview"></div>
+                        <div class="theme-name">Purple</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="setting-group">
+                <label class="setting-label">Accent Color</label>
+                <div class="setting-description">Choose an accent color for highlights and buttons</div>
+                <div class="color-picker">
+                    <div class="color-option active" data-color="#238636" style="background: #238636;"></div>
+                    <div class="color-option" data-color="#1f6feb" style="background: #1f6feb;"></div>
+                    <div class="color-option" data-color="#8957e5" style="background: #8957e5;"></div>
+                    <div class="color-option" data-color="#d29922" style="background: #d29922;"></div>
+                    <div class="color-option" data-color="#da3633" style="background: #da3633;"></div>
+                    <div class="color-option" data-color="#f85149" style="background: #f85149;"></div>
+                    <div class="color-option" data-color="#7c3aed" style="background: #7c3aed;"></div>
+                    <div class="color-option" data-color="#059669" style="background: #059669;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Layout Settings -->
+        <div class="settings-section">
+            <h2 class="section-title">Layout Configuration</h2>
+            
+            <div class="setting-group">
+                <label class="setting-label">Dashboard Layout</label>
+                <div class="setting-description">Choose how components are arranged</div>
+                <div class="layout-grid">
+                    <div class="layout-option layout-sidebar active" data-layout="sidebar">
+                        <div class="layout-preview"></div>
+                        <div>Sidebar (Default)</div>
+                    </div>
+                    <div class="layout-option layout-top" data-layout="top">
+                        <div class="layout-preview"></div>
+                        <div>Top Navigation</div>
+                    </div>
+                    <div class="layout-option layout-grid" data-layout="grid">
+                        <div class="layout-preview"></div>
+                        <div>Grid Layout</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Component Settings -->
+        <div class="settings-section">
+            <h2 class="section-title">Dashboard Components</h2>
+            
+            <div class="setting-group">
+                <label class="setting-label">Visible Components</label>
+                <div class="setting-description">Toggle which components appear in your dashboard</div>
+                <div class="component-list">
+                    <div class="component-item">
+                        <div class="component-info">
+                            <h4>Chat Interface</h4>
+                            <p>AI conversation panel</p>
+                        </div>
+                        <div class="toggle-switch active" data-component="chat"></div>
+                    </div>
+                    <div class="component-item">
+                        <div class="component-info">
+                            <h4>Project Builder</h4>
+                            <p>Create new projects</p>
+                        </div>
+                        <div class="toggle-switch active" data-component="builder"></div>
+                    </div>
+                    <div class="component-item">
+                        <div class="component-info">
+                            <h4>Code Generator</h4>
+                            <p>Generate code snippets</p>
+                        </div>
+                        <div class="toggle-switch active" data-component="code"></div>
+                    </div>
+                    <div class="component-item">
+                        <div class="component-info">
+                            <h4>System Monitor</h4>
+                            <p>System health and status</p>
+                        </div>
+                        <div class="toggle-switch active" data-component="monitor"></div>
+                    </div>
+                    <div class="component-item">
+                        <div class="component-info">
+                            <h4>Recent Projects</h4>
+                            <p>Project history sidebar</p>
+                        </div>
+                        <div class="toggle-switch active" data-component="recent"></div>
+                    </div>
+                    <div class="component-item">
+                        <div class="component-info">
+                            <h4>API Usage Stats</h4>
+                            <p>Cost and usage tracking</p>
+                        </div>
+                        <div class="toggle-switch active" data-component="usage"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Preview -->
+        <div class="preview-section">
+            <div class="preview-header">Live Preview</div>
+            <div class="mini-dashboard" id="preview">
+                <div style="padding: 1rem; text-align: center; color: var(--text-muted);">
+                    Your dashboard preview will update as you change settings
+                </div>
+            </div>
+        </div>
+
+        <!-- Actions -->
+        <div style="text-align: right; margin-top: 2rem;">
+            <button class="reset-button" id="reset-settings">Reset to Default</button>
+            <button class="save-button" id="save-settings">Save Changes</button>
+        </div>
+    </div>
+
+    <script>
+        class DashboardCustomizer {
+            constructor() {
+                this.settings = this.loadSettings();
+                this.init();
+            }
+
+            init() {
+                this.setupEventListeners();
+                this.applySettings();
+                this.updatePreview();
+            }
+
+            loadSettings() {
+                const saved = localStorage.getItem('mito-dashboard-settings');
+                return saved ? JSON.parse(saved) : {
+                    theme: 'dark',
+                    accentColor: '#238636',
+                    layout: 'sidebar',
+                    components: {
+                        chat: true,
+                        builder: true,
+                        code: true,
+                        monitor: true,
+                        recent: true,
+                        usage: true
+                    }
+                };
+            }
+
+            saveSettings() {
+                localStorage.setItem('mito-dashboard-settings', JSON.stringify(this.settings));
+                this.showNotification('Settings saved successfully!');
+                
+                // Also send to parent window if opened from workbench
+                if (window.opener) {
+                    window.opener.postMessage({
+                        type: 'settingsUpdated',
+                        settings: this.settings
+                    }, '*');
+                }
+            }
+
+            setupEventListeners() {
+                // Theme selection
+                document.querySelectorAll('.theme-option').forEach(option => {
+                    option.addEventListener('click', (e) => {
+                        document.querySelectorAll('.theme-option').forEach(o => o.classList.remove('active'));
+                        option.classList.add('active');
+                        this.settings.theme = option.dataset.theme;
+                        this.applySettings();
+                        this.updatePreview();
+                    });
+                });
+
+                // Color selection
+                document.querySelectorAll('.color-option').forEach(option => {
+                    option.addEventListener('click', (e) => {
+                        document.querySelectorAll('.color-option').forEach(o => o.classList.remove('active'));
+                        option.classList.add('active');
+                        this.settings.accentColor = option.dataset.color;
+                        this.applySettings();
+                        this.updatePreview();
+                    });
+                });
+
+                // Layout selection
+                document.querySelectorAll('.layout-option').forEach(option => {
+                    option.addEventListener('click', (e) => {
+                        document.querySelectorAll('.layout-option').forEach(o => o.classList.remove('active'));
+                        option.classList.add('active');
+                        this.settings.layout = option.dataset.layout;
+                        this.updatePreview();
+                    });
+                });
+
+                // Component toggles
+                document.querySelectorAll('.toggle-switch').forEach(toggle => {
+                    toggle.addEventListener('click', (e) => {
+                        toggle.classList.toggle('active');
+                        const component = toggle.dataset.component;
+                        this.settings.components[component] = toggle.classList.contains('active');
+                        this.updatePreview();
+                    });
+                });
+
+                // Save button
+                document.getElementById('save-settings').addEventListener('click', () => {
+                    this.saveSettings();
+                });
+
+                // Reset button
+                document.getElementById('reset-settings').addEventListener('click', () => {
+                    this.resetSettings();
+                });
+            }
+
+            applySettings() {
+                // Apply theme
+                document.documentElement.className = `theme-${this.settings.theme}`;
+                
+                // Apply accent color
+                document.documentElement.style.setProperty('--accent', this.settings.accentColor);
+                document.documentElement.style.setProperty('--accent-hover', this.adjustColor(this.settings.accentColor, -20));
+
+                // Update active states
+                document.querySelectorAll('.theme-option').forEach(o => {
+                    o.classList.toggle('active', o.dataset.theme === this.settings.theme);
+                });
+
+                document.querySelectorAll('.color-option').forEach(o => {
+                    o.classList.toggle('active', o.dataset.color === this.settings.accentColor);
+                });
+
+                document.querySelectorAll('.layout-option').forEach(o => {
+                    o.classList.toggle('active', o.dataset.layout === this.settings.layout);
+                });
+
+                document.querySelectorAll('.toggle-switch').forEach(toggle => {
+                    const component = toggle.dataset.component;
+                    toggle.classList.toggle('active', this.settings.components[component]);
+                });
+            }
+
+            updatePreview() {
+                const preview = document.getElementById('preview');
+                let previewHTML = '<div style="display: flex; gap: 1rem; height: 100%;">';
+
+                if (this.settings.layout === 'sidebar') {
+                    previewHTML += '<div style="width: 200px; background: var(--bg-secondary); border-radius: 4px; padding: 0.5rem;">';
+                    if (this.settings.components.recent) previewHTML += '<div style="background: var(--accent); height: 20px; border-radius: 2px; margin-bottom: 0.5rem; opacity: 0.7;"></div>';
+                    previewHTML += '</div>';
+                }
+
+                previewHTML += '<div style="flex: 1;">';
+                
+                if (this.settings.layout === 'top') {
+                    previewHTML += '<div style="height: 40px; background: var(--bg-secondary); border-radius: 4px; margin-bottom: 1rem;"></div>';
+                }
+
+                if (this.settings.components.builder) {
+                    previewHTML += '<div style="background: var(--accent); height: 60px; border-radius: 4px; margin-bottom: 1rem; opacity: 0.7;"></div>';
+                }
+
+                if (this.settings.components.code) {
+                    previewHTML += '<div style="background: var(--bg-secondary); height: 40px; border-radius: 4px; margin-bottom: 1rem;"></div>';
+                }
+
+                previewHTML += '</div>';
+
+                if (this.settings.components.chat || this.settings.components.monitor) {
+                    previewHTML += '<div style="width: 250px; background: var(--bg-secondary); border-radius: 4px; padding: 0.5rem;">';
+                    if (this.settings.components.chat) previewHTML += '<div style="background: var(--accent); height: 30px; border-radius: 2px; margin-bottom: 0.5rem; opacity: 0.5;"></div>';
+                    if (this.settings.components.monitor) previewHTML += '<div style="background: var(--border); height: 20px; border-radius: 2px; opacity: 0.7;"></div>';
+                    previewHTML += '</div>';
+                }
+
+                previewHTML += '</div>';
+                preview.innerHTML = previewHTML;
+            }
+
+            adjustColor(hex, percent) {
+                const num = parseInt(hex.replace("#", ""), 16);
+                const amt = Math.round(2.55 * percent);
+                const R = (num >> 16) + amt;
+                const G = (num >> 8 & 0x00FF) + amt;
+                const B = (num & 0x0000FF) + amt;
+                return "#" + (0x1000000 + (R < 255 ? R < 1 ? 0 : R : 255) * 0x10000 +
+                    (G < 255 ? G < 1 ? 0 : G : 255) * 0x100 +
+                    (B < 255 ? B < 1 ? 0 : B : 255)).toString(16).slice(1);
+            }
+
+            resetSettings() {
+                this.settings = {
+                    theme: 'dark',
+                    accentColor: '#238636',
+                    layout: 'sidebar',
+                    components: {
+                        chat: true,
+                        builder: true,
+                        code: true,
+                        monitor: true,
+                        recent: true,
+                        usage: true
+                    }
+                };
+                this.applySettings();
+                this.updatePreview();
+                this.showNotification('Settings reset to default');
+            }
+
+            showNotification(message) {
+                const notification = document.createElement('div');
+                notification.className = 'notification success';
+                notification.textContent = message;
+                document.body.appendChild(notification);
+
+                setTimeout(() => notification.classList.add('show'), 100);
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                    setTimeout(() => document.body.removeChild(notification), 300);
+                }, 3000);
+            }
+        }
+
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new DashboardCustomizer();
+        });
+    </script>
+</body>
+</html>
