@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MITO Advanced Features</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #e5e7eb;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .advanced-container {
+            display: grid;
+            grid-template-columns: 250px 1fr 300px;
+            grid-template-rows: 60px 1fr 40px;
+            height: 100vh;
+            gap: 1px;
+            background: #0f0f0f;
+        }
+
+        .header {
+            grid-column: 1 / -1;
+            background: #1f2937;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            border-bottom: 1px solid #374151;
+        }
+
+        .header h1 {
+            color: #60a5fa;
+            font-size: 1.5rem;
+            margin-right: 30px;
+        }
+
+        .header-controls {
+            display: flex;
+            gap: 15px;
+            margin-left: auto;
+        }
+
+        .header-btn {
+            padding: 8px 16px;
+            background: #374151;
+            border: none;
+            border-radius: 6px;
+            color: #e5e7eb;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .header-btn:hover {
+            background: #4b5563;
+        }
+
+        .sidebar {
+            background: #1f2937;
+            border-right: 1px solid #374151;
+            overflow-y: auto;
+        }
+
+        .sidebar-section {
+            border-bottom: 1px solid #374151;
+        }
+
+        .sidebar-header {
+            padding: 12px 16px;
+            background: #374151;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #9ca3af;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .sidebar-item {
+            padding: 10px 16px;
+            cursor: pointer;
+            border-bottom: 1px solid #2d3748;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .sidebar-item:hover {
+            background: #2563eb;
+            color: white;
+        }
+
+        .sidebar-item.active {
+            background: #3b82f6;
+            color: white;
+        }
+
+        .main-content {
+            background: #111827;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .content-panel {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 20px;
+            overflow-y: auto;
+            display: none;
+        }
+
+        .content-panel.active {
+            display: block;
+        }
+
+        .right-panel {
+            background: #1f2937;
+            border-left: 1px solid #374151;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .panel-tabs {
+            display: flex;
+            background: #374151;
+        }
+
+        .panel-tab {
+            flex: 1;
+            padding: 10px 8px;
+            text-align: center;
+            cursor: pointer;
+            font-size: 0.8rem;
+            background: #374151;
+            border: none;
+            color: #9ca3af;
+            transition: all 0.2s;
+        }
+
+        .panel-tab.active {
+            background: #1f2937;
+            color: #60a5fa;
+        }
+
+        .panel-content {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            display: none;
+        }
+
+        .panel-content.active {
+            display: block;
+        }
+
+        .status-bar {
+            grid-column: 1 / -1;
+            background: #374151;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            font-size: 0.8rem;
+            color: #9ca3af;
+            border-top: 1px solid #4b5563;
+        }
+
+        .status-item {
+            margin-right: 20px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .status-indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #10b981;
+        }
+
+        /* Terminal Styles */
+        .terminal {
+            background: #000;
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+            padding: 15px;
+            height: 100%;
+            overflow-y: auto;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .terminal-input {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .terminal-prompt {
+            color: #00ff00;
+            margin-right: 5px;
+        }
+
+        .terminal-command {
+            background: transparent;
+            border: none;
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            flex: 1;
+            outline: none;
+        }
+
+        /* Preview Styles */
+        .preview-container {
+            background: #1f2937;
+            border-radius: 8px;
+            padding: 15px;
+            height: 100%;
+        }
+
+        .preview-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #374151;
+        }
+
+        .preview-content {
+            height: calc(100% - 60px);
+            overflow: auto;
+            background: #111827;
+            border-radius: 6px;
+            padding: 15px;
+        }
+
+        /* Problems Panel */
+        .problem-item {
+            padding: 10px;
+            border-bottom: 1px solid #374151;
+            cursor: pointer;
+        }
+
+        .problem-item:hover {
+            background: #374151;
+        }
+
+        .problem-severity {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        .problem-severity.error {
+            background: #ef4444;
+        }
+
+        .problem-severity.warning {
+            background: #f59e0b;
+        }
+
+        .problem-severity.info {
+            background: #3b82f6;
+        }
+
+        /* Object Storage */
+        .storage-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 12px;
+            border-bottom: 1px solid #374151;
+            cursor: pointer;
+        }
+
+        .storage-item:hover {
+            background: #374151;
+        }
+
+        .storage-size {
+            color: #9ca3af;
+            font-size: 0.8rem;
+        }
+
+        /* Secrets Management */
+        .secret-item {
+            background: #374151;
+            border-radius: 6px;
+            padding: 12px;
+            margin-bottom: 10px;
+        }
+
+        .secret-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .secret-value {
+            background: #1f2937;
+            padding: 8px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.9rem;
+            word-break: break-all;
+        }
+
+        /* Workflow Styles */
+        .workflow-item {
+            background: #374151;
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .workflow-status {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .workflow-status.running {
+            background: #10b981;
+            color: #000;
+        }
+
+        .workflow-status.stopped {
+            background: #6b7280;
+            color: #fff;
+        }
+
+        .workflow-status.error {
+            background: #ef4444;
+            color: #fff;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .advanced-container {
+                grid-template-columns: 200px 1fr 250px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .advanced-container {
+                grid-template-columns: 1fr;
+                grid-template-rows: 60px 40px 1fr 40px;
+            }
+            
+            .sidebar, .right-panel {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="advanced-container">
+        <!-- Header -->
+        <div class="header">
+            <h1>MITO Advanced Features</h1>
+            <div class="header-controls">
+                <button class="header-btn" onclick="togglePreview()">Preview</button>
+                <button class="header-btn" onclick="refreshWorkflows()">Refresh</button>
+                <button class="header-btn" onclick="saveWorkspace()">Save</button>
+                <button class="header-btn" onclick="window.close()">Close</button>
+            </div>
+        </div>
+
+        <!-- Left Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-section">
+                <div class="sidebar-header">Navigation</div>
+                <div class="sidebar-item active" onclick="showPanel('preview')">
+                    <span>🔍</span> Preview
+                </div>
+                <div class="sidebar-item" onclick="showPanel('terminal')">
+                    <span>💻</span> Terminal
+                </div>
+                <div class="sidebar-item" onclick="showPanel('secrets')">
+                    <span>🔐</span> Secrets
+                </div>
+                <div class="sidebar-item" onclick="showPanel('storage')">
+                    <span>💾</span> Object Storage
+                </div>
+                <div class="sidebar-item" onclick="showPanel('workflows')">
+                    <span>⚡</span> Workflows
+                </div>
+                <div class="sidebar-item" onclick="showPanel('networking')">
+                    <span>🌐</span> Networking
+                </div>
+            </div>
+            
+            <div class="sidebar-section">
+                <div class="sidebar-header">Tools</div>
+                <div class="sidebar-item" onclick="showPanel('shell')">
+                    <span>🐚</span> Shell Integration
+                </div>
+                <div class="sidebar-item" onclick="openFileManager()">
+                    <span>📁</span> File Manager
+                </div>
+                <div class="sidebar-item" onclick="openMonitoring()">
+                    <span>📊</span> System Monitor
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <!-- Preview Panel -->
+            <div class="content-panel active" id="preview-panel">
+                <div class="preview-container">
+                    <div class="preview-header">
+                        <h3>Live Preview</h3>
+                        <div>
+                            <select id="preview-type" onchange="updatePreview()">
+                                <option value="web">Web Preview</option>
+                                <option value="markdown">Markdown</option>
+                                <option value="json">JSON</option>
+                                <option value="code">Code</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="preview-content" id="preview-content">
+                        <iframe src="/" style="width: 100%; height: 100%; border: none; background: white; border-radius: 4px;"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Terminal Panel -->
+            <div class="content-panel" id="terminal-panel">
+                <div class="terminal">
+                    <div id="terminal-output">
+                        <div>MITO Engine Terminal v1.2.0</div>
+                        <div>Type 'help' for available commands</div>
+                        <div>Connected to workspace: /workspace</div>
+                        <div></div>
+                    </div>
+                    <div class="terminal-input">
+                        <span class="terminal-prompt">mito@engine:~$</span>
+                        <input type="text" class="terminal-command" id="terminal-input" 
+                               onkeypress="handleTerminalInput(event)" placeholder="Enter command...">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Secrets Panel -->
+            <div class="content-panel" id="secrets-panel">
+                <h3 style="margin-bottom: 20px;">Secrets Management</h3>
+                <button onclick="addSecret()" style="background: #3b82f6; color: white; border: none; padding: 10px 20px; border-radius: 6px; margin-bottom: 20px; cursor: pointer;">Add Secret</button>
+                <div id="secrets-list">
+                    <!-- Secrets will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Object Storage Panel -->
+            <div class="content-panel" id="storage-panel">
+                <h3 style="margin-bottom: 20px;">Object Storage</h3>
+                <button onclick="uploadFile()" style="background: #10b981; color: white; border: none; padding: 10px 20px; border-radius: 6px; margin-bottom: 20px; cursor: pointer;">Upload File</button>
+                <div id="storage-list">
+                    <!-- Storage items will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Workflows Panel -->
+            <div class="content-panel" id="workflows-panel">
+                <h3 style="margin-bottom: 20px;">Workflow Management</h3>
+                <button onclick="createWorkflow()" style="background: #8b5cf6; color: white; border: none; padding: 10px 20px; border-radius: 6px; margin-bottom: 20px; cursor: pointer;">Create Workflow</button>
+                <div id="workflows-list">
+                    <!-- Workflows will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Shell Integration Panel -->
+            <div class="content-panel" id="shell-panel">
+                <h3 style="margin-bottom: 20px;">Shell Integration</h3>
+                <div style="background: #1f2937; border-radius: 8px; padding: 15px;">
+                    <h4 style="margin-bottom: 15px;">Quick Actions</h4>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                        <button onclick="executeShellCommand('ls -la')" class="shell-btn">List Files</button>
+                        <button onclick="executeShellCommand('pwd')" class="shell-btn">Current Directory</button>
+                        <button onclick="executeShellCommand('ps aux')" class="shell-btn">Process List</button>
+                        <button onclick="executeShellCommand('df -h')" class="shell-btn">Disk Usage</button>
+                        <button onclick="executeShellCommand('free -h')" class="shell-btn">Memory Usage</button>
+                        <button onclick="executeShellCommand('git status')" class="shell-btn">Git Status</button>
+                    </div>
+                    <div style="margin-top: 20px;">
+                        <h4 style="margin-bottom: 10px;">Custom Command</h4>
+                        <div style="display: flex; gap: 10px;">
+                            <input type="text" id="custom-command" placeholder="Enter shell command..." 
+                                   style="flex: 1; padding: 10px; background: #374151; border: 1px solid #4b5563; border-radius: 6px; color: #e5e7eb;">
+                            <button onclick="executeCustomCommand()" style="background: #3b82f6; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer;">Execute</button>
+                        </div>
+                    </div>
+                    <div id="shell-output" style="background: #000; color: #00ff00; font-family: monospace; padding: 15px; margin-top: 15px; border-radius: 6px; height: 300px; overflow-y: auto;"></div>
+                </div>
+            </div>
+
+            <!-- Networking Panel -->
+            <div class="content-panel" id="networking-panel">
+                <h3 style="margin-bottom: 20px;">Network Management</h3>
+                
+                <!-- Network Tools -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 30px;">
+                    <div style="background: #1f2937; border-radius: 8px; padding: 15px;">
+                        <h4 style="margin-bottom: 15px;">Network Tools</h4>
+                        <div style="display: flex; flex-direction: column; gap: 10px;">
+                            <div style="display: flex; gap: 10px;">
+                                <input type="text" id="ping-host" placeholder="Host to ping..." 
+                                       style="flex: 1; padding: 8px; background: #374151; border: 1px solid #4b5563; border-radius: 4px; color: #e5e7eb;">
+                                <button onclick="pingHost()" style="background: #10b981; color: white; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer;">Ping</button>
+                            </div>
+                            <div style="display: flex; gap: 10px;">
+                                <input type="text" id="dns-host" placeholder="Hostname to resolve..." 
+                                       style="flex: 1; padding: 8px; background: #374151; border: 1px solid #4b5563; border-radius: 4px; color: #e5e7eb;">
+                                <button onclick="resolveDns()" style="background: #3b82f6; color: white; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer;">DNS</button>
+                            </div>
+                            <div style="display: flex; gap: 10px;">
+                                <input type="text" id="scan-host" placeholder="Host to scan..." 
+                                       style="flex: 1; padding: 8px; background: #374151; border: 1px solid #4b5563; border-radius: 4px; color: #e5e7eb;">
+                                <input type="number" id="scan-port" placeholder="Port" min="1" max="65535" value="80"
+                                       style="width: 80px; padding: 8px; background: #374151; border: 1px solid #4b5563; border-radius: 4px; color: #e5e7eb;">
+                                <button onclick="scanPort()" style="background: #f59e0b; color: white; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer;">Scan</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="background: #1f2937; border-radius: 8px; padding: 15px;">
+                        <h4 style="margin-bottom: 15px;">Quick Actions</h4>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                            <button onclick="loadNetworkInterfaces()" class="shell-btn">Interfaces</button>
+                            <button onclick="loadActiveConnections()" class="shell-btn">Connections</button>
+                            <button onclick="loadListeningPorts()" class="shell-btn">Listening Ports</button>
+                            <button onclick="checkBandwidth()" class="shell-btn">Bandwidth</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Network Results -->
+                <div style="background: #1f2937; border-radius: 8px; padding: 15px;">
+                    <h4 style="margin-bottom: 15px;">Network Information</h4>
+                    <div id="network-results" style="background: #111827; padding: 15px; border-radius: 6px; min-height: 400px; overflow-y: auto; font-family: monospace; font-size: 0.9rem; color: #e5e7eb;">
+                        Click a network tool above to view results...
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Panel -->
+        <div class="right-panel">
+            <div class="panel-tabs">
+                <button class="panel-tab active" onclick="showRightPanel('problems')">Problems</button>
+                <button class="panel-tab" onclick="showRightPanel('output')">Output</button>
+                <button class="panel-tab" onclick="showRightPanel('debug')">Debug</button>
+            </div>
+            
+            <div class="panel-content active" id="problems-content">
+                <div id="problems-list">
+                    <!-- Problems will be loaded here -->
+                </div>
+            </div>
+            
+            <div class="panel-content" id="output-content">
+                <div id="output-log" style="font-family: monospace; font-size: 0.8rem; line-height: 1.4;">
+                    <!-- Output logs will appear here -->
+                </div>
+            </div>
+            
+            <div class="panel-content" id="debug-content">
+                <div id="debug-info">
+                    <!-- Debug information will appear here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <div class="status-item">
+                <div class="status-indicator"></div>
+                <span>MITO Engine</span>
+            </div>
+            <div class="status-item">
+                <span>Workspace: /workspace</span>
+            </div>
+            <div class="status-item">
+                <span id="current-time"></span>
+            </div>
+            <div class="status-item" style="margin-left: auto;">
+                <span>Connected</span>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .shell-btn {
+            background: #374151;
+            color: #e5e7eb;
+            border: 1px solid #4b5563;
+            padding: 10px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .shell-btn:hover {
+            background: #4b5563;
+        }
+    </style>
+
+    <script>
+        // Panel switching
+        function showPanel(panelName) {
+            // Hide all content panels
+            document.querySelectorAll('.content-panel').forEach(panel => {
+                panel.classList.remove('active');
+            });
+            
+            // Show selected panel
+            document.getElementById(panelName + '-panel').classList.add('active');
+            
+            // Update sidebar active state
+            document.querySelectorAll('.sidebar-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Load panel-specific data
+            loadPanelData(panelName);
+        }
+
+        function showRightPanel(panelName) {
+            // Hide all right panel contents
+            document.querySelectorAll('.panel-content').forEach(panel => {
+                panel.classList.remove('active');
+            });
+            
+            // Show selected panel
+            document.getElementById(panelName + '-content').classList.add('active');
+            
+            // Update tab active state
+            document.querySelectorAll('.panel-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Load panel data
+            if (panelName === 'problems') {
+                loadProblems();
+            } else if (panelName === 'output') {
+                loadOutput();
+            } else if (panelName === 'debug') {
+                loadDebugInfo();
+            }
+        }
+
+        // Load panel-specific data
+        function loadPanelData(panelName) {
+            switch(panelName) {
+                case 'secrets':
+                    loadSecrets();
+                    break;
+                case 'storage':
+                    loadStorage();
+                    break;
+                case 'workflows':
+                    loadWorkflows();
+                    break;
+                case 'terminal':
+                    initializeTerminal();
+                    break;
+                case 'preview':
+                    updatePreview();
+                    break;
+            }
+        }
+
+        // Terminal functionality
+        function handleTerminalInput(event) {
+            if (event.key === 'Enter') {
+                const input = event.target;
+                const command = input.value.trim();
+                
+                if (command) {
+                    executeTerminalCommand(command);
+                    input.value = '';
+                }
+            }
+        }
+
+        function executeTerminalCommand(command) {
+            const output = document.getElementById('terminal-output');
+            
+            // Add command to output
+            const commandDiv = document.createElement('div');
+            commandDiv.innerHTML = `<span style="color: #00ff00;">mito@engine:~$</span> ${command}`;
+            output.appendChild(commandDiv);
+            
+            // Execute command via API
+            fetch('/api/execute-command', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({command: command})
+            })
+            .then(response => response.json())
+            .then(data => {
+                const resultDiv = document.createElement('div');
+                resultDiv.style.color = data.success ? '#e5e7eb' : '#ef4444';
+                resultDiv.textContent = data.output || data.error;
+                output.appendChild(resultDiv);
+                output.scrollTop = output.scrollHeight;
+            })
+            .catch(error => {
+                const errorDiv = document.createElement('div');
+                errorDiv.style.color = '#ef4444';
+                errorDiv.textContent = 'Error executing command: ' + error.message;
+                output.appendChild(errorDiv);
+                output.scrollTop = output.scrollHeight;
+            });
+        }
+
+        // Shell integration
+        function executeShellCommand(command) {
+            fetch('/api/shell-execute', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({command: command})
+            })
+            .then(response => response.json())
+            .then(data => {
+                const output = document.getElementById('shell-output');
+                const div = document.createElement('div');
+                div.innerHTML = `<div style="color: #00ff00;">$ ${command}</div><div>${data.output || data.error}</div><div></div>`;
+                output.appendChild(div);
+                output.scrollTop = output.scrollHeight;
+            });
+        }
+
+        function executeCustomCommand() {
+            const input = document.getElementById('custom-command');
+            const command = input.value.trim();
+            if (command) {
+                executeShellCommand(command);
+                input.value = '';
+            }
+        }
+
+        // Secrets management
+        function loadSecrets() {
+            fetch('/api/secrets')
+            .then(response => response.json())
+            .then(data => {
+                const list = document.getElementById('secrets-list');
+                list.innerHTML = '';
+                
+                if (data.secrets) {
+                    data.secrets.forEach(secret => {
+                        const item = document.createElement('div');
+                        item.className = 'secret-item';
+                        item.innerHTML = `
+                            <div class="secret-name">${secret.name}</div>
+                            <div class="secret-value">••••••••••••••••</div>
+                            <button onclick="deleteSecret('${secret.name}')" style="background: #ef4444; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; margin-top: 8px;">Delete</button>
+                        `;
+                        list.appendChild(item);
+                    });
+                }
+            });
+        }
+
+        function addSecret() {
+            const name = prompt('Secret name:');
+            const value = prompt('Secret value:');
+            
+            if (name && value) {
+                fetch('/api/secrets', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({name: name, value: value})
+                })
+                .then(() => loadSecrets());
+            }
+        }
+
+        // Object storage
+        function loadStorage() {
+            fetch('/api/storage')
+            .then(response => response.json())
+            .then(data => {
+                const list = document.getElementById('storage-list');
+                list.innerHTML = '';
+                
+                if (data.objects) {
+                    data.objects.forEach(obj => {
+                        const item = document.createElement('div');
+                        item.className = 'storage-item';
+                        item.innerHTML = `
+                            <div>
+                                <div style="font-weight: 600;">${obj.name}</div>
+                                <div style="color: #9ca3af; font-size: 0.8rem;">${obj.type}</div>
+                            </div>
+                            <div class="storage-size">${formatBytes(obj.size)}</div>
+                        `;
+                        list.appendChild(item);
+                    });
+                }
+            });
+        }
+
+        // Workflows
+        function loadWorkflows() {
+            fetch('/api/workflows')
+            .then(response => response.json())
+            .then(data => {
+                const list = document.getElementById('workflows-list');
+                list.innerHTML = '';
+                
+                if (data.workflows) {
+                    data.workflows.forEach(workflow => {
+                        const item = document.createElement('div');
+                        item.className = 'workflow-item';
+                        item.innerHTML = `
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                                <h4>${workflow.name}</h4>
+                                <span class="workflow-status ${workflow.status}">${workflow.status}</span>
+                            </div>
+                            <div style="color: #9ca3af; margin-bottom: 10px;">${workflow.description}</div>
+                            <div style="display: flex; gap: 10px;">
+                                <button onclick="startWorkflow('${workflow.id}')" style="background: #10b981; color: white; border: none; padding: 5px 15px; border-radius: 4px; cursor: pointer;">Start</button>
+                                <button onclick="stopWorkflow('${workflow.id}')" style="background: #ef4444; color: white; border: none; padding: 5px 15px; border-radius: 4px; cursor: pointer;">Stop</button>
+                            </div>
+                        `;
+                        list.appendChild(item);
+                    });
+                }
+            });
+        }
+
+        // Problems panel
+        function loadProblems() {
+            fetch('/api/problems')
+            .then(response => response.json())
+            .then(data => {
+                const list = document.getElementById('problems-list');
+                list.innerHTML = '';
+                
+                if (data.problems) {
+                    data.problems.forEach(problem => {
+                        const item = document.createElement('div');
+                        item.className = 'problem-item';
+                        item.innerHTML = `
+                            <div style="display: flex; align-items: center;">
+                                <span class="problem-severity ${problem.severity}"></span>
+                                <div>
+                                    <div style="font-weight: 600;">${problem.message}</div>
+                                    <div style="color: #9ca3af; font-size: 0.8rem;">${problem.file}:${problem.line}</div>
+                                </div>
+                            </div>
+                        `;
+                        list.appendChild(item);
+                    });
+                }
+            });
+        }
+
+        // Utility functions
+        function formatBytes(bytes) {
+            if (bytes === 0) return '0 B';
+            const k = 1024;
+            const sizes = ['B', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(1)) + ' ' + sizes[i];
+        }
+
+        function updateTime() {
+            document.getElementById('current-time').textContent = new Date().toLocaleTimeString();
+        }
+
+        function updatePreview() {
+            const type = document.getElementById('preview-type').value;
+            const content = document.getElementById('preview-content');
+            
+            switch(type) {
+                case 'web':
+                    content.innerHTML = '<iframe src="/" style="width: 100%; height: 100%; border: none; background: white; border-radius: 4px;"></iframe>';
+                    break;
+                case 'markdown':
+                    content.innerHTML = '<div style="padding: 20px; background: white; color: black; border-radius: 4px;">Markdown preview will appear here...</div>';
+                    break;
+                case 'json':
+                    content.innerHTML = '<pre style="background: #1f2937; color: #e5e7eb; padding: 15px; border-radius: 4px; overflow: auto;">JSON preview will appear here...</pre>';
+                    break;
+                case 'code':
+                    content.innerHTML = '<pre style="background: #1f2937; color: #e5e7eb; padding: 15px; border-radius: 4px; overflow: auto;">Code preview will appear here...</pre>';
+                    break;
+            }
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            updateTime();
+            setInterval(updateTime, 1000);
+            loadPanelData('preview');
+            loadProblems();
+        });
+    </script>
+</body>
+</html>

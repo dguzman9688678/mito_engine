@@ -1,0 +1,1314 @@
+<!--
+MITO Engine - AI Agent & Tool Creator
+Name: MITO Engine
+Version: 1.2.0
+Created by: Daniel Guzman
+Contact: guzman.danield@outlook.com
+Description: AI Agent & Tool Creator with Tabs
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>MITO Engine - Tabbed Workbench</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-bg: #0f172a;
+            --secondary-bg: #1e293b;
+            --accent-bg: #334155;
+            --text-primary: #f1f5f9;
+            --text-secondary: #cbd5e1;
+            --accent-color: #3b82f6;
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --danger-color: #ef4444;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--primary-bg);
+            color: var(--text-primary);
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Header */
+        .workbench-header {
+            background: var(--secondary-bg);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 20px;
+            border-bottom: 1px solid var(--accent-bg);
+            height: 60px;
+        }
+
+        .workbench-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .workbench-controls {
+            display: flex;
+            gap: 10px;
+        }
+
+        .control-btn {
+            background: var(--accent-bg);
+            border: none;
+            color: var(--text-secondary);
+            padding: 8px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.9rem;
+        }
+
+        .control-btn:hover {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        /* Tabs Navigation */
+        .workbench-tabs {
+            background: var(--secondary-bg);
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            border-bottom: 1px solid var(--accent-bg);
+            overflow-x: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            height: 50px;
+        }
+
+        .workbench-tabs::-webkit-scrollbar {
+            display: none;
+        }
+
+        .tab-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            cursor: pointer;
+            white-space: nowrap;
+            border-bottom: 2px solid transparent;
+            color: var(--text-secondary);
+            transition: all 0.2s ease;
+            font-weight: 500;
+            font-size: 0.9rem;
+            height: 100%;
+        }
+
+        .tab-item:hover {
+            color: var(--text-primary);
+            background: rgba(59, 130, 246, 0.1);
+        }
+
+        .tab-item.active {
+            color: var(--accent-color);
+            border-bottom-color: var(--accent-color);
+            background: rgba(59, 130, 246, 0.05);
+        }
+
+        .tab-icon {
+            font-size: 1rem;
+        }
+
+        .new-tab-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            margin-left: 10px;
+            background: var(--accent-bg);
+            border: none;
+            border-radius: 6px;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .new-tab-btn:hover {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        /* Tab Content */
+        .tab-content {
+            display: none;
+            height: calc(100vh - 110px);
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Workspace specific styles */
+        .workspace-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            height: 100%;
+        }
+
+        .workspace-card {
+            background: var(--secondary-bg);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid var(--accent-bg);
+        }
+
+        .workspace-card h3 {
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Chat interface */
+        .chat-container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            background: var(--secondary-bg);
+            border-radius: 12px;
+            border: 1px solid var(--accent-bg);
+        }
+
+        .chat-header {
+            padding: 15px 20px;
+            border-bottom: 1px solid var(--accent-bg);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .chat-input-area {
+            padding: 20px;
+            border-top: 1px solid var(--accent-bg);
+        }
+
+        .chat-input {
+            display: flex;
+            gap: 10px;
+        }
+
+        .chat-input textarea {
+            flex: 1;
+            background: var(--accent-bg);
+            border: none;
+            border-radius: 8px;
+            padding: 12px;
+            color: var(--text-primary);
+            resize: none;
+            min-height: 50px;
+        }
+
+        .send-btn {
+            background: var(--accent-color);
+            border: none;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .send-btn:hover {
+            background: #2563eb;
+        }
+
+        /* Code editor styles */
+        .code-editor-container {
+            background: var(--secondary-bg);
+            border-radius: 12px;
+            border: 1px solid var(--accent-bg);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .code-editor-header {
+            padding: 15px 20px;
+            border-bottom: 1px solid var(--accent-bg);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .code-editor {
+            flex: 1;
+            background: #1a1a1a;
+            color: #f1f5f9;
+            font-family: 'Consolas', 'Monaco', monospace;
+            padding: 20px;
+            border: none;
+            outline: none;
+            resize: none;
+        }
+
+        /* File browser styles */
+        .file-browser {
+            background: var(--secondary-bg);
+            border-radius: 12px;
+            border: 1px solid var(--accent-bg);
+            height: 100%;
+        }
+
+        .file-browser-header {
+            padding: 15px 20px;
+            border-bottom: 1px solid var(--accent-bg);
+        }
+
+        .file-list {
+            padding: 20px;
+        }
+
+        .file-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .file-item:hover {
+            background: var(--accent-bg);
+        }
+
+        /* Analytics styles */
+        .analytics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .metric-card {
+            background: var(--secondary-bg);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid var(--accent-bg);
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            margin-bottom: 5px;
+        }
+
+        .metric-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .workspace-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .workbench-tabs {
+                padding: 0 10px;
+            }
+            
+            .tab-item {
+                padding: 8px 15px;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="workbench-header">
+        <div class="workbench-logo">
+            <i class="fas fa-brain" style="color: var(--accent-color);"></i>
+            <span>MITO Engine v1.2.0</span>
+        </div>
+        <div class="workbench-controls">
+            <button class="control-btn" onclick="toggleFullscreen()">
+                <i class="fas fa-expand"></i> Fullscreen
+            </button>
+            <button class="control-btn" onclick="openSettings()">
+                <i class="fas fa-cog"></i> Settings
+            </button>
+        </div>
+    </div>
+
+    <div class="workbench-tabs">
+        <div class="tab-item active" onclick="switchTab('workspace')">
+            <i class="tab-icon fas fa-home"></i>
+            <span>Workspace</span>
+        </div>
+        <div class="tab-item" onclick="switchTab('ai-chat')">
+            <i class="tab-icon fas fa-robot"></i>
+            <span>AI Chat</span>
+        </div>
+        <div class="tab-item" onclick="switchTab('code-editor')">
+            <i class="tab-icon fas fa-code"></i>
+            <span>Code Editor</span>
+        </div>
+        <div class="tab-item" onclick="switchTab('file-browser')">
+            <i class="tab-icon fas fa-folder"></i>
+            <span>Files</span>
+        </div>
+        <div class="tab-item" onclick="switchTab('project-tools')">
+            <i class="tab-icon fas fa-tools"></i>
+            <span>Tools</span>
+        </div>
+        <div class="tab-item" onclick="switchTab('analytics')">
+            <i class="tab-icon fas fa-chart-bar"></i>
+            <span>Analytics</span>
+        </div>
+        <div class="tab-item" onclick="switchTab('advanced')">
+            <i class="tab-icon fas fa-cogs"></i>
+            <span>Advanced</span>
+        </div>
+        <button class="new-tab-btn" onclick="openNewTabModal()">
+            <i class="fas fa-plus"></i>
+        </button>
+    </div>
+
+    <!-- Workspace Tab -->
+    <div id="workspace" class="tab-content active">
+        <div class="workspace-grid">
+            <div class="workspace-card">
+                <h3><i class="fas fa-brain"></i> MITO Status</h3>
+                <div style="margin-bottom: 20px;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                        <span>AI Agent Status:</span>
+                        <span style="color: var(--success-color);">Active</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                        <span>Memory System:</span>
+                        <span style="color: var(--success-color);">Operational</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                        <span>API Connections:</span>
+                        <span style="color: var(--warning-color);">2/4 Active</span>
+                    </div>
+                </div>
+                <button class="control-btn" style="width: 100%;" onclick="runSystemDiagnostic()">
+                    Run System Diagnostic
+                </button>
+            </div>
+
+            <div class="workspace-card">
+                <h3><i class="fas fa-project-diagram"></i> Quick Actions</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                    <button class="control-btn" onclick="switchTab('ai-chat')">
+                        <i class="fas fa-robot"></i> Start AI Chat
+                    </button>
+                    <button class="control-btn" onclick="switchTab('code-editor')">
+                        <i class="fas fa-code"></i> Code Editor
+                    </button>
+                    <button class="control-btn" onclick="switchTab('file-browser')">
+                        <i class="fas fa-folder"></i> Browse Files
+                    </button>
+                    <button class="control-btn" onclick="generateProject()">
+                        <i class="fas fa-plus"></i> New Project
+                    </button>
+                </div>
+            </div>
+
+            <div class="workspace-card">
+                <h3><i class="fas fa-clock"></i> Recent Activity</h3>
+                <div style="font-size: 0.9rem; color: var(--text-secondary);">
+                    <div style="padding: 10px 0; border-bottom: 1px solid var(--accent-bg);">
+                        <strong>12:45 PM</strong> - AI generated Python code
+                    </div>
+                    <div style="padding: 10px 0; border-bottom: 1px solid var(--accent-bg);">
+                        <strong>12:30 PM</strong> - File uploaded to knowledge base
+                    </div>
+                    <div style="padding: 10px 0;">
+                        <strong>12:15 PM</strong> - System diagnostic completed
+                    </div>
+                </div>
+            </div>
+
+            <div class="workspace-card">
+                <h3><i class="fas fa-chart-line"></i> Live Performance Metrics</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; text-align: center;">
+                    <div>
+                        <div id="cpu-usage" style="font-size: 1.5rem; color: var(--success-color); font-weight: bold;">--</div>
+                        <div style="font-size: 0.8rem; color: var(--text-secondary);">CPU Usage</div>
+                    </div>
+                    <div>
+                        <div id="memory-usage" style="font-size: 1.5rem; color: var(--accent-color); font-weight: bold;">--</div>
+                        <div style="font-size: 0.8rem; color: var(--text-secondary);">Memory Usage</div>
+                    </div>
+                </div>
+                <div style="margin-top: 15px; display: flex; gap: 10px;">
+                    <button onclick="startTelemetryStream()" class="control-btn" style="flex: 1;">Start Live Stream</button>
+                    <button onclick="stopTelemetryStream()" class="control-btn" style="flex: 1;">Stop Stream</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI Chat Tab -->
+    <div id="ai-chat" class="tab-content">
+        <div class="chat-container">
+            <div class="chat-header">
+                <h3><i class="fas fa-robot"></i> MITO AI Assistant</h3>
+                <div style="display: flex; gap: 10px;">
+                    <select style="background: var(--accent-bg); border: none; color: var(--text-primary); padding: 5px 10px; border-radius: 4px;">
+                        <option>OpenAI GPT-4</option>
+                        <option>Claude</option>
+                        <option>LLaMA</option>
+                        <option>Local AI</option>
+                    </select>
+                    <button class="control-btn" onclick="clearChat()">Clear</button>
+                </div>
+            </div>
+            <div class="chat-messages" id="chat-messages">
+                <div style="text-align: center; color: var(--text-secondary); padding: 40px;">
+                    <i class="fas fa-robot" style="font-size: 3rem; margin-bottom: 20px; color: var(--accent-color);"></i>
+                    <p>Welcome to MITO AI Assistant!</p>
+                    <p>Ask me anything about development, coding, or project management.</p>
+                </div>
+            </div>
+            <div class="chat-input-area">
+                <div class="chat-input">
+                    <textarea id="chat-input-text" placeholder="Ask MITO anything..." rows="2"></textarea>
+                    <button class="send-btn" onclick="sendMessage()">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Code Editor Tab -->
+    <div id="code-editor" class="tab-content">
+        <div class="code-editor-container">
+            <div class="code-editor-header">
+                <h3><i class="fas fa-code"></i> Code Editor</h3>
+                <div style="display: flex; gap: 10px;">
+                    <select style="background: var(--accent-bg); border: none; color: var(--text-primary); padding: 5px 10px; border-radius: 4px;">
+                        <option>Python</option>
+                        <option>JavaScript</option>
+                        <option>HTML</option>
+                        <option>CSS</option>
+                        <option>JSON</option>
+                    </select>
+                    <button class="control-btn" onclick="saveCode()">Save</button>
+                    <button class="control-btn" onclick="runCode()">Run</button>
+                </div>
+            </div>
+            <textarea class="code-editor" id="code-editor-text" placeholder="# Start coding here...
+def hello_world():
+    print('Hello from MITO Engine!')
+    
+hello_world()"></textarea>
+        </div>
+    </div>
+
+    <!-- File Browser Tab -->
+    <div id="file-browser" class="tab-content">
+        <div class="file-browser">
+            <div class="file-browser-header">
+                <h3><i class="fas fa-folder"></i> File Browser</h3>
+                <button class="control-btn" onclick="refreshFiles()">
+                    <i class="fas fa-sync"></i> Refresh
+                </button>
+            </div>
+            <div class="file-list" id="file-list">
+                <div class="file-item">
+                    <i class="fas fa-folder" style="color: var(--warning-color);"></i>
+                    <span>projects/</span>
+                </div>
+                <div class="file-item">
+                    <i class="fas fa-folder" style="color: var(--warning-color);"></i>
+                    <span>templates/</span>
+                </div>
+                <div class="file-item">
+                    <i class="fas fa-file-code" style="color: var(--accent-color);"></i>
+                    <span>app.py</span>
+                </div>
+                <div class="file-item">
+                    <i class="fas fa-file-code" style="color: var(--accent-color);"></i>
+                    <span>main.py</span>
+                </div>
+                <div class="file-item">
+                    <i class="fas fa-file" style="color: var(--text-secondary);"></i>
+                    <span>README.md</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Tools Tab -->
+    <div id="project-tools" class="tab-content">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+            <div class="workspace-card">
+                <h3><i class="fas fa-plus"></i> Project Generator</h3>
+                <p style="margin-bottom: 15px; color: var(--text-secondary);">Create new projects with AI assistance</p>
+                <button class="control-btn" style="width: 100%;" onclick="openProjectGenerator()">
+                    Generate New Project
+                </button>
+            </div>
+            
+            <div class="workspace-card">
+                <h3><i class="fas fa-magic"></i> Code Templates</h3>
+                <p style="margin-bottom: 15px; color: var(--text-secondary);">Pre-built code templates and snippets</p>
+                <button class="control-btn" style="width: 100%;" onclick="openTemplates()">
+                    Browse Templates
+                </button>
+            </div>
+            
+            <div class="workspace-card">
+                <h3><i class="fas fa-database"></i> Database Tools</h3>
+                <p style="margin-bottom: 15px; color: var(--text-secondary);">Database design and management</p>
+                <button class="control-btn" style="width: 100%;" onclick="openDatabaseTools()">
+                    Database Manager
+                </button>
+            </div>
+            
+            <div class="workspace-card">
+                <h3><i class="fas fa-cloud"></i> Deployment</h3>
+                <p style="margin-bottom: 15px; color: var(--text-secondary);">Deploy projects to cloud platforms</p>
+                <button class="control-btn" style="width: 100%;" onclick="openDeployment()">
+                    Deploy Project
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Analytics Tab -->
+    <div id="analytics" class="tab-content">
+        <div class="analytics-grid">
+            <div class="metric-card">
+                <div class="metric-value">1,247</div>
+                <div class="metric-label">Total AI Requests</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">98.5%</div>
+                <div class="metric-label">System Uptime</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">156</div>
+                <div class="metric-label">Projects Created</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">2.3s</div>
+                <div class="metric-label">Avg Response Time</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">45</div>
+                <div class="metric-label">Active Users</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">892</div>
+                <div class="metric-label">Code Generations</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Advanced Tab -->
+    <div id="advanced" class="tab-content">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+            <div class="workspace-card">
+                <h3><i class="fas fa-terminal"></i> Terminal</h3>
+                <div style="background: #000; padding: 15px; border-radius: 8px; font-family: monospace; color: #00ff00; min-height: 200px;">
+                    <div>$ mito --version</div>
+                    <div>MITO Engine v1.2.0</div>
+                    <div>$ _</div>
+                </div>
+            </div>
+            
+            <div class="workspace-card">
+                <h3><i class="fas fa-network-wired"></i> Networking</h3>
+                <button class="control-btn" style="width: 100%; margin-bottom: 10px;" onclick="window.location.href='/advanced-features'">
+                    Network Tools
+                </button>
+            </div>
+            
+            <div class="workspace-card">
+                <h3><i class="fas fa-memory"></i> Memory Manager</h3>
+                <button class="control-btn" style="width: 100%;" onclick="window.location.href='/memory-manager'">
+                    Manage Memory
+                </button>
+            </div>
+            
+            <div class="workspace-card">
+                <h3><i class="fas fa-shield-alt"></i> Security & Audit</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 15px;">
+                    <button class="control-btn" onclick="viewAuditLog()">Audit Log</button>
+                    <button class="control-btn" onclick="generateCertificate()">Certificate</button>
+                </div>
+                <button class="control-btn" style="width: 100%;" onclick="openSecurity()">
+                    Security Center
+                </button>
+            </div>
+            
+            <div class="workspace-card">
+                <h3><i class="fas fa-file-export"></i> Export Reports</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px;">
+                    <button class="control-btn" onclick="generateReport('audit', 'pdf')">Audit PDF</button>
+                    <button class="control-btn" onclick="generateReport('system', 'pdf')">System PDF</button>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                    <button class="control-btn" onclick="generateReport('audit', 'csv')">Audit CSV</button>
+                    <button class="control-btn" onclick="generateReport('system', 'csv')">System CSV</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Session and profile management
+        let sessionId = null;
+        let userProfile = null;
+        let telemetryStream = null;
+        let availableTools = [];
+
+        function switchTab(tabName) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Remove active class from all tabs
+            document.querySelectorAll('.tab-item').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected tab content
+            document.getElementById(tabName).classList.add('active');
+            
+            // Add active class to clicked tab
+            event.target.closest('.tab-item').classList.add('active');
+            
+            // Save tab state
+            saveTabState(tabName);
+            
+            // Log audit action
+            logAuditAction('tab_switched', `Switched to ${tabName} tab`, tabName);
+        }
+
+        function saveTabState(tabId, customState = {}) {
+            const state = {
+                timestamp: new Date().toISOString(),
+                scrollPosition: window.scrollY,
+                activeElements: getActiveElements(tabId),
+                ...customState
+            };
+            
+            fetch('/api/session/state', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    tab_id: tabId,
+                    state: state
+                })
+            }).catch(error => console.error('Failed to save tab state:', error));
+        }
+
+        function getActiveElements(tabId) {
+            const tab = document.getElementById(tabId);
+            if (!tab) return {};
+            
+            const activeElements = {};
+            
+            // Save input values
+            tab.querySelectorAll('input, textarea, select').forEach(element => {
+                if (element.id) {
+                    activeElements[element.id] = element.value;
+                }
+            });
+            
+            return activeElements;
+        }
+
+        function restoreTabState(tabId, state) {
+            if (!state) return;
+            
+            // Restore scroll position
+            if (state.scrollPosition) {
+                window.scrollTo(0, state.scrollPosition);
+            }
+            
+            // Restore active elements
+            if (state.activeElements) {
+                Object.keys(state.activeElements).forEach(elementId => {
+                    const element = document.getElementById(elementId);
+                    if (element) {
+                        element.value = state.activeElements[elementId];
+                    }
+                });
+            }
+        }
+
+        function logAuditAction(actionType, actionDetails, tabContext = null) {
+            fetch('/api/audit/action', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    action_type: actionType,
+                    action_details: actionDetails,
+                    tab_context: tabContext
+                })
+            }).catch(error => console.error('Failed to log audit action:', error));
+        }
+
+        function loadUserProfile() {
+            fetch('/api/profile')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        userProfile = data.profile;
+                        updateInterfaceForRole();
+                    }
+                })
+                .catch(error => console.error('Failed to load user profile:', error));
+        }
+
+        function loadAvailableTools() {
+            fetch('/api/profile/tools')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        availableTools = data.tools;
+                        updateTabsBasedOnRole();
+                        updateRoleIndicator(data.role);
+                    }
+                })
+                .catch(error => console.error('Failed to load available tools:', error));
+        }
+
+        function updateTabsBasedOnRole() {
+            const tabsContainer = document.querySelector('.workbench-tabs');
+            const existingTabs = tabsContainer.querySelectorAll('.tab-item');
+            
+            // Hide tabs not available to current role
+            existingTabs.forEach(tab => {
+                const tabId = tab.getAttribute('onclick').match(/'([^']+)'/)[1];
+                const isAvailable = availableTools.some(tool => tool.id === tabId);
+                tab.style.display = isAvailable ? 'flex' : 'none';
+            });
+        }
+
+        function updateRoleIndicator(role) {
+            const roleIndicator = document.createElement('div');
+            roleIndicator.id = 'role-indicator';
+            roleIndicator.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: var(--accent-color);
+                color: white;
+                padding: 5px 10px;
+                border-radius: 15px;
+                font-size: 0.8rem;
+                font-weight: bold;
+                z-index: 1000;
+            `;
+            roleIndicator.textContent = `Role: ${role.charAt(0).toUpperCase() + role.slice(1)}`;
+            
+            const existing = document.getElementById('role-indicator');
+            if (existing) existing.remove();
+            
+            document.body.appendChild(roleIndicator);
+        }
+
+        function updateInterfaceForRole() {
+            if (!userProfile) return;
+            
+            // Apply theme preferences
+            if (userProfile.theme) {
+                applyThemePreferences(userProfile.theme);
+            }
+            
+            // Apply custom layout
+            if (userProfile.layout) {
+                applyCustomLayout(userProfile.layout);
+            }
+        }
+
+        function applyThemePreferences(theme) {
+            const root = document.documentElement;
+            
+            if (theme.primaryColor) {
+                root.style.setProperty('--accent-color', theme.primaryColor);
+            }
+            
+            if (theme.darkMode !== undefined) {
+                if (theme.darkMode) {
+                    root.style.setProperty('--primary-bg', '#0f172a');
+                    root.style.setProperty('--secondary-bg', '#1e293b');
+                } else {
+                    root.style.setProperty('--primary-bg', '#f8fafc');
+                    root.style.setProperty('--secondary-bg', '#e2e8f0');
+                }
+            }
+        }
+
+        function applyCustomLayout(layout) {
+            if (layout.tabOrder) {
+                reorderTabs(layout.tabOrder);
+            }
+        }
+
+        function reorderTabs(tabOrder) {
+            const tabsContainer = document.querySelector('.workbench-tabs');
+            const tabs = Array.from(tabsContainer.querySelectorAll('.tab-item'));
+            
+            tabOrder.forEach((tabId, index) => {
+                const tab = tabs.find(t => t.getAttribute('onclick').includes(tabId));
+                if (tab) {
+                    tabsContainer.insertBefore(tab, tabsContainer.children[index]);
+                }
+            });
+        }
+
+        function startTelemetryStream() {
+            if (telemetryStream) return;
+            
+            const eventSource = new EventSource('/api/telemetry/stream');
+            
+            eventSource.onmessage = function(event) {
+                const metrics = JSON.parse(event.data);
+                updateLiveMetrics(metrics);
+            };
+            
+            eventSource.onerror = function(event) {
+                console.error('Telemetry stream error:', event);
+                setTimeout(startTelemetryStream, 5000); // Retry after 5 seconds
+            };
+            
+            telemetryStream = eventSource;
+            logAuditAction('telemetry_started', 'Started live telemetry stream');
+        }
+
+        function stopTelemetryStream() {
+            if (telemetryStream) {
+                telemetryStream.close();
+                telemetryStream = null;
+                logAuditAction('telemetry_stopped', 'Stopped live telemetry stream');
+            }
+        }
+
+        function updateLiveMetrics(metrics) {
+            // Update CPU usage
+            const cpuElement = document.getElementById('cpu-usage');
+            if (cpuElement) {
+                cpuElement.textContent = `${metrics.cpu_usage.toFixed(1)}%`;
+            }
+            
+            // Update memory usage
+            const memoryElement = document.getElementById('memory-usage');
+            if (memoryElement) {
+                memoryElement.textContent = `${metrics.memory_usage.toFixed(1)}%`;
+            }
+            
+            // Update active sessions count
+            const sessionsElement = document.getElementById('active-sessions');
+            if (sessionsElement) {
+                sessionsElement.textContent = metrics.active_sessions;
+            }
+            
+            // Update metrics in analytics tab
+            updateAnalyticsMetrics(metrics);
+        }
+
+        function updateAnalyticsMetrics(metrics) {
+            const metricCards = document.querySelectorAll('.metric-card');
+            
+            metricCards.forEach(card => {
+                const label = card.querySelector('.metric-label').textContent;
+                const valueElement = card.querySelector('.metric-value');
+                
+                switch (label) {
+                    case 'System Uptime':
+                        // Calculate uptime percentage
+                        break;
+                    case 'CPU Usage':
+                        valueElement.textContent = `${metrics.cpu_usage.toFixed(1)}%`;
+                        break;
+                    case 'Memory Usage':
+                        valueElement.textContent = `${metrics.memory_usage.toFixed(1)}%`;
+                        break;
+                    case 'Active Sessions':
+                        valueElement.textContent = metrics.active_sessions;
+                        break;
+                }
+            });
+        }
+
+        function generateReport(type, format) {
+            const reportData = {
+                type: type,
+                format: format,
+                days: 30
+            };
+            
+            logAuditAction('report_requested', `Requested ${type} report in ${format} format`);
+            
+            fetch('/api/reports/generate', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(reportData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    if (data.download_url) {
+                        // Download file
+                        const link = document.createElement('a');
+                        link.href = data.download_url;
+                        link.download = data.filename;
+                        link.click();
+                        
+                        alert(`Report generated successfully! Download started.`);
+                    } else {
+                        // Display JSON data
+                        displayReportData(data.report_data);
+                    }
+                } else {
+                    alert(`Failed to generate report: ${data.error}`);
+                }
+            })
+            .catch(error => {
+                console.error('Failed to generate report:', error);
+                alert('Failed to generate report. Please try again.');
+            });
+        }
+
+        function displayReportData(reportData) {
+            const modal = document.createElement('div');
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.8);
+                z-index: 10000;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            `;
+            
+            const content = document.createElement('div');
+            content.style.cssText = `
+                background: var(--secondary-bg);
+                padding: 20px;
+                border-radius: 12px;
+                max-width: 80%;
+                max-height: 80%;
+                overflow-y: auto;
+                color: var(--text-primary);
+            `;
+            
+            content.innerHTML = `
+                <h3>Report Data</h3>
+                <pre style="background: var(--accent-bg); padding: 15px; border-radius: 6px; overflow-x: auto;">
+                    ${JSON.stringify(reportData, null, 2)}
+                </pre>
+                <button onclick="this.closest('.modal').remove()" style="margin-top: 15px; padding: 10px 20px; background: var(--accent-color); color: white; border: none; border-radius: 6px; cursor: pointer;">
+                    Close
+                </button>
+            `;
+            
+            modal.className = 'modal';
+            modal.appendChild(content);
+            document.body.appendChild(modal);
+        }
+
+        function generateCertificate() {
+            logAuditAction('certificate_requested', 'Requested digital signature certificate');
+            
+            fetch('/api/reports/certificate')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        if (data.download_url) {
+                            const link = document.createElement('a');
+                            link.href = data.download_url;
+                            link.download = `mito_certificate_${data.certificate.certificate_id}.pdf`;
+                            link.click();
+                        }
+                        
+                        alert(`Certificate generated successfully!\nCertificate ID: ${data.certificate.certificate_id}`);
+                    } else {
+                        alert(`Failed to generate certificate: ${data.error}`);
+                    }
+                })
+                .catch(error => {
+                    console.error('Failed to generate certificate:', error);
+                    alert('Failed to generate certificate. Please try again.');
+                });
+        }
+
+        function viewAuditLog() {
+            logAuditAction('audit_log_viewed', 'Viewed audit log');
+            
+            fetch('/api/audit/log?days=7')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        displayAuditLog(data.audit_log);
+                    } else {
+                        alert(`Failed to load audit log: ${data.error}`);
+                    }
+                })
+                .catch(error => {
+                    console.error('Failed to load audit log:', error);
+                    alert('Failed to load audit log. Please try again.');
+                });
+        }
+
+        function displayAuditLog(auditData) {
+            const modal = document.createElement('div');
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.8);
+                z-index: 10000;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            `;
+            
+            const content = document.createElement('div');
+            content.style.cssText = `
+                background: var(--secondary-bg);
+                padding: 20px;
+                border-radius: 12px;
+                max-width: 90%;
+                max-height: 90%;
+                overflow-y: auto;
+                color: var(--text-primary);
+            `;
+            
+            let auditHtml = `
+                <h3>Audit Trail (Last 7 Days)</h3>
+                <p>Total entries: ${auditData.length}</p>
+                <div style="margin: 15px 0;">
+                    <button onclick="generateReport('audit', 'csv')" class="control-btn" style="margin-right: 10px;">Export CSV</button>
+                    <button onclick="generateReport('audit', 'pdf')" class="control-btn">Export PDF</button>
+                </div>
+                <div style="background: var(--accent-bg); border-radius: 6px; overflow: hidden;">
+                    <table style="width: 100%; border-collapse: collapse; color: var(--text-primary);">
+                        <thead>
+                            <tr style="background: var(--accent-color); color: white;">
+                                <th style="padding: 10px; text-align: left;">Timestamp</th>
+                                <th style="padding: 10px; text-align: left;">Action</th>
+                                <th style="padding: 10px; text-align: left;">Details</th>
+                                <th style="padding: 10px; text-align: left;">Tab</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+            `;
+            
+            auditData.slice(0, 50).forEach(entry => {
+                auditHtml += `
+                    <tr style="border-bottom: 1px solid var(--accent-bg);">
+                        <td style="padding: 8px; font-size: 0.8rem;">${new Date(entry.timestamp).toLocaleString()}</td>
+                        <td style="padding: 8px; font-weight: bold;">${entry.action_type}</td>
+                        <td style="padding: 8px; max-width: 200px; overflow: hidden; text-overflow: ellipsis;">${entry.action_details}</td>
+                        <td style="padding: 8px;">${entry.tab_context || '-'}</td>
+                    </tr>
+                `;
+            });
+            
+            auditHtml += `
+                        </tbody>
+                    </table>
+                </div>
+                <button onclick="this.closest('.modal').remove()" style="margin-top: 15px; padding: 10px 20px; background: var(--accent-color); color: white; border: none; border-radius: 6px; cursor: pointer; width: 100%;">
+                    Close
+                </button>
+            `;
+            
+            content.innerHTML = auditHtml;
+            modal.className = 'modal';
+            modal.appendChild(content);
+            document.body.appendChild(modal);
+        }
+
+        // Initialize session management on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load user profile and available tools
+            loadUserProfile();
+            loadAvailableTools();
+            
+            // Restore session state
+            fetch('/api/session/state')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        sessionId = data.session_id;
+                        
+                        // Restore tab states
+                        Object.keys(data.tab_states).forEach(tabId => {
+                            restoreTabState(tabId, data.tab_states[tabId].state);
+                        });
+                        
+                        // Log session restoration
+                        logAuditAction('session_restored', 'Session state restored from storage');
+                    }
+                })
+                .catch(error => console.error('Failed to restore session state:', error));
+            
+            // Start live telemetry stream
+            setTimeout(startTelemetryStream, 2000);
+            
+            // Save workspace state periodically
+            setInterval(() => {
+                const workspaceState = {
+                    active_tab: document.querySelector('.tab-item.active')?.getAttribute('onclick')?.match(/'([^']+)'/)?.[1],
+                    timestamp: new Date().toISOString()
+                };
+                
+                fetch('/api/session/state', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({workspace_state: workspaceState})
+                }).catch(error => console.error('Failed to save workspace state:', error));
+            }, 30000); // Save every 30 seconds
+        });
+        
+        // Save state before page unload
+        window.addEventListener('beforeunload', function() {
+            if (telemetryStream) {
+                telemetryStream.close();
+            }
+            
+            // Save final tab state
+            const activeTab = document.querySelector('.tab-item.active');
+            if (activeTab) {
+                const tabId = activeTab.getAttribute('onclick').match(/'([^']+)'/)[1];
+                saveTabState(tabId, {final_save: true});
+            }
+            
+            logAuditAction('session_ended', 'User session ended');
+        });
+
+        function sendMessage() {
+            const input = document.getElementById('chat-input-text');
+            const message = input.value.trim();
+            if (!message) return;
+
+            const messagesDiv = document.getElementById('chat-messages');
+            
+            // Add user message
+            messagesDiv.innerHTML += `
+                <div style="margin-bottom: 15px; text-align: right;">
+                    <div style="background: var(--accent-color); color: white; padding: 10px 15px; border-radius: 15px; display: inline-block; max-width: 70%;">
+                        ${message}
+                    </div>
+                </div>
+            `;
+            
+            input.value = '';
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+            
+            // Simulate AI response
+            setTimeout(() => {
+                messagesDiv.innerHTML += `
+                    <div style="margin-bottom: 15px;">
+                        <div style="background: var(--secondary-bg); border: 1px solid var(--accent-bg); padding: 10px 15px; border-radius: 15px; display: inline-block; max-width: 70%;">
+                            I'm MITO, your AI assistant. I can help you with coding, project development, and technical questions. What would you like to work on?
+                        </div>
+                    </div>
+                `;
+                messagesDiv.scrollTop = messagesDiv.scrollHeight;
+            }, 1000);
+        }
+
+        function saveCode() {
+            const code = document.getElementById('code-editor-text').value;
+            alert('Code saved successfully!');
+        }
+
+        function runCode() {
+            alert('Code execution feature coming soon!');
+        }
+
+        function refreshFiles() {
+            alert('Files refreshed!');
+        }
+
+        function toggleFullscreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen();
+            } else {
+                document.exitFullscreen();
+            }
+        }
+
+        function openSettings() {
+            alert('Settings panel coming soon!');
+        }
+
+        function openNewTabModal() {
+            alert('New tab creation coming soon!');
+        }
+
+        function runSystemDiagnostic() {
+            alert('Running system diagnostic...');
+        }
+
+        function generateProject() {
+            alert('Project generator coming soon!');
+        }
+
+        function clearChat() {
+            document.getElementById('chat-messages').innerHTML = `
+                <div style="text-align: center; color: var(--text-secondary); padding: 40px;">
+                    <i class="fas fa-robot" style="font-size: 3rem; margin-bottom: 20px; color: var(--accent-color);"></i>
+                    <p>Welcome to MITO AI Assistant!</p>
+                    <p>Ask me anything about development, coding, or project management.</p>
+                </div>
+            `;
+        }
+
+        // Handle Enter key in chat
+        document.getElementById('chat-input-text').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                sendMessage();
+            }
+        });
+
+        // Update time
+        function updateTime() {
+            document.getElementById('current-time').textContent = new Date().toLocaleTimeString();
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+    </script>
+</body>
+</html>

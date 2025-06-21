@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MITO Engine Mobile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #1a1a1a;
+            color: white;
+            line-height: 1.6;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #2a2a2a;
+            border-radius: 10px;
+        }
+        
+        .header h1 {
+            margin: 0 0 10px 0;
+            font-size: 24px;
+        }
+        
+        .status {
+            background: #28a745;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            display: inline-block;
+        }
+        
+        .section {
+            background: #2a2a2a;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        .section h2 {
+            margin: 0 0 15px 0;
+            color: #4CAF50;
+            font-size: 18px;
+        }
+        
+        .btn {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            margin: 5px;
+            border-radius: 8px;
+            font-size: 16px;
+            width: calc(100% - 10px);
+            cursor: pointer;
+        }
+        
+        .btn:active {
+            background: #0056b3;
+        }
+        
+        .nav-btn {
+            background: #6c757d;
+            padding: 10px 15px;
+            margin: 5px;
+            display: inline-block;
+            border-radius: 5px;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+        
+        .nav-btn.active {
+            background: #007bff;
+        }
+        
+        .nav-scroll {
+            overflow-x: auto;
+            white-space: nowrap;
+            padding: 10px 0;
+            margin-bottom: 20px;
+        }
+        
+        .input {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            background: #3a3a3a;
+            border: 1px solid #555;
+            color: white;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        .chat-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 20px;
+            width: 60px;
+            height: 60px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>MITO Engine</h1>
+        <div class="status">Online</div>
+    </div>
+    
+    <div class="nav-scroll">
+        <span class="nav-btn active">Dashboard</span>
+        <span class="nav-btn">AI Factory</span>
+        <span class="nav-btn">Code Gen</span>
+        <span class="nav-btn">Projects</span>
+        <span class="nav-btn">Admin</span>
+    </div>
+    
+    <div class="section">
+        <h2>MITO AI Assistant</h2>
+        <p>Your autonomous AI development partner ready to help with code generation, project planning, and deployment.</p>
+    </div>
+    
+    <div class="section">
+        <h2>Quick Actions</h2>
+        <button class="btn" onclick="createProject()">Create New Project</button>
+        <button class="btn" onclick="showCodeGenerator()">Generate Code</button>
+        <button class="btn" onclick="deployApp()">Deploy Application</button>
+    </div>
+    
+    <div class="section" id="code-generator" style="display: none;">
+        <h2>Code Generator</h2>
+        <input type="text" class="input" placeholder="What do you want to build?" id="code-prompt">
+        <select class="input" id="code-language">
+            <option value="python">Python</option>
+            <option value="javascript">JavaScript</option>
+            <option value="html">HTML/CSS</option>
+            <option value="react">React</option>
+            <option value="flask">Flask App</option>
+        </select>
+        <button class="btn" onclick="generateCode()">Generate Code with MITO</button>
+        <div id="code-output" style="display: none; margin-top: 15px;">
+            <h3>Generated Code:</h3>
+            <textarea class="input" id="generated-code" rows="10" readonly></textarea>
+            <button class="btn" onclick="saveCode()">Save Code</button>
+            <button class="btn" onclick="modifyCode()">Ask MITO to Modify</button>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>Chat with MITO</h2>
+        <input type="text" class="input" placeholder="Ask MITO anything..." id="chat-input">
+        <button class="btn" onclick="sendMessage()">Send Message</button>
+    </div>
+    
+    <button class="chat-btn" onclick="alert('Full chat available in main app')">💬</button>
+
+    <script>
+        function showCodeGenerator() {
+            document.getElementById('code-generator').style.display = 'block';
+            document.getElementById('code-generator').scrollIntoView();
+        }
+        
+        function generateCode() {
+            const prompt = document.getElementById('code-prompt').value;
+            const language = document.getElementById('code-language').value;
+            
+            if (!prompt.trim()) {
+                alert('Please describe what you want to build');
+                return;
+            }
+            
+            // Show loading
+            const btn = event.target;
+            btn.textContent = 'MITO is generating...';
+            btn.disabled = true;
+            
+            // Call MITO API
+            fetch('/api/generate-code', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    prompt: prompt,
+                    language: language
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    document.getElementById('generated-code').value = data.code;
+                    document.getElementById('code-output').style.display = 'block';
+                } else {
+                    alert('Error: ' + data.error);
+                }
+            })
+            .catch(error => {
+                alert('Failed to generate code: ' + error);
+            })
+            .finally(() => {
+                btn.textContent = 'Generate Code with MITO';
+                btn.disabled = false;
+            });
+        }
+        
+        function modifyCode() {
+            const currentCode = document.getElementById('generated-code').value;
+            const modification = prompt('What changes do you want MITO to make to this code?');
+            
+            if (!modification) return;
+            
+            fetch('/api/modify-code', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    code: currentCode,
+                    modification: modification
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    document.getElementById('generated-code').value = data.code;
+                    alert('Code modified by MITO');
+                } else {
+                    alert('Error: ' + data.error);
+                }
+            })
+            .catch(error => {
+                alert('Failed to modify code: ' + error);
+            });
+        }
+        
+        function saveCode() {
+            const code = document.getElementById('generated-code').value;
+            const filename = prompt('Enter filename (e.g., app.py, index.html):');
+            
+            if (!filename) return;
+            
+            fetch('/api/save-code', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    code: code,
+                    filename: filename
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Code saved as ' + filename);
+                } else {
+                    alert('Error: ' + data.error);
+                }
+            })
+            .catch(error => {
+                alert('Failed to save code: ' + error);
+            });
+        }
+        
+        function createProject() {
+            const projectName = prompt('Enter project name:');
+            if (!projectName) return;
+            
+            fetch('/api/create-project', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    name: projectName
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Project "' + projectName + '" created successfully');
+                } else {
+                    alert('Error: ' + data.error);
+                }
+            })
+            .catch(error => {
+                alert('Failed to create project: ' + error);
+            });
+        }
+        
+        function deployApp() {
+            alert('Deployment feature coming soon - MITO will handle full deployment pipeline');
+        }
+        
+        function sendMessage() {
+            const input = document.getElementById('chat-input');
+            if (!input.value.trim()) return;
+            
+            const message = input.value;
+            input.value = '';
+            
+            fetch('/api/generate', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    message: message
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.response) {
+                    alert('MITO: ' + data.response);
+                } else {
+                    alert('Error: ' + data.error);
+                }
+            })
+            .catch(error => {
+                alert('Chat error: ' + error);
+            });
+        }
+    </script>
+</body>
+</html>

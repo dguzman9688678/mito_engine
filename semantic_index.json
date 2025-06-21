@@ -1,0 +1,3365 @@
+{
+  "routes": [
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    },
+    {
+      "pattern": "create project",
+      "intent": "project_creation",
+      "confidence": 0.0,
+      "action": "create_new_project",
+      "parameters": {},
+      "examples": [
+        "make a new project",
+        "start project",
+        "begin new project"
+      ]
+    },
+    {
+      "pattern": "search files",
+      "intent": "file_search",
+      "confidence": 0.0,
+      "action": "search_filesystem",
+      "parameters": {},
+      "examples": [
+        "find files",
+        "locate file",
+        "search for file"
+      ]
+    },
+    {
+      "pattern": "run command",
+      "intent": "terminal_execution",
+      "confidence": 0.0,
+      "action": "execute_terminal_command",
+      "parameters": {},
+      "examples": [
+        "execute command",
+        "run in terminal",
+        "terminal command"
+      ]
+    },
+    {
+      "pattern": "deploy application",
+      "intent": "deployment",
+      "confidence": 0.0,
+      "action": "deploy_to_platform",
+      "parameters": {},
+      "examples": [
+        "deploy app",
+        "publish application",
+        "launch deployment"
+      ]
+    }
+  ],
+  "last_updated": "2025-06-21T06:21:00.673490"
+}

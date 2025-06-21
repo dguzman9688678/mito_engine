@@ -1,0 +1,149 @@
+<!--
+MITO Engine - AI Agent & Tool Creator
+Name: MITO Engine
+Version: 1.2.0
+Created by: Daniel Guzman
+Contact: guzman.danield@outlook.com
+Description: AI Agent & Tool Creator
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MITO Engine</title>
+    
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+</head>
+<body>
+    <!-- Simple Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">MITO Engine</h1>
+                <div class="status">
+                    <span class="status-dot"></span>
+                    Online
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            
+            <!-- Project Creation -->
+            <section class="create-section">
+                <div class="create-card">
+                    <h2>Create New Project</h2>
+                    <div class="project-types">
+                        <button class="project-type" data-type="webapp">Web Application</button>
+                        <button class="project-type" data-type="api">REST API</button>
+                        <button class="project-type" data-type="mobile">Mobile App</button>
+                        <button class="project-type" data-type="desktop">Desktop App</button>
+                        <button class="project-type" data-type="game">Game</button>
+                        <button class="project-type" data-type="ai">AI/ML Project</button>
+                    </div>
+                    <div class="project-form" id="project-form" style="display: none;">
+                        <input type="text" id="project-name" placeholder="Project Name" />
+                        <textarea id="project-description" placeholder="Describe what you want to build..." rows="4"></textarea>
+                        <select id="tech-stack">
+                            <option value="">Select Technology Stack</option>
+                            <option value="react">React + Node.js</option>
+                            <option value="vue">Vue.js + Express</option>
+                            <option value="angular">Angular + NestJS</option>
+                            <option value="python">Python + Flask/Django</option>
+                            <option value="ruby">Ruby on Rails</option>
+                            <option value="php">PHP + Laravel</option>
+                            <option value="java">Java + Spring Boot</option>
+                            <option value="csharp">C# + .NET</option>
+                        </select>
+                        <button id="create-project-btn" class="create-btn">Create Project</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Code Generation -->
+            <section class="code-section">
+                <div class="code-card">
+                    <h2>Code Generator</h2>
+                    <div class="code-input">
+                        <textarea id="code-prompt" placeholder="Describe the code you need (e.g., 'Create a login form with validation', 'Build a REST API for user management')" rows="4"></textarea>
+                        <div class="code-options">
+                            <select id="language-select">
+                                <option value="javascript">JavaScript</option>
+                                <option value="python">Python</option>
+                                <option value="java">Java</option>
+                                <option value="csharp">C#</option>
+                                <option value="php">PHP</option>
+                                <option value="ruby">Ruby</option>
+                                <option value="go">Go</option>
+                                <option value="rust">Rust</option>
+                            </select>
+                            <button id="generate-code-btn" class="generate-btn">Generate Code</button>
+                        </div>
+                    </div>
+                    <div class="code-output" id="code-output">
+                        <div class="output-tabs">
+                            <button class="tab active" data-tab="code">Generated Code</button>
+                            <button class="tab" data-tab="files">File Structure</button>
+                            <button class="tab" data-tab="docs">Documentation</button>
+                        </div>
+                        <div class="tab-content active" id="code-tab">
+                            <pre><code id="generated-code">Your generated code will appear here</code></pre>
+                        </div>
+                        <div class="tab-content" id="files-tab">
+                            <div id="file-structure">File structure will appear here</div>
+                        </div>
+                        <div class="tab-content" id="docs-tab">
+                            <div id="documentation">Documentation will appear here</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Project Management -->
+            <section class="projects-section">
+                <div class="projects-card">
+                    <h2>Your Projects</h2>
+                    <div class="projects-list" id="projects-list">
+                        <div class="empty-state">
+                            <p>No projects yet. Create your first project above!</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="loading-spinner">
+            <i class="fas fa-brain fa-spin"></i>
+            <p>Processing...</p>
+        </div>
+    </div>
+
+    <!-- Error Modal -->
+    <div class="modal" id="error-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4><i class="fas fa-exclamation-triangle"></i> Error</h4>
+                <button class="modal-close" id="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p id="error-message">An error occurred</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+</html>

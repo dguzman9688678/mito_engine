@@ -1,0 +1,14 @@
+2025-06-20 10:25:56,395 - INFO - Ultimate System Check initialized: MITO-ULTIMATE-1750415156-D18FF4EB
+2025-06-20 10:25:56,395 - INFO - ================================================================================
+2025-06-20 10:25:56,396 - INFO - MITO ENGINE v1.2.0 - ULTIMATE FINAL SYSTEM CHECK
+2025-06-20 10:25:56,396 - INFO - ================================================================================
+2025-06-20 10:25:56,396 - INFO - 🔍 Executing: File System Integrity
+2025-06-20 10:26:00,914 - INFO - ✅ File System Integrity: PASSED (4.518s)
+2025-06-20 10:26:00,916 - INFO - 🔍 Executing: Database Systems
+2025-06-20 10:26:00,992 - INFO - No MongoDB URI found - using SQLite
+2025-06-20 10:26:00,996 - INFO - SQLite database initialized successfully
+2025-06-20 10:26:00,999 - INFO - ✅ Database Systems: PASSED (0.083s)
+2025-06-20 10:26:00,999 - INFO - 🔍 Executing: Core Module Imports
+2025-06-20 10:26:03,596 - INFO - MITO Weights Manager initialized - 16 modules, 13 weight categories
+2025-06-20 10:26:03,602 - ERROR - Failed to initialize MITO Agent modules: cannot import name 'MitoAgent' from 'mito_agent' (/home/runner/workspace/mito_agent.py)
+2025-06-20 10:26:03,621 - INFO - Session database initialized

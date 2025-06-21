@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MITO Visual UI Designer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-bg: #1a1a1a;
+            --secondary-bg: #2a2a2a;
+            --accent-bg: #3a3a3a;
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --accent-color: #6366f1;
+            --border-color: #404040;
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --danger-color: #ef4444;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--primary-bg);
+            color: var(--text-primary);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+
+        .designer-container {
+            display: grid;
+            grid-template-columns: 300px 1fr 250px;
+            height: 100vh;
+        }
+
+        .components-panel {
+            background: var(--secondary-bg);
+            border-right: 1px solid var(--border-color);
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .canvas-area {
+            background: var(--primary-bg);
+            position: relative;
+            overflow: auto;
+            padding: 20px;
+        }
+
+        .properties-panel {
+            background: var(--secondary-bg);
+            border-left: 1px solid var(--border-color);
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .component-item {
+            background: var(--accent-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 10px;
+            cursor: grab;
+            transition: all 0.2s;
+            user-select: none;
+        }
+
+        .component-item:hover {
+            background: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        .component-item:active {
+            cursor: grabbing;
+        }
+
+        .draggable-element {
+            position: absolute;
+            background: var(--secondary-bg);
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px;
+            cursor: move;
+            min-width: 200px;
+            min-height: 100px;
+            transition: all 0.2s;
+        }
+
+        .draggable-element:hover {
+            border-color: var(--accent-color);
+            box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
+        }
+
+        .draggable-element.selected {
+            border-color: var(--success-color);
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+        }
+
+        .element-handle {
+            background: var(--accent-color);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            position: absolute;
+            top: -15px;
+            left: 0;
+            cursor: move;
+        }
+
+        .resize-handle {
+            position: absolute;
+            bottom: -5px;
+            right: -5px;
+            width: 15px;
+            height: 15px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            cursor: se-resize;
+        }
+
+        .delete-handle {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 20px;
+            height: 20px;
+            background: var(--danger-color);
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: white;
+        }
+
+        .property-group {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: var(--accent-bg);
+            border-radius: 8px;
+        }
+
+        .property-label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        .property-input {
+            width: 100%;
+            padding: 8px;
+            background: var(--primary-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+        }
+
+        .toolbar {
+            background: var(--secondary-bg);
+            padding: 10px 20px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .toolbar-btn {
+            background: var(--accent-color);
+            border: none;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .toolbar-btn:hover {
+            background: var(--accent-color);
+            opacity: 0.8;
+        }
+
+        .grid-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0.1;
+            background-image: 
+                linear-gradient(to right, var(--border-color) 1px, transparent 1px),
+                linear-gradient(to bottom, var(--border-color) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .snap-guide {
+            position: absolute;
+            background: var(--accent-color);
+            opacity: 0.7;
+            z-index: 1000;
+            pointer-events: none;
+        }
+
+        .snap-guide.horizontal {
+            height: 1px;
+            width: 100%;
+        }
+
+        .snap-guide.vertical {
+            width: 1px;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Toolbar -->
+    <div class="toolbar">
+        <button class="toolbar-btn" onclick="saveLayout()">
+            <i class="fas fa-save"></i> Save Layout
+        </button>
+        <button class="toolbar-btn" onclick="loadLayout()">
+            <i class="fas fa-folder-open"></i> Load Layout
+        </button>
+        <button class="toolbar-btn" onclick="clearCanvas()">
+            <i class="fas fa-trash"></i> Clear Canvas
+        </button>
+        <button class="toolbar-btn" onclick="toggleGrid()">
+            <i class="fas fa-th"></i> Toggle Grid
+        </button>
+        <button class="toolbar-btn" onclick="exportCode()">
+            <i class="fas fa-code"></i> Export Code
+        </button>
+        <button class="toolbar-btn" onclick="previewLayout()">
+            <i class="fas fa-eye"></i> Preview
+        </button>
+        <span class="ms-auto text-secondary">Visual UI Designer - Drag & Drop Interface Builder</span>
+    </div>
+
+    <div class="designer-container">
+        <!-- Components Panel -->
+        <div class="components-panel">
+            <h4 class="mb-3">Components</h4>
+            
+            <div class="component-category mb-4">
+                <h6 class="text-secondary mb-2">Layout</h6>
+                <div class="component-item" draggable="true" data-component="container">
+                    <i class="fas fa-square-o"></i> Container
+                </div>
+                <div class="component-item" draggable="true" data-component="row">
+                    <i class="fas fa-columns"></i> Row
+                </div>
+                <div class="component-item" draggable="true" data-component="column">
+                    <i class="fas fa-th-large"></i> Column
+                </div>
+                <div class="component-item" draggable="true" data-component="card">
+                    <i class="fas fa-window-maximize"></i> Card
+                </div>
+            </div>
+
+            <div class="component-category mb-4">
+                <h6 class="text-secondary mb-2">Form Elements</h6>
+                <div class="component-item" draggable="true" data-component="input">
+                    <i class="fas fa-i-cursor"></i> Text Input
+                </div>
+                <div class="component-item" draggable="true" data-component="select">
+                    <i class="fas fa-caret-down"></i> Select Dropdown
+                </div>
+                <div class="component-item" draggable="true" data-component="checkbox">
+                    <i class="fas fa-check-square"></i> Checkbox
+                </div>
+                <div class="component-item" draggable="true" data-component="button">
+                    <i class="fas fa-hand-pointer"></i> Button
+                </div>
+                <div class="component-item" draggable="true" data-component="textarea">
+                    <i class="fas fa-align-left"></i> Text Area
+                </div>
+            </div>
+
+            <div class="component-category mb-4">
+                <h6 class="text-secondary mb-2">Content</h6>
+                <div class="component-item" draggable="true" data-component="text">
+                    <i class="fas fa-font"></i> Text/Label
+                </div>
+                <div class="component-item" draggable="true" data-component="heading">
+                    <i class="fas fa-heading"></i> Heading
+                </div>
+                <div class="component-item" draggable="true" data-component="image">
+                    <i class="fas fa-image"></i> Image
+                </div>
+                <div class="component-item" draggable="true" data-component="code">
+                    <i class="fas fa-code"></i> Code Block
+                </div>
+            </div>
+
+            <div class="component-category">
+                <h6 class="text-secondary mb-2">AI Factory</h6>
+                <div class="component-item" draggable="true" data-component="configuration">
+                    <i class="fas fa-cogs"></i> Configuration Panel
+                </div>
+                <div class="component-item" draggable="true" data-component="functions">
+                    <i class="fas fa-list-check"></i> Functions List
+                </div>
+                <div class="component-item" draggable="true" data-component="preview">
+                    <i class="fas fa-eye"></i> Preview Window
+                </div>
+            </div>
+        </div>
+
+        <!-- Canvas Area -->
+        <div class="canvas-area" id="canvas">
+            <div class="grid-overlay" id="gridOverlay"></div>
+            <!-- Draggable elements will be added here -->
+        </div>
+
+        <!-- Properties Panel -->
+        <div class="properties-panel">
+            <h4 class="mb-3">Properties</h4>
+            <div id="properties-content">
+                <div class="text-secondary text-center py-4">
+                    Select an element to edit its properties
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let selectedElement = null;
+        let dragOffset = { x: 0, y: 0 };
+        let elementCounter = 0;
+        let isGridVisible = true;
+        let snapThreshold = 10;
+
+        // Component templates
+        const componentTemplates = {
+            container: { 
+                html: '<div class="container-fluid" style="border: 1px dashed #666; min-height: 100px; padding: 20px;">Container</div>',
+                width: 300, height: 100 
+            },
+            row: { 
+                html: '<div class="row" style="border: 1px dashed #666; min-height: 60px;">Row</div>',
+                width: 400, height: 60 
+            },
+            column: { 
+                html: '<div class="col" style="border: 1px dashed #666; min-height: 80px; padding: 10px;">Column</div>',
+                width: 200, height: 80 
+            },
+            card: { 
+                html: '<div class="card"><div class="card-header">Card Header</div><div class="card-body">Card content goes here</div></div>',
+                width: 300, height: 150 
+            },
+            input: { 
+                html: '<input type="text" class="form-control" placeholder="Enter text...">',
+                width: 200, height: 40 
+            },
+            select: { 
+                html: '<select class="form-control"><option>Option 1</option><option>Option 2</option></select>',
+                width: 200, height: 40 
+            },
+            checkbox: { 
+                html: '<div class="form-check"><input class="form-check-input" type="checkbox"><label class="form-check-label">Checkbox</label></div>',
+                width: 120, height: 30 
+            },
+            button: { 
+                html: '<button class="btn btn-primary">Button</button>',
+                width: 100, height: 40 
+            },
+            textarea: { 
+                html: '<textarea class="form-control" rows="3" placeholder="Enter text..."></textarea>',
+                width: 300, height: 100 
+            },
+            text: { 
+                html: '<span>Text Label</span>',
+                width: 100, height: 25 
+            },
+            heading: { 
+                html: '<h3>Heading</h3>',
+                width: 150, height: 40 
+            },
+            image: { 
+                html: '<img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjY2NjIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzMzMyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlIFBsYWNlaG9sZGVyPC90ZXh0Pjwvc3ZnPg==" class="img-fluid">',
+                width: 200, height: 100 
+            },
+            code: { 
+                html: '<pre style="background: #1a1a1a; color: #f1f5f9; padding: 15px; border-radius: 6px; font-family: monospace;">// Code block\nfunction example() {\n    return "Hello World";\n}</pre>',
+                width: 300, height: 120 
+            },
+            configuration: { 
+                html: '<div class="card"><div class="card-header">Configuration</div><div class="card-body"><div class="form-group"><label>Application Name</label><input type="text" class="form-control"></div></div></div>',
+                width: 350, height: 200 
+            },
+            functions: { 
+                html: '<div class="card"><div class="card-header">Select Functions</div><div class="card-body"><div class="form-check"><input type="checkbox" class="form-check-input"><label class="form-check-label">AI Chat Interface</label></div></div></div>',
+                width: 300, height: 180 
+            },
+            preview: { 
+                html: '<div class="card"><div class="card-header">Preview</div><div class="card-body"><div style="background: #1a1a1a; color: #f1f5f9; padding: 15px; border-radius: 6px; min-height: 200px; font-family: monospace;">Preview content...</div></div></div>',
+                width: 400, height: 300 
+            }
+        };
+
+        // Initialize drag and drop
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeDragAndDrop();
+            setupEventListeners();
+        });
+
+        function initializeDragAndDrop() {
+            const componentItems = document.querySelectorAll('.component-item');
+            const canvas = document.getElementById('canvas');
+
+            componentItems.forEach(item => {
+                item.addEventListener('dragstart', function(e) {
+                    e.dataTransfer.setData('text/plain', this.dataset.component);
+                });
+            });
+
+            canvas.addEventListener('dragover', function(e) {
+                e.preventDefault();
+            });
+
+            canvas.addEventListener('drop', function(e) {
+                e.preventDefault();
+                const componentType = e.dataTransfer.getData('text/plain');
+                const rect = canvas.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                createDraggableElement(componentType, x, y);
+            });
+        }
+
+        function createDraggableElement(componentType, x, y) {
+            const template = componentTemplates[componentType];
+            if (!template) return;
+
+            elementCounter++;
+            const element = document.createElement('div');
+            element.className = 'draggable-element';
+            element.id = `element-${elementCounter}`;
+            element.style.left = x + 'px';
+            element.style.top = y + 'px';
+            element.style.width = template.width + 'px';
+            element.style.height = template.height + 'px';
+            element.innerHTML = `
+                <div class="element-handle">${componentType}</div>
+                <div class="delete-handle" onclick="deleteElement('${element.id}')">×</div>
+                <div class="resize-handle"></div>
+                ${template.html}
+            `;
+
+            // Make element draggable
+            element.addEventListener('mousedown', startDrag);
+            element.addEventListener('click', selectElement);
+
+            document.getElementById('canvas').appendChild(element);
+            selectElement({ target: element });
+        }
+
+        function startDrag(e) {
+            if (e.target.className.includes('delete-handle') || e.target.className.includes('resize-handle')) return;
+            
+            selectedElement = e.currentTarget;
+            const rect = selectedElement.getBoundingClientRect();
+            dragOffset.x = e.clientX - rect.left;
+            dragOffset.y = e.clientY - rect.top;
+
+            document.addEventListener('mousemove', drag);
+            document.addEventListener('mouseup', stopDrag);
+            e.preventDefault();
+        }
+
+        function drag(e) {
+            if (!selectedElement) return;
+            
+            const canvas = document.getElementById('canvas');
+            const canvasRect = canvas.getBoundingClientRect();
+            
+            let x = e.clientX - canvasRect.left - dragOffset.x;
+            let y = e.clientY - canvasRect.top - dragOffset.y;
+
+            // Snap to grid
+            if (isGridVisible) {
+                x = Math.round(x / 20) * 20;
+                y = Math.round(y / 20) * 20;
+            }
+
+            selectedElement.style.left = x + 'px';
+            selectedElement.style.top = y + 'px';
+        }
+
+        function stopDrag() {
+            document.removeEventListener('mousemove', drag);
+            document.removeEventListener('mouseup', stopDrag);
+        }
+
+        function selectElement(e) {
+            // Remove previous selection
+            document.querySelectorAll('.draggable-element').forEach(el => {
+                el.classList.remove('selected');
+            });
+
+            // Select current element
+            const element = e.target.closest('.draggable-element');
+            if (element) {
+                element.classList.add('selected');
+                selectedElement = element;
+                showProperties(element);
+            }
+        }
+
+        function showProperties(element) {
+            const propertiesContent = document.getElementById('properties-content');
+            const computedStyle = window.getComputedStyle(element);
+            
+            propertiesContent.innerHTML = `
+                <div class="property-group">
+                    <h6>Position & Size</h6>
+                    <label class="property-label">X Position</label>
+                    <input type="number" class="property-input" value="${parseInt(element.style.left)}" 
+                           onchange="updateProperty('${element.id}', 'left', this.value + 'px')">
+                    
+                    <label class="property-label">Y Position</label>
+                    <input type="number" class="property-input" value="${parseInt(element.style.top)}" 
+                           onchange="updateProperty('${element.id}', 'top', this.value + 'px')">
+                    
+                    <label class="property-label">Width</label>
+                    <input type="number" class="property-input" value="${parseInt(element.style.width)}" 
+                           onchange="updateProperty('${element.id}', 'width', this.value + 'px')">
+                    
+                    <label class="property-label">Height</label>
+                    <input type="number" class="property-input" value="${parseInt(element.style.height)}" 
+                           onchange="updateProperty('${element.id}', 'height', this.value + 'px')">
+                </div>
+                
+                <div class="property-group">
+                    <h6>Styling</h6>
+                    <label class="property-label">Background Color</label>
+                    <input type="color" class="property-input" value="#2a2a2a" 
+                           onchange="updateProperty('${element.id}', 'backgroundColor', this.value)">
+                    
+                    <label class="property-label">Border Color</label>
+                    <input type="color" class="property-input" value="#404040" 
+                           onchange="updateProperty('${element.id}', 'borderColor', this.value)">
+                    
+                    <label class="property-label">Border Width</label>
+                    <input type="number" class="property-input" value="2" min="0" max="10"
+                           onchange="updateProperty('${element.id}', 'borderWidth', this.value + 'px')">
+                </div>
+                
+                <div class="property-group">
+                    <h6>Actions</h6>
+                    <button class="btn btn-sm btn-danger w-100 mb-2" onclick="deleteElement('${element.id}')">
+                        <i class="fas fa-trash"></i> Delete Element
+                    </button>
+                    <button class="btn btn-sm btn-secondary w-100 mb-2" onclick="duplicateElement('${element.id}')">
+                        <i class="fas fa-copy"></i> Duplicate
+                    </button>
+                    <button class="btn btn-sm btn-info w-100" onclick="moveToFront('${element.id}')">
+                        <i class="fas fa-layer-group"></i> Bring to Front
+                    </button>
+                </div>
+            `;
+        }
+
+        function updateProperty(elementId, property, value) {
+            const element = document.getElementById(elementId);
+            if (element) {
+                element.style[property] = value;
+            }
+        }
+
+        function deleteElement(elementId) {
+            const element = document.getElementById(elementId);
+            if (element) {
+                element.remove();
+                document.getElementById('properties-content').innerHTML = 
+                    '<div class="text-secondary text-center py-4">Select an element to edit its properties</div>';
+            }
+        }
+
+        function duplicateElement(elementId) {
+            const element = document.getElementById(elementId);
+            if (element) {
+                const clone = element.cloneNode(true);
+                elementCounter++;
+                clone.id = `element-${elementCounter}`;
+                clone.style.left = (parseInt(element.style.left) + 20) + 'px';
+                clone.style.top = (parseInt(element.style.top) + 20) + 'px';
+                
+                // Re-attach event listeners
+                clone.addEventListener('mousedown', startDrag);
+                clone.addEventListener('click', selectElement);
+                
+                document.getElementById('canvas').appendChild(clone);
+            }
+        }
+
+        function moveToFront(elementId) {
+            const element = document.getElementById(elementId);
+            if (element) {
+                element.style.zIndex = Date.now();
+            }
+        }
+
+        function clearCanvas() {
+            if (confirm('Are you sure you want to clear the canvas? This action cannot be undone.')) {
+                document.getElementById('canvas').innerHTML = '<div class="grid-overlay" id="gridOverlay"></div>';
+                document.getElementById('properties-content').innerHTML = 
+                    '<div class="text-secondary text-center py-4">Select an element to edit its properties</div>';
+            }
+        }
+
+        function toggleGrid() {
+            const gridOverlay = document.getElementById('gridOverlay');
+            isGridVisible = !isGridVisible;
+            gridOverlay.style.display = isGridVisible ? 'block' : 'none';
+        }
+
+        function saveLayout() {
+            const elements = [];
+            document.querySelectorAll('.draggable-element').forEach(el => {
+                elements.push({
+                    id: el.id,
+                    html: el.innerHTML,
+                    style: {
+                        left: el.style.left,
+                        top: el.style.top,
+                        width: el.style.width,
+                        height: el.style.height,
+                        backgroundColor: el.style.backgroundColor,
+                        borderColor: el.style.borderColor,
+                        borderWidth: el.style.borderWidth
+                    }
+                });
+            });
+            
+            const layout = { elements, timestamp: new Date().toISOString() };
+            localStorage.setItem('ui_designer_layout', JSON.stringify(layout));
+            alert('Layout saved successfully!');
+        }
+
+        function loadLayout() {
+            const savedLayout = localStorage.getItem('ui_designer_layout');
+            if (savedLayout) {
+                const layout = JSON.parse(savedLayout);
+                clearCanvas();
+                
+                layout.elements.forEach(elementData => {
+                    const element = document.createElement('div');
+                    element.className = 'draggable-element';
+                    element.id = elementData.id;
+                    element.innerHTML = elementData.html;
+                    
+                    Object.assign(element.style, elementData.style);
+                    
+                    element.addEventListener('mousedown', startDrag);
+                    element.addEventListener('click', selectElement);
+                    
+                    document.getElementById('canvas').appendChild(element);
+                });
+                
+                alert('Layout loaded successfully!');
+            } else {
+                alert('No saved layout found.');
+            }
+        }
+
+        function exportCode() {
+            const elements = document.querySelectorAll('.draggable-element');
+            let html = '<div class="canvas-container" style="position: relative;">\n';
+            
+            elements.forEach(el => {
+                const content = el.innerHTML
+                    .replace(/<div class="element-handle">.*?<\/div>/, '')
+                    .replace(/<div class="delete-handle".*?<\/div>/, '')
+                    .replace(/<div class="resize-handle"><\/div>/, '');
+                
+                html += `  <div style="position: absolute; left: ${el.style.left}; top: ${el.style.top}; width: ${el.style.width}; height: ${el.style.height};">\n`;
+                html += `    ${content}\n`;
+                html += `  </div>\n`;
+            });
+            
+            html += '</div>';
+            
+            // Create download
+            const blob = new Blob([html], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'ui_layout.html';
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        function previewLayout() {
+            const elements = document.querySelectorAll('.draggable-element');
+            let html = `
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <title>UI Preview</title>
+                    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+                    <style>
+                        body { background: #1a1a1a; color: #f1f5f9; padding: 20px; }
+                        .canvas-container { position: relative; min-height: 100vh; }
+                    </style>
+                </head>
+                <body>
+                    <div class="canvas-container">
+            `;
+            
+            elements.forEach(el => {
+                const content = el.innerHTML
+                    .replace(/<div class="element-handle">.*?<\/div>/, '')
+                    .replace(/<div class="delete-handle".*?<\/div>/, '')
+                    .replace(/<div class="resize-handle"><\/div>/, '');
+                
+                html += `<div style="position: absolute; left: ${el.style.left}; top: ${el.style.top}; width: ${el.style.width}; height: ${el.style.height};">${content}</div>`;
+            });
+            
+            html += `
+                    </div>
+                </body>
+                </html>
+            `;
+            
+            const previewWindow = window.open('', '_blank');
+            previewWindow.document.write(html);
+            previewWindow.document.close();
+        }
+
+        function setupEventListeners() {
+            // Keyboard shortcuts
+            document.addEventListener('keydown', function(e) {
+                if (e.ctrlKey || e.metaKey) {
+                    switch(e.key) {
+                        case 's':
+                            e.preventDefault();
+                            saveLayout();
+                            break;
+                        case 'o':
+                            e.preventDefault();
+                            loadLayout();
+                            break;
+                        case 'd':
+                            if (selectedElement) {
+                                e.preventDefault();
+                                duplicateElement(selectedElement.id);
+                            }
+                            break;
+                    }
+                }
+                
+                if (e.key === 'Delete' && selectedElement) {
+                    deleteElement(selectedElement.id);
+                }
+            });
+        }
+    </script>
+</body>
+</html>
