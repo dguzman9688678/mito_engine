@@ -1,0 +1,2 @@
+{"timestamp": "2025-06-20T06:19:34.343470", "provider": "test", "model": "test-model", "request_type": "chat", "usage": {"prompt_tokens": 10, "completion_tokens": 20}, "cost": 0.0, "custom_data": {}}
+{"timestamp": "2025-06-20T06:22:35.455923", "provider": "test", "model": "test-model", "request_type": "chat", "usage": {"prompt_tokens": 10, "completion_tokens": 20}, "cost": 0.0, "custom_data": {}}

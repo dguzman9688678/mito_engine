@@ -1,0 +1,38 @@
+2025-06-18 18:23:31,589 - __main__ - ERROR - Database connection failed: module 'psycopg2' has no attribute 'extras'
+2025-06-18 18:23:31,589 - __main__ - ERROR - Database initialization failed: module 'psycopg2' has no attribute 'extras'
+2025-06-18 18:25:23,241 - __main__ - ERROR - Database connection failed: connection to server at "localhost" (::1), port 5432 failed: FATAL:  role "postgres" does not exist
+
+2025-06-18 18:25:23,241 - __main__ - ERROR - Database initialization failed: connection to server at "localhost" (::1), port 5432 failed: FATAL:  role "postgres" does not exist
+
+2025-06-18 18:29:29,395 - __main__ - ERROR - Database connection failed: connection to server at "localhost" (::1), port 5432 failed: FATAL:  role "postgres" does not exist
+
+2025-06-18 18:29:29,395 - __main__ - ERROR - Database initialization failed: connection to server at "localhost" (::1), port 5432 failed: FATAL:  role "postgres" does not exist
+
+2025-06-18 18:30:51,716 - __main__ - INFO - Database tables initialized successfully
+2025-06-18 18:30:51,974 - __main__ - INFO - Default admin user created successfully
+2025-06-18 19:07:03,553 - __main__ - INFO - Database tables initialized successfully
+2025-06-18 19:07:03,559 - __main__ - INFO - Default admin already exists
+2025-06-18 19:07:03,597 - __main__ - INFO - Starting MITO Engine v1.0.0
+2025-06-18 19:07:03,597 - __main__ - INFO - Debug mode: False
+2025-06-18 19:07:03,597 - __main__ - INFO - Database: Connected
+2025-06-18 19:07:03,597 - __main__ - INFO - Redis: Connected
+2025-06-18 19:07:03,597 - __main__ - INFO - WebSocket: Active
+2025-06-18 19:07:03,597 - __main__ - INFO - AI Providers: llama, claude
+2025-06-18 19:07:03,597 - __main__ - INFO - MITO Modules: 16 loaded
+2025-06-18 19:07:03,597 - __main__ - INFO - Security Level: maximum
+2025-06-18 19:07:03,619 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.1.240:8080
+2025-06-18 19:07:03,619 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-06-18 19:09:03,772 - __main__ - INFO - Database tables initialized successfully
+2025-06-18 19:09:03,778 - __main__ - INFO - Default admin already exists
+2025-06-18 19:09:03,813 - __main__ - INFO - Starting MITO Engine v1.0.0
+2025-06-18 19:09:03,813 - __main__ - INFO - Debug mode: False
+2025-06-18 19:09:03,813 - __main__ - INFO - Database: Connected
+2025-06-18 19:09:03,813 - __main__ - INFO - Redis: Connected
+2025-06-18 19:09:03,813 - __main__ - INFO - WebSocket: Active
+2025-06-18 19:09:03,814 - __main__ - INFO - AI Providers: llama, claude
+2025-06-18 19:09:03,814 - __main__ - INFO - MITO Modules: 16 loaded
+2025-06-18 19:09:03,814 - __main__ - INFO - Security Level: maximum
+2025-06-18 19:09:03,814 - __main__ - ERROR - MITO Engine startup failed: invalid literal for int() with base 10: "8080' > .env"

@@ -1,0 +1,11 @@
+
+
+flask
+flask-cors
+flask-limiter
+flask-caching
+gunicorn
+requests
+python-dotenv
+anthropic
+# And any other NON-openai packages you use

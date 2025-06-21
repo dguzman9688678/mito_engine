@@ -1,0 +1,145 @@
+`python
+# Import necessary libraries
+from flask import Flask, request, jsonify
+from transformers import AutoModel
+import faiss
+import numpy as np
+import logging
+
+# Set up logging configuration
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+# Define the SearchEngine class
+class SearchEngine:
+    """
+    A class used to create a search engine using sentence transformers and faiss.
+
+    Attributes:
+    ----------
+    index : faiss.IndexFlatIP
+        The faiss index used for efficient similarity search.
+    model : AutoModel
+        The pre-trained sentence transformer model.
+
+    Methods:
+    -------
+    __init__()
+        Initializes the search engine with the faiss index and the pre-trained model.
+    """
+
+    def __init__(self):
+        """
+        Initializes the search engine.
+
+        Creates a faiss index and loads a pre-trained sentence transformer model.
+        """
+        # Create a faiss index for efficient similarity search
+        self.index = faiss.IndexFlatIP(768)
+        # Load a pre-trained sentence transformer model
+        self.model = AutoModel.from_pretrained('sentence-transformers/all-MiniLM-L6-v2')
+
+    def add_documents(self, documents):
+        """
+        Adds documents to the search engine.
+
+        Parameters:
+        ----------
+        documents : list
+            A list of strings representing the documents to be added.
+        """
+        # Tokenize the documents and generate embeddings
+        inputs = self.model.encode(documents, return_tensors='pt')
+        # Add the embeddings to the faiss index
+        self.index.add(inputs)
+
+    def search(self, query, k=5):
+        """
+        Searches for similar documents.
+
+        Parameters:
+        ----------
+        query : str
+            The query string.
+        k : int, optional
+            The number of similar documents to return (default is 5).
+
+        Returns:
+        -------
+        list
+            A list of tuples containing the similarities and the corresponding documents.
+        """
+        # Tokenize the query and generate an embedding
+        query_embedding = self.model.encode(query, return_tensors='pt')
+        # Search for similar documents
+        similarities, indices = self.index.search(query_embedding, k)
+        return similarities, indices
+
+
+# Create a Flask application
+app = Flask(__name__)
+
+# Create a search engine instance
+search_engine = SearchEngine()
+
+# Define a route for adding documents
+@app.route('/add_documents', methods=['POST'])
+def add_documents():
+    """
+    Adds documents to the search engine.
+
+    Request Body:
+    ----------
+    documents : list
+        A list of strings representing the documents to be added.
+
+    Returns:
+    -------
+    jsonify
+        A JSON response indicating success or failure.
+    """
+    try:
+        # Get the documents from the request body
+        documents = request.json['documents']
+        # Add the documents to the search engine
+        search_engine.add_documents(documents)
+        # Return a success response
+        return jsonify({'message': 'Documents added successfully'}), 200
+    except Exception as e:
+        # Return an error response
+        return jsonify({'message': 'Error adding documents', 'error': str(e)}), 500
+
+# Define a route for searching documents
+@app.route('/search', methods=['POST'])
+def search():
+    """
+    Searches for similar documents.
+
+    Request Body:
+    ----------
+    query : str
+        The query string.
+    k : int, optional
+        The number of similar documents to return (default is 5).
+
+    Returns:
+    -------
+    jsonify
+        A JSON response containing the similarities and the corresponding documents.
+    """
+    try:
+        # Get the query and k from the request body
+        query = request.json['query']
+        k = request.json.get('k', 5)
+        # Search for similar documents
+        similarities, indices = search_engine.search(query, k)
+        # Return the results
+        return jsonify({'similarities': similarities.tolist(), 'indices': indices.tolist()}), 200
+    except Exception as e:
+        # Return an error response
+        return jsonify({'message': 'Error searching documents', 'error': str(e)}), 500
+
+if __name__ == '__main__':
+    # Run the Flask application
+    app.run(debug=True)
+```

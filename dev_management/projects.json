@@ -1,0 +1,24 @@
+{
+  "proj_bd027a5f": {
+    "project_id": "proj_bd027a5f",
+    "name": "Intent Processing System",
+    "description": "Advanced system for processing user intents and routing to specialized handlers",
+    "status": "planning",
+    "created_at": "2025-06-20T13:08:42.223506",
+    "updated_at": "2025-06-20T13:08:42.223511",
+    "owner": "Daniel Guzman",
+    "repository_url": "",
+    "version": "1.0.0",
+    "tags": [],
+    "technologies": [
+      "Python",
+      "Flask",
+      "AI",
+      "Natural Language Processing"
+    ],
+    "team_members": [],
+    "deadline": null,
+    "budget": null,
+    "progress_percentage": 0.0
+  }
+}

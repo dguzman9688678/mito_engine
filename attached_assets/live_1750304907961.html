@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARCSEC Professional Cybersecurity Demo</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+```
+    :root {
+        --primary-blue: #2563eb;
+        --secondary-blue: #1e40af;
+        --accent-cyan: #06b6d4;
+        --danger-red: #dc2626;
+        --warning-amber: #f59e0b;
+        --success-green: #059669;
+        --neutral-gray: #6b7280;
+        --dark-bg: #0f172a;
+        --darker-bg: #020617;
+        --light-text: #f8fafc;
+        --muted-text: #94a3b8;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        background: var(--darker-bg);
+        color: var(--light-text);
+        overflow: hidden;
+        height: 100vh;
+        cursor: default;
+        user-select: none;
+    }
+
+    /* Professional Grid Background */
+    .grid-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: 
+            linear-gradient(rgba(37, 99, 235, 0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(37, 99, 235, 0.03) 1px, transparent 1px);
+        background-size: 40px 40px;
+        z-index: -1;
+        animation: gridShift 20s linear infinite;
+    }
+
+    @keyframes gridShift {
+        0% { transform: translate(0, 0); }
+        100% { transform: translate(40px, 40px); }
+    }
+
+    /* Subtle Background Gradient */
+    .bg-gradient {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: 
+            radial-gradient(circle at 20% 20%, rgba(37, 99, 235, 0.1) 0%, transparent 50%),
+            radial-gradient(circle at 80% 80%, rgba(6, 182, 212, 0.08) 0%, transparent 50%),
+            linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
+        z-index: -2;
+    }
+
+    /* Main Demo Container */
+    .demo-container {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .screen {
+        display: none;
+        width: 95vw;
+        height: 95vh;
+        position: relative;
+        border: 2px solid var(--primary-blue);
+        border-radius: 12px;
+        background: rgba(15, 23, 42, 0.95);
+        backdrop-filter: blur(20px);
+        box-shadow: 
+            0 25px 50px -12px rgba(0, 0, 0, 0.25),
+            0 0 0 1px rgba(37, 99, 235, 0.1),
+            inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        overflow: hidden;
+    }
+
+    .screen.active {
+        display: block;
+        animation: screenAppear 1s ease-out;
+    }
+
+    @keyframes screenAppear {
+        0% { 
+            opacity: 0; 
+            transform: scale(0.95);
+            filter: blur(10px);
+        }
+        100% { 
+            opacity: 1; 
+            transform: scale(1);
+            filter: blur(0px);
+        }
+    }
+
+    /* Professional Header */
+    .header-bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+        padding: 16px 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .header-title {
+        font-weight: 700;
+        font-size: 1.125rem;
+        color: white;
+        letter-spacing: 0.5px;
+    }
+
+    .status-indicator {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 12px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 6px;
+        font-size: 0.875rem;
+        font-weight: 500;
+    }
+
+    .status-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--success-green);
+        animation: statusPulse 2s infinite;
+    }
+
+    @keyframes statusPulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.5; }
+    }
+
+    /* SCREEN 0: System Boot */
+    .boot-screen {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        text-align: center;
+        padding: 80px;
+    }
+
+    .system-logo {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 4rem;
+        font-weight: 800;
+        margin-bottom: 24px;
+        background: linear-gradient(135deg, var(--primary-blue), var(--accent-cyan));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        letter-spacing: 4px;
+    }
+
+    .system-subtitle {
+        font-size: 1.5rem;
+        color: var(--muted-text);
+        margin-bottom: 48px;
+        font-weight: 500;
+    }
+
+    .loading-container {
+        width: 400px;
+        margin: 32px 0;
+    }
+
+    .loading-bar {
+        width: 100%;
+        height: 8px;
+        background: rgba(37, 99, 235, 0.1);
+        border-radius: 4px;
+        overflow: hidden;
+        margin-bottom: 16px;
+    }
+
+    .loading-progress {
+        height: 100%;
+        background: linear-gradient(90deg, var(--primary-blue), var(--accent-cyan));
+        width: 0%;
+        animation: loadingProgress 4s ease-in-out;
+        border-radius: 4px;
+    }
+
+    @keyframes loadingProgress {
+        0% { width: 0%; }
+        100% { width: 100%; }
+    }
+
+    .loading-text {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.875rem;
+        color: var(--muted-text);
+        animation: typewriter 3s steps(40);
+        overflow: hidden;
+        white-space: nowrap;
+        border-right: 2px solid var(--primary-blue);
+    }
+
+    @keyframes typewriter {
+        from { width: 0; }
+        to { width: 100%; }
+    }
+
+    /* SCREEN 1: Architecture */
+    .arch-screen {
+        padding: 80px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .arch-title {
+        font-size: 2.5rem;
+        font-weight: 800;
+        text-align: center;
+        margin-bottom: 16px;
+        background: linear-gradient(135deg, var(--primary-blue), var(--accent-cyan));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .operator-info {
+        background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(6, 182, 212, 0.1));
+        border: 1px solid var(--primary-blue);
+        padding: 20px 32px;
+        border-radius: 8px;
+        text-align: center;
+        font-size: 1.125rem;
+        font-weight: 600;
+        margin-bottom: 64px;
+        color: var(--light-text);
+    }
+
+    .system-hierarchy {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 48px;
+        flex: 1;
+        justify-content: center;
+    }
+
+    .hierarchy-level {
+        display: flex;
+        gap: 80px;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .system-node {
+        background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(6, 182, 212, 0.05));
+        border: 2px solid var(--primary-blue);
+        padding: 20px 32px;
+        border-radius: 8px;
+        font-size: 1.25rem;
+        font-weight: 700;
+        min-width: 120px;
+        text-align: center;
+        color: var(--light-text);
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    .system-node:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.2);
+        border-color: var(--accent-cyan);
+    }
+
+    .connection-line {
+        width: 3px;
+        height: 40px;
+        background: linear-gradient(180deg, var(--primary-blue), var(--accent-cyan));
+        margin: 0 auto;
+        border-radius: 2px;
+    }
+
+    /* SCREEN 2: Threat Analysis */
+    .threat-screen {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        text-align: center;
+        padding: 80px;
+    }
+
+    .threat-title {
+        font-size: 2.5rem;
+        margin-bottom: 32px;
+        color: var(--light-text);
+        font-weight: 700;
+    }
+
+    .breach-alert {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 3.5rem;
+        color: var(--danger-red);
+        font-weight: 800;
+        margin-bottom: 48px;
+        animation: alertPulse 2s infinite;
+    }
+
+    @keyframes alertPulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.7; }
+    }
+
+    .alert-icon {
+        width: 120px;
+        height: 120px;
+        border: 3px solid var(--danger-red);
+        background: linear-gradient(135deg, rgba(220, 38, 38, 0.1), rgba(220, 38, 38, 0.05));
+        margin: 32px auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 12px;
+        font-size: 3rem;
+    }
+
+    .breach-details {
+        font-size: 1.25rem;
+        color: var(--warning-amber);
+        margin-top: 32px;
+        font-weight: 500;
+    }
+
+    /* SCREEN 3: Layer Analysis */
+    .layer-screen {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        height: 100%;
+        padding: 80px;
+    }
+
+    .layers-container {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        flex: 1;
+    }
+
+    .security-layer {
+        background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(6, 182, 212, 0.05));
+        border: 2px solid var(--primary-blue);
+        padding: 24px 32px;
+        border-radius: 8px;
+        min-width: 280px;
+        transition: all 0.3s ease;
+    }
+
+    .security-layer:hover {
+        transform: translateX(8px);
+        border-color: var(--accent-cyan);
+        box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.1);
+    }
+
+    .layer-title {
+        font-weight: 700;
+        font-size: 1.125rem;
+        color: var(--light-text);
+        margin-bottom: 8px;
+    }
+
+    .layer-description {
+        font-size: 1rem;
+        color: var(--muted-text);
+    }
+
+    .breach-center {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+        flex: 0 0 auto;
+    }
+
+    .breach-point {
+        width: 80px;
+        height: 80px;
+        background: radial-gradient(circle, var(--danger-red), #991b1b);
+        border-radius: 50%;
+        position: relative;
+        animation: breachPulse 2s infinite;
+    }
+
+    @keyframes breachPulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+    }
+
+    .breach-label {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 2rem;
+        color: var(--danger-red);
+        font-weight: 700;
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+    }
+
+    .connection-vector {
+        width: 120px;
+        height: 3px;
+        background: linear-gradient(90deg, var(--primary-blue), var(--danger-red));
+        border-radius: 2px;
+    }
+
+    /* SCREEN 4 & 5: Network Topology */
+    .network-screen {
+        padding: 80px;
+        height: 100%;
+    }
+
+    .network-title {
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 48px;
+        background: linear-gradient(135deg, var(--primary-blue), var(--accent-cyan));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 800;
+    }
+
+    .network-container {
+        position: relative;
+        width: 100%;
+        height: 500px;
+        border: 2px solid var(--primary-blue);
+        border-radius: 12px;
+        background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(6, 182, 212, 0.03));
+        backdrop-filter: blur(10px);
+    }
+
+    .network-node {
+        position: absolute;
+        background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(6, 182, 212, 0.05));
+        border: 2px solid var(--primary-blue);
+        padding: 12px 24px;
+        border-radius: 8px;
+        font-weight: 700;
+        color: var(--light-text);
+        transition: all 0.3s ease;
+    }
+
+    .network-node:hover {
+        transform: scale(1.05);
+        border-color: var(--accent-cyan);
+    }
+
+    .compromised-node {
+        background: linear-gradient(135deg, rgba(220, 38, 38, 0.2), rgba(220, 38, 38, 0.1));
+        border-color: var(--danger-red);
+        color: var(--danger-red);
+        animation: compromisedAlert 2s infinite;
+    }
+
+    @keyframes compromisedAlert {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.7; }
+    }
+
+    .network-line {
+        position: absolute;
+        background: var(--primary-blue);
+        height: 2px;
+        transform-origin: left center;
+        border-radius: 1px;
+    }
+
+    .compromised-line {
+        background: var(--danger-red);
+        animation: compromisedFlow 1.5s infinite;
+    }
+
+    @keyframes compromisedFlow {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.5; }
+    }
+
+    /* Network Positioning */
+    .node-odin { top: 350px; left: 80px; }
+    .node-mito { top: 100px; right: 200px; }
+    .node-vader { top: 280px; right: 80px; }
+    .node-jarvis { bottom: 100px; right: 200px; }
+
+    .line1 { width: 180px; top: 200px; left: 300px; transform: rotate(25deg); }
+    .line2 { width: 150px; top: 300px; left: 400px; transform: rotate(-15deg); }
+    .line3 { width: 200px; top: 350px; left: 250px; transform: rotate(45deg); }
+
+    /* Controls */
+    .controls {
+        position: fixed;
+        bottom: 32px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 16px;
+        z-index: 1000;
+    }
+
+    .control-btn {
+        background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(37, 99, 235, 0.05));
+        border: 2px solid var(--primary-blue);
+        color: var(--light-text);
+        padding: 12px 24px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+    }
+
+    .control-btn:hover {
+        background: linear-gradient(135deg, rgba(37, 99, 235, 0.2), rgba(37, 99, 235, 0.1));
+        border-color: var(--accent-cyan);
+        transform: translateY(-2px);
+    }
+
+    .auto-btn {
+        background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(245, 158, 11, 0.05));
+        border-color: var(--warning-amber);
+        color: var(--warning-amber);
+    }
+
+    .auto-btn:hover {
+        background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(245, 158, 11, 0.1));
+    }
+
+    /* Auto Demo Indicator */
+    .auto-indicator {
+        position: fixed;
+        top: 32px;
+        left: 32px;
+        background: linear-gradient(135deg, var(--warning-amber), #d97706);
+        color: white;
+        padding: 8px 16px;
+        border-radius: 6px;
+        font-weight: 600;
+        font-size: 0.875rem;
+        display: none;
+    }
+
+    .auto-indicator.active {
+        display: block;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .system-logo { font-size: 2.5rem; }
+        .arch-title { font-size: 2rem; }
+        .breach-alert { font-size: 2.5rem; }
+        .network-title { font-size: 2rem; }
+        .controls { flex-direction: column; width: 90%; }
+    }
+</style>
+```
+
+</head>
+<body>
+    <div class="bg-gradient"></div>
+    <div class="grid-background"></div>
+    <div class="auto-indicator" id="autoIndicator">AUTO DEMO RUNNING</div>
+
+```
+<div class="demo-container">
+    <!-- SCREEN 0: System Boot -->
+    <div class="screen active" id="screen0">
+        <div class="header-bar">
+            <div class="header-title">ARCSEC Cybersecurity Platform</div>
+            <div class="status-indicator">
+                <div class="status-dot"></div>
+                <span>System Online</span>
+            </div>
+        </div>
+        <div class="boot-screen">
+            <div class="system-logo">ARCSEC</div>
+            <div class="system-subtitle">Advanced Real-Time Cyber Security</div>
+            <div class="loading-container">
+                <div class="loading-bar">
+                    <div class="loading-progress"></div>
+                </div>
+                <div class="loading-text">Initializing quantum defense protocols...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCREEN 1: System Architecture -->
+    <div class="screen" id="screen1">
+        <div class="header-bar">
+            <div class="header-title">System Architecture Overview</div>
+            <div class="status-indicator">
+                <div class="status-dot"></div>
+                <span>All Systems Operational</span>
+            </div>
+        </div>
+        <div class="arch-screen">
+            <div class="arch-title">ARCSEC System Architecture</div>
+            <div class="operator-info">System Operator: Daniel Guzman</div>
+            
+            <div class="system-hierarchy">
+                <div class="hierarchy-level">
+                    <div class="system-node">JARVIS</div>
+                </div>
+                
+                <div class="connection-line"></div>
+                
+                <div class="hierarchy-level">
+                    <div class="system-node">ODIN</div>
+                    <div class="system-node">MITO</div>
+                    <div class="system-node">VADER</div>
+                </div>
+                
+                <div class="connection-line"></div>
+                
+                <div class="hierarchy-level">
+                    <div class="system-node">ROOT</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCREEN 2: Threat Analysis -->
+    <div class="screen" id="screen2">
+        <div class="header-bar">
+            <div class="header-title">Threat Analysis Dashboard</div>
+            <div class="status-indicator">
+                <div class="status-dot" style="background: var(--danger-red);"></div>
+                <span>Critical Alert</span>
+            </div>
+        </div>
+        <div class="threat-screen">
+            <div class="threat-title">THREAT ANALYSIS</div>
+            <div class="breach-alert">BREACH DETECTED</div>
+            <div class="alert-icon">⚠</div>
+            <div class="breach-details">Unauthorized access detected in Sector 7</div>
+        </div>
+    </div>
+
+    <!-- SCREEN 3: Layer Analysis -->
+    <div class="screen" id="screen3">
+        <div class="header-bar">
+            <div class="header-title">Security Layer Analysis</div>
+            <div class="status-indicator">
+                <div class="status-dot" style="background: var(--danger-red);"></div>
+                <span>Multiple Layers Compromised</span>
+            </div>
+        </div>
+        <div class="layer-screen">
+            <div class="layers-container">
+                <div class="security-layer">
+                    <div class="layer-title">Layer 1</div>
+                    <div class="layer-description">Files Detected</div>
+                </div>
+                <div class="security-layer">
+                    <div class="layer-title">Layer 2</div>
+                    <div class="layer-description">Encrypted Metadata</div>
+                </div>
+                <div class="security-layer">
+                    <div class="layer-title">Layer 3</div>
+                    <div class="layer-description">Cloaked Memory</div>
+                </div>
+                <div class="security-layer">
+                    <div class="layer-title">Layer 4</div>
+                    <div class="layer-description">Shadow I/O</div>
+                </div>
+                <div class="security-layer">
+                    <div class="layer-title">Layer 5</div>
+                    <div class="layer-description">External Signals</div>
+                </div>
+            </div>
+            
+            <div class="breach-center">
+                <div class="breach-point"></div>
+                <div class="breach-label">BREACH</div>
+            </div>
+            
+            <div style="display: flex; flex-direction: column; gap: 24px;">
+                <div class="connection-vector"></div>
+                <div class="connection-vector"></div>
+                <div class="connection-vector"></div>
+                <div class="connection-vector"></div>
+                <div class="connection-vector"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCREEN 4: Sandbox Scan -->
+    <div class="screen" id="screen4">
+        <div class="header-bar">
+            <div class="header-title">ARCSEC Sandbox Scan</div>
+            <div class="status-indicator">
+                <div class="status-dot" style="background: var(--warning-amber);"></div>
+                <span>Containment Active</span>
+            </div>
+        </div>
+        <div class="network-screen">
+            <div class="network-title">ARCSEC Sandbox Scan</div>
+            <div class="network-container">
+                <div class="network-node node-odin">ODIN</div>
+                <div class="network-node node-mito">MITO</div>
+                <div class="network-node node-vader">VADER</div>
+                <div class="network-node node-jarvis">JARVIS</div>
+                
+                <div class="network-line line1"></div>
+                <div class="network-line line2 compromised-line"></div>
+                <div class="network-line line3"></div>
+                
+                <div style="position: absolute; top: 200px; left: 200px; font-size: 1.5rem; color: var(--danger-red); font-weight: 700;">
+                    BREACH<br>DETECTED
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCREEN 5: Breach Map Intelligence -->
+    <div class="screen" id="screen5">
+        <div class="header-bar">
+            <div class="header-title">Breach Map Intelligence</div>
+            <div class="status-indicator">
+                <div class="status-dot" style="background: var(--success-green);"></div>
+                <span>Analysis Complete</span>
+            </div>
+        </div>
+        <div class="network-screen">
+            <div class="network-title">Breach Map Intelligence</div>
+            <div class="network-container">
+                <div class="network-node node-odin">ODIN</div>
+                <div class="network-node node-mito">MITO</div>
+                <div class="network-node node-vader compromised-node">VADER</div>
+                <div class="network-node node-jarvis">JARVIS</div>
+                
+                <div class="network-line line1"></div>
+                <div class="network-line line2 compromised-line"></div>
+                <div class="network-line line3 compromised-line"></div>
+                
+                <div style="position: absolute; top: 180px; left: 180px; font-size: 1.5rem; color: var(--danger-red); font-weight: 700;">
+                    BREACH<br>DETECTED
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="controls">
+    <button class="control-btn" onclick="previousScreen()">← Previous</button>
+    <button class="control-btn" onclick="nextScreen()">Next →</button>
+    <button class="control-btn auto-btn" onclick="toggleAuto()">Auto Demo</button>
+</div>
+
+<script>
+    let currentScreen = 0;
+    let isAutoMode = false;
+    let autoInterval;
+    const totalScreens = 6;
+
+    function showScreen(index) {
+        document.querySelectorAll('.screen').forEach(screen => {
+            screen.classList.remove('active');
+        });
+        document.getElementById(`screen${index}`).classList.add('active');
+        currentScreen = index;
+    }
+
+    function nextScreen() {
+        const next = (currentScreen + 1) % totalScreens;
+        showScreen(next);
+    }
+
+    function previousScreen() {
+        const prev = (currentScreen - 1 + totalScreens) % totalScreens;
+        showScreen(prev);
+    }
+
+    function toggleAuto() {
+        isAutoMode = !isAutoMode;
+        const indicator = document.getElementById('autoIndicator');
+        
+        if (isAutoMode) {
+            indicator.classList.add('active');
+            autoInterval = setInterval(() => {
+                nextScreen();
+            }, 5000);
+        } else {
+            indicator.classList.remove('active');
+            clearInterval(autoInterval);
+        }
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        switch(e.key) {
+            case 'ArrowRight':
+            case ' ':
+                e.preventDefault();
+                nextScreen();
+                break;
+            case 'ArrowLeft':
+                e.preventDefault();
+                previousScreen();
+                break;
+            case 'Escape':
+                if (isAutoMode) toggleAuto();
+                break;
+        }
+    });
+
+    // 
+    setTimeout(() => {
+        if (currentScreen === 0) {
+            nextScreen();
+        }
+    }, 5000);
+</script>
+```
+
+</body>
+</html>

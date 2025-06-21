@@ -1,0 +1,338 @@
+{
+  "entry_points": {
+    "main_interface": {
+      "url": "/",
+      "description": "Main MITO Engine Interface",
+      "features": [
+        "giant_workbench",
+        "lab_mode",
+        "agent_interactions"
+      ]
+    },
+    "lab_interfaces": {
+      "agent_lab": "/agent-lab",
+      "api_key_lab": "/api-key-lab",
+      "tool_lab": "/tool-lab",
+      "unified_lab": "/unified-lab"
+    }
+  },
+  "core_features": {
+    "file_management": {
+      "backend": "file_manager.py",
+      "apis": [
+        "/api/files",
+        "/api/files/read",
+        "/api/files/write",
+        "/api/files/delete",
+        "/api/files/search"
+      ],
+      "capabilities": [
+        "browse_files",
+        "edit_files",
+        "upload_files",
+        "download_files",
+        "search_content"
+      ],
+      "user_flow": [
+        "User clicks 'File Browser' button",
+        "System loads file_manager backend",
+        "User navigates directory structure",
+        "User selects file for editing/viewing",
+        "Code editor opens with syntax highlighting",
+        "User makes changes and saves"
+      ]
+    },
+    "terminal_operations": {
+      "backend": "terminal_manager.py",
+      "apis": [
+        "/api/terminal/execute",
+        "/api/terminal/history",
+        "/api/terminal/sessions"
+      ],
+      "capabilities": [
+        "command_execution",
+        "session_management",
+        "command_history",
+        "system_info"
+      ],
+      "user_flow": [
+        "User clicks 'Terminal' button",
+        "System initializes terminal_manager",
+        "Terminal interface opens",
+        "User types commands",
+        "System executes via subprocess",
+        "Results displayed in real-time"
+      ]
+    },
+    "code_editing": {
+      "backend": "code_editor.py",
+      "apis": [
+        "/api/editor/open",
+        "/api/editor/save",
+        "/api/editor/format",
+        "/api/editor/open-files"
+      ],
+      "capabilities": [
+        "syntax_highlighting",
+        "code_formatting",
+        "multi_file_editing",
+        "auto_completion"
+      ],
+      "user_flow": [
+        "User opens file from browser",
+        "Code editor loads with syntax detection",
+        "User edits with highlighting and completion",
+        "Auto-save triggers on changes",
+        "Format code on demand"
+      ]
+    },
+    "project_management": {
+      "backend": "project_manager.py",
+      "apis": [
+        "/api/projects/templates",
+        "/api/projects/create",
+        "/api/projects",
+        "/api/projects/<id>/structure"
+      ],
+      "capabilities": [
+        "template_selection",
+        "project_creation",
+        "structure_analysis",
+        "dependency_management"
+      ],
+      "user_flow": [
+        "User clicks 'New Project'",
+        "Template gallery loads",
+        "User selects framework/template",
+        "Project scaffolding generated",
+        "Files and structure created automatically"
+      ]
+    },
+    "database_operations": {
+      "backend": "database_manager.py",
+      "apis": [
+        "/api/database/connections",
+        "/api/database/query",
+        "/api/database/tables",
+        "/api/database/stats"
+      ],
+      "capabilities": [
+        "multi_db_support",
+        "query_execution",
+        "schema_management",
+        "data_visualization"
+      ],
+      "user_flow": [
+        "User accesses 'Database' section",
+        "Connection manager loads",
+        "User selects/configures database",
+        "Query interface opens",
+        "Results displayed in tables/charts"
+      ]
+    },
+    "deployment_tools": {
+      "backend": "deployment_manager.py",
+      "apis": [
+        "/api/deployment/targets",
+        "/api/deployment/deploy",
+        "/api/deployment/status/<id>",
+        "/api/deployment/list"
+      ],
+      "capabilities": [
+        "multi_platform_deployment",
+        "status_monitoring",
+        "rollback_support",
+        "automated_builds"
+      ],
+      "user_flow": [
+        "User clicks 'Deploy' button",
+        "Deployment targets load",
+        "User selects platform (Replit/AWS/Docker)",
+        "Build process initiates",
+        "Real-time status updates",
+        "Deployment completion notification"
+      ]
+    },
+    "ai_interactions": {
+      "backend": "ai_providers.py",
+      "apis": [
+        "/api/ai/chat",
+        "/api/ai/generate",
+        "/api/ai/analyze"
+      ],
+      "capabilities": [
+        "multi_model_support",
+        "code_generation",
+        "analysis",
+        "conversation"
+      ],
+      "user_flow": [
+        "User types in AI chat interface",
+        "System selects best available model",
+        "Request processed through provider",
+        "AI response with code/analysis",
+        "User can iterate and refine"
+      ]
+    },
+    "web_scraping": {
+      "backend": "web_scraper_manager.py",
+      "apis": [
+        "/api/scraper/scrape",
+        "/api/scraper/scrape-multiple",
+        "/api/scraper/search",
+        "/api/scraper/jobs"
+      ],
+      "capabilities": [
+        "single_url_scraping",
+        "batch_scraping",
+        "search_integration",
+        "data_extraction"
+      ],
+      "user_flow": [
+        "User enters URL to scrape",
+        "Scraper manager validates URL",
+        "Content extraction begins",
+        "Clean data displayed",
+        "Export options provided"
+      ]
+    },
+    "data_visualization": {
+      "backend": "visualization_manager.py",
+      "apis": [
+        "/api/viz/charts",
+        "/api/viz/charts/create",
+        "/api/viz/dashboards",
+        "/api/viz/reports/analytics"
+      ],
+      "capabilities": [
+        "chart_creation",
+        "dashboard_building",
+        "report_generation",
+        "data_analysis"
+      ],
+      "user_flow": [
+        "User uploads/selects data",
+        "Chart type selection interface",
+        "Data mapping and configuration",
+        "Chart generation and preview",
+        "Dashboard assembly and sharing"
+      ]
+    },
+    "authentication": {
+      "backend": "authentication_manager.py",
+      "apis": [
+        "/api/auth/register",
+        "/api/auth/login",
+        "/api/auth/logout",
+        "/api/auth/validate"
+      ],
+      "capabilities": [
+        "user_registration",
+        "secure_login",
+        "session_management",
+        "role_based_access"
+      ],
+      "user_flow": [
+        "User accesses protected feature",
+        "Login prompt appears",
+        "Credentials validated",
+        "Session established",
+        "Access granted to features"
+      ]
+    }
+  },
+  "specialized_labs": {
+    "agent_lab": {
+      "purpose": "AI Agent Development and Testing",
+      "features": [
+        "agent_creation",
+        "behavior_configuration",
+        "testing_environment",
+        "performance_monitoring"
+      ],
+      "user_journey": [
+        "Enter Agent Lab interface",
+        "Select agent template or create custom",
+        "Configure AI model and parameters",
+        "Define agent goals and constraints",
+        "Test agent in sandbox environment",
+        "Deploy to production with monitoring"
+      ]
+    },
+    "api_key_lab": {
+      "purpose": "API Key Management and Testing",
+      "features": [
+        "key_storage",
+        "service_testing",
+        "usage_monitoring",
+        "security_validation"
+      ],
+      "user_journey": [
+        "Access API Key Lab",
+        "Add API keys for various services",
+        "Test connectivity and permissions",
+        "Monitor usage and quotas",
+        "Manage key rotation and security"
+      ]
+    },
+    "tool_lab": {
+      "purpose": "Custom Tool Development",
+      "features": [
+        "tool_creation",
+        "integration_testing",
+        "workflow_automation",
+        "tool_marketplace"
+      ],
+      "user_journey": [
+        "Open Tool Lab interface",
+        "Design custom tool or select template",
+        "Configure inputs/outputs and logic",
+        "Test tool functionality",
+        "Integrate with main workflow",
+        "Share or publish to marketplace"
+      ]
+    }
+  },
+  "data_flow": {
+    "user_input": [
+      "Mouse clicks and keyboard input",
+      "File uploads and drag-drop",
+      "API requests and webhook calls",
+      "Voice commands (if enabled)",
+      "Touch gestures (mobile)"
+    ],
+    "processing_layers": [
+      "Frontend JavaScript handlers",
+      "Flask route processing",
+      "Manager class methods",
+      "Database operations",
+      "External API calls",
+      "AI model inference"
+    ],
+    "output_channels": [
+      "Real-time UI updates",
+      "WebSocket notifications",
+      "File downloads",
+      "Email notifications",
+      "API responses",
+      "Generated reports"
+    ]
+  },
+  "integration_points": {
+    "external_services": [
+      "OpenAI GPT models",
+      "Cloud storage providers",
+      "Database systems",
+      "Deployment platforms",
+      "Authentication providers",
+      "Monitoring services"
+    ],
+    "internal_connections": [
+      "Cross-manager communication",
+      "Shared database access",
+      "Event system notifications",
+      "Cache layer coordination",
+      "Session state management"
+    ]
+  }
+}
