@@ -1,0 +1,6 @@
+{
+  "name": "text-processor",
+  "version": "2.1.0",
+  "description": "Text processing and analysis",
+  "main": "main.py"
+}

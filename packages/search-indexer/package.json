@@ -1,0 +1,6 @@
+{
+  "name": "search-indexer",
+  "version": "1.0.0",
+  "description": "Search indexing components",
+  "main": "main.py"
+}

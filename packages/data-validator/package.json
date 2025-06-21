@@ -1,0 +1,6 @@
+{
+  "name": "data-validator",
+  "version": "1.5.0",
+  "description": "Data validation utilities",
+  "main": "main.py"
+}

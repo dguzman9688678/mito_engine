@@ -1,0 +1,6 @@
+{
+  "name": "api-client",
+  "version": "3.0.0",
+  "description": "API client libraries",
+  "main": "main.py"
+}
