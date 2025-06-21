@@ -1,0 +1,126 @@
+
+graph TD
+    %% Entry Points
+    A[User Visits MITO Engine] --> B{Select Interface}
+    B --> C[Main Workbench /]
+    B --> D[Agent Lab /agent-lab]
+    B --> E[API Key Lab /api-key-lab]
+    B --> F[Tool Lab /tool-lab]
+    B --> G[Unified Lab /unified-lab]
+    
+    %% Main Workbench Flow
+    C --> H[Giant Workbench Interface]
+    H --> I{Choose Feature}
+    
+    %% File Management Flow
+    I --> J[File Browser]
+    J --> K[file_manager.py]
+    K --> L[/api/files/*]
+    L --> M[Browse/Edit/Upload Files]
+    M --> N[Code Editor Opens]
+    N --> O[Syntax Highlighting]
+    O --> P[Save Changes]
+    
+    %% Terminal Operations Flow
+    I --> Q[Terminal Access]
+    Q --> R[terminal_manager.py]
+    R --> S[/api/terminal/*]
+    S --> T[Command Execution]
+    T --> U[Real-time Results]
+    U --> V[Command History]
+    
+    %% Project Management Flow
+    I --> W[New Project]
+    W --> X[project_manager.py]
+    X --> Y[/api/projects/*]
+    Y --> Z[Template Selection]
+    Z --> AA[Project Scaffolding]
+    AA --> BB[Auto-generated Structure]
+    
+    %% Database Operations Flow
+    I --> CC[Database Manager]
+    CC --> DD[database_manager.py]
+    DD --> EE[/api/database/*]
+    EE --> FF[Connection Setup]
+    FF --> GG[Query Interface]
+    GG --> HH[Results Visualization]
+    
+    %% AI Interactions Flow
+    I --> II[AI Chat Interface]
+    II --> JJ[ai_providers.py]
+    JJ --> KK[/api/ai/*]
+    KK --> LL{Select AI Model}
+    LL --> MM[OpenAI GPT]
+    LL --> NN[Local Models]
+    LL --> OO[Claude API]
+    MM --> PP[AI Response]
+    NN --> PP
+    OO --> PP
+    PP --> QQ[Code Generation]
+    QQ --> RR[Analysis Results]
+    
+    %% Web Scraping Flow
+    I --> SS[Web Scraper]
+    SS --> TT[web_scraper_manager.py]
+    TT --> UU[/api/scraper/*]
+    UU --> VV[URL Input]
+    VV --> WW[Content Extraction]
+    WW --> XX[Data Processing]
+    XX --> YY[Export Options]
+    
+    %% Visualization Flow
+    I --> ZZ[Data Visualization]
+    ZZ --> AAA[visualization_manager.py]
+    AAA --> BBB[/api/viz/*]
+    BBB --> CCC[Chart Creation]
+    CCC --> DDD[Dashboard Building]
+    DDD --> EEE[Report Generation]
+    
+    %% Deployment Flow
+    I --> FFF[Deploy Project]
+    FFF --> GGG[deployment_manager.py]
+    GGG --> HHH[/api/deployment/*]
+    HHH --> III{Select Platform}
+    III --> JJJ[Replit Deploy]
+    III --> KKK[AWS Deploy]
+    III --> LLL[Docker Deploy]
+    JJJ --> MMM[Build Process]
+    KKK --> MMM
+    LLL --> MMM
+    MMM --> NNN[Live Application]
+    
+    %% Authentication Flow
+    A --> OOO{User Authenticated?}
+    OOO -->|No| PPP[Login/Register]
+    PPP --> QQQ[authentication_manager.py]
+    QQQ --> RRR[/api/auth/*]
+    RRR --> SSS[Session Created]
+    SSS --> C
+    OOO -->|Yes| C
+    
+    %% Specialized Labs Flow
+    D --> TTT[Agent Development]
+    TTT --> UUU[AI Model Configuration]
+    UUU --> VVV[Agent Testing]
+    VVV --> WWW[Deployment]
+    
+    E --> XXX[API Key Management]
+    XXX --> YYY[Service Testing]
+    YYY --> ZZZ[Usage Monitoring]
+    
+    F --> AAAA[Tool Creation]
+    AAAA --> BBBB[Integration Testing]
+    BBBB --> CCCC[Workflow Automation]
+    
+    %% Styling
+    classDef entryPoint fill:#e1f5fe
+    classDef backend fill:#f3e5f5
+    classDef api fill:#e8f5e8
+    classDef feature fill:#fff3e0
+    classDef output fill:#fce4ec
+    
+    class A,B,C,D,E,F,G entryPoint
+    class K,R,X,DD,JJ,TT,AAA,GGG,QQQ backend
+    class L,S,Y,EE,KK,UU,BBB,HHH,RRR api
+    class M,T,Z,FF,LL,VV,CCC,III feature
+    class P,U,BB,HH,PP,YY,EEE,NNN output

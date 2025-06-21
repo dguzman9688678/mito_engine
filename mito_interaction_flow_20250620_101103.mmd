@@ -1,0 +1,29 @@
+
+graph TD
+    TextSelect[User Selects Text] --> SelectionDetected{Selection Detected?}
+    SelectionDetected -->|Yes| ShowToolbar[Show Selection Toolbar]
+    SelectionDetected -->|No| RightClick{Right Click?}
+    
+    ShowToolbar --> CopyBtn[📋 Copy]
+    ShowToolbar --> SearchBtn[🔍 Search]
+    ShowToolbar --> EditBtn[✏️ Edit]
+    ShowToolbar --> HighlightBtn[🎯 Highlight]
+    ShowToolbar --> ExportBtn[📤 Export]
+    
+    RightClick -->|Yes| ContextMenu[Show Context Menu]
+    RightClick -->|No| GlobalShortcuts{Keyboard Shortcut?}
+    
+    ContextMenu --> CopySelection[Copy Selection]
+    ContextMenu --> CopyAllText[Copy All Text]
+    ContextMenu --> CopyData[Copy Structured Data]
+    ContextMenu --> CopyJSON[Copy as JSON]
+    
+    GlobalShortcuts -->|Ctrl+C| CopySelected[Copy Selected Content]
+    GlobalShortcuts -->|Ctrl+V| PasteContent[Paste Content]
+    GlobalShortcuts -->|Ctrl+A| SelectAll[Select All Content]
+    
+    CopyBtn --> Clipboard[Copy to Clipboard]
+    SearchBtn --> OpenSearch[Open Google Search]
+    EditBtn --> InPlaceEdit[Edit Text in Place]
+    HighlightBtn --> HighlightText[Highlight with Yellow]
+    ExportBtn --> ExportJSON[Export as JSON]

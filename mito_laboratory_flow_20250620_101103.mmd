@@ -1,0 +1,43 @@
+
+graph LR
+    User([User Access]) --> Auth{Admin Auth?}
+    Auth -->|Yes| LabInterface[Laboratory Interface]
+    Auth -->|No| Login[Login Required]
+    
+    LabInterface --> APIKeyLab[🔑 API Key Lab]
+    LabInterface --> ToolLab[🛠️ Tool Lab]
+    LabInterface --> AgentLab[🤖 Agent Lab]
+    LabInterface --> BlueprintLab[📋 Blueprint Lab]
+    LabInterface --> DeployLab[🚀 Deploy Lab]
+    LabInterface --> CodeEditor[💻 Code Editor]
+    
+    %% API Key Lab
+    APIKeyLab --> CreateKey[Create API Key]
+    APIKeyLab --> ManagePerms[Manage Permissions]
+    APIKeyLab --> AuditKeys[Audit Key Usage]
+    
+    %% Tool Lab
+    ToolLab --> LoadTools[Load 10+ Tools]
+    ToolLab --> ConfigTools[Configure Tools]
+    ToolLab --> MonitorTools[Monitor Status]
+    
+    %% Agent Lab
+    AgentLab --> CreateAgent[Create AI Agent]
+    AgentLab --> TrainAgent[Train Agent]
+    AgentLab --> Visualize3D[3D Visualization]
+    
+    %% Blueprint Lab
+    BlueprintLab --> CreateDoc[Create Documentation]
+    BlueprintLab --> VersionControl[Version Control]
+    BlueprintLab --> SearchDocs[Search Documents]
+    
+    %% Deploy Lab
+    DeployLab --> SelectEnv[Select Environment]
+    DeployLab --> ConfigDeploy[Configure Deployment]
+    DeployLab --> MonitorDeploy[Monitor Deployment]
+    
+    %% Code Editor
+    CodeEditor --> EditCode[Edit Code]
+    CodeEditor --> SyntaxCheck[Syntax Validation]
+    CodeEditor --> CopyPaste[Copy/Paste System]
+    CodeEditor --> Highlight[Text Highlighting]

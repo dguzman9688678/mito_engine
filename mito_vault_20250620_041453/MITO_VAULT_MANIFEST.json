@@ -1,0 +1,338 @@
+{
+  "creation_time": "2025-06-20T04:14:53.402263-07:00",
+  "version": "MITO Engine v1.2.0",
+  "creator": "Daniel Guzman",
+  "components": {
+    "app.py": {
+      "size": 167447,
+      "hash": "ad536efbc8249d836b790734a903c8f1dfd68c5652b73314277319dcdb2abcfd",
+      "backup_location": "mito_vault_20250620_041453/core/app.py"
+    },
+    "main.py": {
+      "size": 278,
+      "hash": "52c273c257a3fb25bb1a1564233d70f3a1dde16997fbeaa13296bcc535007773",
+      "backup_location": "mito_vault_20250620_041453/core/main.py"
+    },
+    "models.py": {
+      "size": 5091,
+      "hash": "88cbe64744bc3ac6e1194fec11dab1fb30851bb6c94e21f8005f83bead96d7a6",
+      "backup_location": "mito_vault_20250620_041453/core/models.py"
+    },
+    "config.py": {
+      "size": 1573,
+      "hash": "b81b0dcc4bf4e2eaec9385b1cff6717eb5cf0deb7ca54ca74f325888bf35e674",
+      "backup_location": "mito_vault_20250620_041453/core/config.py"
+    },
+    "ai_providers.py": {
+      "size": 13021,
+      "hash": "b000a4d0b63f9d153454d2ea90b8190ddcd54f77de0de89d879eabfc1d534270",
+      "backup_location": "mito_vault_20250620_041453/core/ai_providers.py"
+    },
+    "admin_auth.py": {
+      "size": 5613,
+      "hash": "9842fde8306f2c5628494b3b7cd2d488a5f1d9cb5ba1fab63d3fd8e4d8960921",
+      "backup_location": "mito_vault_20250620_041453/core/admin_auth.py"
+    },
+    "memory_manager.py": {
+      "size": 23789,
+      "hash": "dddc20f20d8794f49b6d304f03b13055ce0fc3488109470051d8ab68ba47ce70",
+      "backup_location": "mito_vault_20250620_041453/core/memory_manager.py"
+    },
+    "mito_weights.py": {
+      "size": 8192,
+      "hash": "42abeae5fc5ed5e180d986b4777e3aee56d90d04fbff96782ef6095addfe600b",
+      "backup_location": "mito_vault_20250620_041453/core/mito_weights.py"
+    },
+    "laboratory/agent_lab.py": {
+      "size": 53323,
+      "hash": "e6f0070fb1488620ec46ba0cdc1bf0bf1789350f2b4c67f14a919996bae4f01c",
+      "type": "laboratory_module"
+    },
+    "laboratory/api_key_lab.py": {
+      "size": 41013,
+      "hash": "e2883f7154e52e2cc11de4f2ea71f83dd1536a093661e53a0ae6c1c96aead66c",
+      "type": "laboratory_module"
+    },
+    "laboratory/tool_lab.py": {
+      "size": 47276,
+      "hash": "1aa4cec5c7fd726d7ffb2e413e2e5be875edf743262c019985f0a95d82f58d47",
+      "type": "laboratory_module"
+    },
+    "laboratory/digital_blueprints.py": {
+      "size": 55274,
+      "hash": "317dc6ab95021d8b079e738bf5c492c1dd6a16f6583ae4c37fa78a7c58b47687",
+      "type": "laboratory_module"
+    },
+    "laboratory/deployment_matrix.py": {
+      "size": 46788,
+      "hash": "1851ec2084757b93c3354ac8963747f0091fcc895fdafd292ea953fce7a762e4",
+      "type": "laboratory_module"
+    },
+    "laboratory/unified_lab.py": {
+      "size": 105285,
+      "hash": "d85083b8bba1c0953c5ed352cd5c63d9bc51be0ea819bab59ddbaa647d06971f",
+      "type": "laboratory_module"
+    },
+    "laboratory/code_generator.py": {
+      "size": 85007,
+      "hash": "c566e3b4868513c9bfa75cd996202520df1e16cbc2b0b287e5e4245f9902bdfe",
+      "type": "laboratory_module"
+    },
+    "directory/templates": {
+      "type": "directory",
+      "file_count": 15
+    },
+    "directory/static": {
+      "type": "directory",
+      "file_count": 3
+    },
+    "directory/docs": {
+      "type": "directory",
+      "file_count": 19
+    }
+  },
+  "databases": {
+    "mito_sessions.db": {
+      "size": 49152,
+      "tables": [
+        "user_sessions",
+        "user_profiles",
+        "audit_trail",
+        "sqlite_sequence",
+        "user_2fa",
+        "rbac_log",
+        "user_interactions",
+        "session_heatmaps"
+      ],
+      "table_count": 8
+    },
+    "mito_vault.db": {
+      "size": 20480,
+      "tables": [
+        "secrets",
+        "sqlite_sequence",
+        "access_log"
+      ],
+      "table_count": 3
+    },
+    "mito_operations.db": {
+      "size": 24576,
+      "tables": [
+        "command_history",
+        "sqlite_sequence",
+        "session_snapshots",
+        "scheduled_tasks"
+      ],
+      "table_count": 4
+    },
+    "mito_webhooks.db": {
+      "size": 20480,
+      "tables": [
+        "webhooks",
+        "sqlite_sequence",
+        "webhook_logs"
+      ],
+      "table_count": 3
+    },
+    "search_engine.db": {
+      "size": 65536,
+      "tables": [
+        "pages",
+        "sqlite_sequence",
+        "links",
+        "word_index",
+        "search_queries"
+      ],
+      "table_count": 5
+    },
+    "simple_search.db": {
+      "size": 16384,
+      "tables": [
+        "documents",
+        "sqlite_sequence",
+        "search_index"
+      ],
+      "table_count": 3
+    },
+    "simple_packages.db": {
+      "size": 16384,
+      "tables": [
+        "packages",
+        "sqlite_sequence"
+      ],
+      "table_count": 2
+    },
+    "code_templates.db": {
+      "size": 98304,
+      "tables": [
+        "templates",
+        "sqlite_sequence",
+        "generation_history",
+        "template_ratings"
+      ],
+      "table_count": 4
+    },
+    "ml_analytics.db": {
+      "size": 36864,
+      "tables": [
+        "ml_models",
+        "predictions",
+        "sqlite_sequence",
+        "anomalies",
+        "user_interactions",
+        "recommendations"
+      ],
+      "table_count": 6
+    },
+    "knowledge_base.db": {
+      "size": 0,
+      "tables": [],
+      "table_count": 0
+    },
+    "project_management.db": {
+      "size": 0,
+      "tables": [],
+      "table_count": 0
+    },
+    "audit_logs.db": {
+      "size": 81920,
+      "tables": [
+        "audit_events",
+        "compliance_rules",
+        "compliance_violations",
+        "sqlite_sequence",
+        "security_incidents",
+        "audit_statistics"
+      ],
+      "table_count": 6
+    },
+    "api_key_lab.db": {
+      "size": 61440,
+      "tables": [
+        "api_keys",
+        "access_logs",
+        "key_integrations",
+        "usage_analytics",
+        "sqlite_sequence"
+      ],
+      "table_count": 5
+    },
+    "tool_lab.db": {
+      "size": 28672,
+      "tables": [
+        "tools",
+        "tool_executions",
+        "tool_configurations"
+      ],
+      "table_count": 3
+    },
+    "agent_lab.db": {
+      "size": 36864,
+      "tables": [
+        "agents",
+        "datasets",
+        "training_sessions",
+        "agent_interactions"
+      ],
+      "table_count": 4
+    },
+    "digital_blueprints.db": {
+      "size": 69632,
+      "tables": [
+        "documents",
+        "folders",
+        "document_analytics",
+        "sqlite_sequence",
+        "document_versions",
+        "access_logs",
+        "comments"
+      ],
+      "table_count": 7
+    },
+    "deployment_matrix.db": {
+      "size": 45056,
+      "tables": [
+        "deployments",
+        "deployment_metrics",
+        "sqlite_sequence",
+        "global_nodes",
+        "deployment_events",
+        "release_pipelines"
+      ],
+      "table_count": 6
+    },
+    "unified_lab.db": {
+      "size": 94208,
+      "tables": [
+        "api_keys",
+        "sqlite_sequence",
+        "tools",
+        "agents",
+        "documents",
+        "deployments",
+        "code_files"
+      ],
+      "table_count": 7
+    },
+    "mito_memory.db": {
+      "size": 24576,
+      "tables": [
+        "conversation_memory",
+        "sqlite_sequence",
+        "system_memory",
+        "user_context",
+        "memory_metadata"
+      ],
+      "table_count": 5
+    },
+    "mito_unified.db": {
+      "size": 45056,
+      "tables": [
+        "conversation_memory",
+        "sqlite_sequence",
+        "system_memory",
+        "api_keys",
+        "tools",
+        "agents",
+        "audit_logs"
+      ],
+      "table_count": 7
+    }
+  },
+  "configurations": {
+    ".env": {
+      "size": 69,
+      "type": "configuration"
+    },
+    ".replit": {
+      "size": 1003,
+      "type": "configuration"
+    },
+    "pyproject.toml": {
+      "size": 92029,
+      "type": "configuration"
+    },
+    "uv.lock": {
+      "size": 487209,
+      "type": "configuration"
+    },
+    "cookies.txt": {
+      "size": 282,
+      "type": "configuration"
+    }
+  },
+  "documentation": {},
+  "security": {
+    "vault_master.key": {
+      "size": 44,
+      "permissions": "600",
+      "type": "encrypted_key"
+    }
+  },
+  "system_info": {
+    "total_files": 117,
+    "vault_size_mb": 3.32,
+    "backup_timestamp": "20250620_041453",
+    "platform": "Replit Infrastructure"
+  }
+}

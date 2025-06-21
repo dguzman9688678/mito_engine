@@ -1,0 +1,308 @@
+{
+  "timestamp": "2025-06-20T07:49:50.369609",
+  "total_checks": 8,
+  "passed": 7,
+  "failed": 1,
+  "errors": 0,
+  "success_rate": 0.875,
+  "production_ready": true,
+  "checks": {
+    "Python Environment": {
+      "status": "PASS",
+      "success": true,
+      "details": {
+        "version": "3.11.10",
+        "implementation": "CPython",
+        "executable": "/home/runner/workspace/.pythonlibs/bin/python3",
+        "platform": "Linux-6.2.16-x86_64-with-glibc2.40"
+      },
+      "errors": [],
+      "warnings": []
+    },
+    "Dependencies": {
+      "status": "FAIL",
+      "success": false,
+      "details": {
+        "required_installed": [
+          "flask",
+          "flask-cors",
+          "flask-sqlalchemy",
+          "werkzeug",
+          "requests",
+          "pandas",
+          "numpy",
+          "openai",
+          "psutil",
+          "cryptography",
+          "qrcode",
+          "schedule",
+          "nltk"
+        ],
+        "required_missing": [
+          "beautifulsoup4",
+          "scikit-learn",
+          "pillow",
+          "python-gnupg",
+          "spacy"
+        ],
+        "optional_installed": [],
+        "optional_missing": [
+          "sentence-transformers",
+          "faiss-cpu",
+          "transformers",
+          "torch",
+          "boto3",
+          "azure-identity",
+          "google-cloud-compute",
+          "feedparser"
+        ]
+      },
+      "errors": [
+        "Missing required package: beautifulsoup4",
+        "Missing required package: scikit-learn",
+        "Missing required package: pillow",
+        "Missing required package: python-gnupg",
+        "Missing required package: spacy"
+      ],
+      "warnings": []
+    },
+    "Database Systems": {
+      "status": "PASS",
+      "success": true,
+      "details": {
+        "databases": {
+          "audit_logs.db": {
+            "status": "healthy",
+            "tables": 6,
+            "table_names": [
+              "audit_events",
+              "compliance_rules",
+              "compliance_violations",
+              "sqlite_sequence",
+              "security_incidents",
+              "audit_statistics"
+            ],
+            "integrity": "ok"
+          },
+          "ml_analytics.db": {
+            "status": "healthy",
+            "tables": 6,
+            "table_names": [
+              "ml_models",
+              "predictions",
+              "sqlite_sequence",
+              "anomalies",
+              "user_interactions",
+              "recommendations"
+            ],
+            "integrity": "ok"
+          },
+          "knowledge_base.db": {
+            "status": "healthy",
+            "tables": 0,
+            "table_names": [],
+            "integrity": "ok"
+          },
+          "project_management.db": {
+            "status": "healthy",
+            "tables": 0,
+            "table_names": [],
+            "integrity": "ok"
+          },
+          "code_templates.db": {
+            "status": "healthy",
+            "tables": 4,
+            "table_names": [
+              "templates",
+              "sqlite_sequence",
+              "generation_history",
+              "template_ratings"
+            ],
+            "integrity": "ok"
+          },
+          "simple_search.db": {
+            "status": "healthy",
+            "tables": 3,
+            "table_names": [
+              "documents",
+              "sqlite_sequence",
+              "search_index"
+            ],
+            "integrity": "ok"
+          }
+        }
+      },
+      "errors": [],
+      "warnings": []
+    },
+    "Configuration": {
+      "status": "PASS",
+      "success": true,
+      "details": {
+        "environment_variables": {
+          "SESSION_SECRET": "configured",
+          "DATABASE_URL": "configured",
+          "OPENAI_API_KEY": "configured",
+          "AWS_ACCESS_KEY_ID": "missing",
+          "AZURE_SUBSCRIPTION_ID": "missing"
+        },
+        "file_permissions": {
+          "app.py": {
+            "readable": true,
+            "writable": true,
+            "executable": false,
+            "size": 154725
+          },
+          "main.py": {
+            "readable": true,
+            "writable": true,
+            "executable": false,
+            "size": 278
+          },
+          "audit.py": {
+            "readable": true,
+            "writable": true,
+            "executable": false,
+            "size": 37066
+          }
+        },
+        "missing_critical": [],
+        "missing_optional": [
+          "AWS_ACCESS_KEY_ID",
+          "AZURE_SUBSCRIPTION_ID"
+        ]
+      },
+      "errors": [],
+      "warnings": [
+        "Missing optional environment variable: AWS_ACCESS_KEY_ID",
+        "Missing optional environment variable: AZURE_SUBSCRIPTION_ID"
+      ]
+    },
+    "Network Connectivity": {
+      "status": "PASS",
+      "success": true,
+      "details": {
+        "network": {
+          "port_5000": {
+            "available": false,
+            "status": "in_use"
+          }
+        },
+        "connectivity": {
+          "https://api.openai.com": {
+            "status": "unreachable",
+            "error": "HTTP Error 421: Misdirected Request"
+          },
+          "https://github.com": {
+            "status": "reachable",
+            "response_code": 200
+          },
+          "https://pypi.org": {
+            "status": "reachable",
+            "response_code": 200
+          }
+        }
+      },
+      "errors": [],
+      "warnings": []
+    },
+    "Security Configuration": {
+      "status": "PASS",
+      "success": true,
+      "details": {
+        "file_security": {
+          ".env": {
+            "permissions": "644",
+            "secure": false
+          },
+          "vault_master.key": {
+            "permissions": "600",
+            "secure": true
+          },
+          "ssl_context": "available"
+        },
+        "issues": [
+          "Insecure permissions on .env: 644"
+        ]
+      },
+      "errors": [],
+      "warnings": [
+        "Insecure permissions on .env: 644"
+      ]
+    },
+    "MITO Components": {
+      "status": "PASS",
+      "success": true,
+      "details": {
+        "components": {
+          "nlp_engine": {
+            "status": "operational",
+            "file_size": 23994,
+            "last_modified": "2025-06-20T07:23:21.581225"
+          },
+          "code_generator": {
+            "status": "operational",
+            "file_size": 85007,
+            "last_modified": "2025-06-20T07:28:40.027569"
+          },
+          "project_manager": {
+            "status": "syntax_error",
+            "error": "f-string: f-string: unmatched '[' (project_manager.py, line 741)"
+          },
+          "ml_analytics": {
+            "status": "operational",
+            "file_size": 43697,
+            "last_modified": "2025-06-20T07:33:08.957015"
+          },
+          "cloud_services": {
+            "status": "operational",
+            "file_size": 31223,
+            "last_modified": "2025-06-20T07:34:52.664802"
+          },
+          "knowledge_base": {
+            "status": "operational",
+            "file_size": 37508,
+            "last_modified": "2025-06-20T07:36:57.556545"
+          },
+          "search_engine": {
+            "status": "operational",
+            "file_size": 16228,
+            "last_modified": "2025-06-20T07:19:54.547652"
+          },
+          "audit_system": {
+            "status": "operational",
+            "file_size": 37066,
+            "last_modified": "2025-06-20T07:45:21.108504"
+          },
+          "security_manager": {
+            "status": "operational",
+            "file_size": 19392,
+            "last_modified": "2025-06-20T06:59:38.533159"
+          }
+        },
+        "working_count": 8,
+        "total_count": 9,
+        "operational_rate": 0.8888888888888888
+      },
+      "errors": [
+        "Syntax error in project_manager: f-string: f-string: unmatched '[' (project_manager.py, line 741)"
+      ],
+      "warnings": []
+    },
+    "System Performance": {
+      "status": "PASS",
+      "success": true,
+      "details": {
+        "cpu_percent": 35.7,
+        "memory_percent": 67.0,
+        "memory_available_gb": 20.70702362060547,
+        "disk_percent": 0.3,
+        "disk_free_gb": 253.2049560546875,
+        "import_time_seconds": 6.4373016357421875e-06,
+        "performance_issues": []
+      },
+      "errors": [],
+      "warnings": []
+    }
+  }
+}

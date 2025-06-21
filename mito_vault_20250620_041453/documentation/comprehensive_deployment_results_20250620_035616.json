@@ -1,0 +1,248 @@
+{
+  "timestamp": "2025-06-20T03:56:09.465869-07:00",
+  "tests": {
+    "Environment Check": {
+      "python_version": {
+        "status": "fail",
+        "version": "3.11"
+      },
+      "environment_vars": {
+        "status": "pass",
+        "required_present": true
+      },
+      "packages": {
+        "status": "pass",
+        "installed": 6,
+        "total": 6
+      }
+    },
+    "System Resources": {
+      "memory": {
+        "status": "pass",
+        "available_gb": 11.65
+      },
+      "disk": {
+        "status": "pass",
+        "free_gb": 253.19
+      },
+      "cpu": {
+        "status": "pass",
+        "usage_percent": 39.8
+      }
+    },
+    "API Endpoints": {
+      "/api/health": {
+        "status": "pass",
+        "status_code": 200,
+        "response_time_ms": 13.83
+      },
+      "/api/status": {
+        "status": "pass",
+        "status_code": 200,
+        "response_time_ms": 4.42
+      },
+      "/api/providers": {
+        "status": "pass",
+        "status_code": 200,
+        "response_time_ms": 4.02
+      },
+      "/api/lab": {
+        "status": "pass",
+        "status_code": 200,
+        "response_time_ms": 4.93
+      },
+      "/api/keys": {
+        "status": "pass",
+        "status_code": 200,
+        "response_time_ms": 3.93
+      },
+      "/api/tools": {
+        "status": "pass",
+        "status_code": 200,
+        "response_time_ms": 3.62
+      },
+      "/api/agents": {
+        "status": "pass",
+        "status_code": 200,
+        "response_time_ms": 4.31
+      },
+      "/api/blueprints": {
+        "status": "pass",
+        "status_code": 200,
+        "response_time_ms": 3.98
+      },
+      "/api/deploy": {
+        "status": "pass",
+        "status_code": 200,
+        "response_time_ms": 3.44
+      },
+      "/api/memory": {
+        "status": "pass",
+        "status_code": 200,
+        "response_time_ms": 19.46
+      },
+      "/api/link-repair/anchors": {
+        "status": "pass",
+        "status_code": 200,
+        "response_time_ms": 3.72
+      },
+      "/api/link-repair/navigation": {
+        "status": "pass",
+        "status_code": 200,
+        "response_time_ms": 3.13
+      }
+    },
+    "Database Connectivity": {
+      "connection": {
+        "status": "pass",
+        "api_response": 200
+      },
+      "config": {
+        "status": "pass",
+        "configured": true
+      }
+    },
+    "Security Tests": {
+      "admin_protection": {
+        "status": "fail",
+        "protected": true
+      },
+      "input_validation": {
+        "status": "pass",
+        "validates": true
+      },
+      "https": {
+        "status": "warning",
+        "enforced": false
+      }
+    },
+    "Performance Tests": {
+      "response_times": {
+        "status": "pass",
+        "average_ms": 27.44
+      },
+      "memory_usage": {
+        "status": "pass",
+        "usage_mb": 39.47
+      }
+    },
+    "Integration Tests": {
+      "user_workflow": {
+        "status": "pass",
+        "steps_passed": 4,
+        "total_steps": 4
+      },
+      "api_workflow": {
+        "status": "pass",
+        "generation_works": true
+      }
+    },
+    "File Operations": {
+      "file_upload": {
+        "status": "pass",
+        "upload_works": true
+      },
+      "permissions": {
+        "status": "pass",
+        "accessible_paths": 3
+      }
+    },
+    "Laboratory Systems": {
+      "/lab-mode": {
+        "status": "pass",
+        "accessible": true
+      },
+      "/workbench": {
+        "status": "pass",
+        "accessible": true
+      },
+      "/giant-workbench": {
+        "status": "pass",
+        "accessible": true
+      },
+      "/memory-manager": {
+        "status": "pass",
+        "accessible": true
+      },
+      "/code-editor": {
+        "status": "pass",
+        "accessible": true
+      },
+      "/mito-files": {
+        "status": "pass",
+        "accessible": true
+      }
+    },
+    "Monitoring Systems": {
+      "health_checks": {
+        "status": "pass",
+        "working_endpoints": 2
+      },
+      "logging": {
+        "status": "pass",
+        "log_files_present": true
+      },
+      "notifications": {
+        "status": "pass",
+        "system_available": true
+      }
+    },
+    "Error Handling": {
+      "404_handling": {
+        "status": "pass",
+        "handles_404": true
+      },
+      "bad_json": {
+        "status": "fail",
+        "rejects_bad_json": false
+      }
+    },
+    "Load Testing": {
+      "concurrent_requests": {
+        "status": "pass",
+        "success_rate": 1.0
+      }
+    },
+    "Backup Systems": {
+      "backup_system": {
+        "status": "pass",
+        "backup_found": true
+      }
+    },
+    "Network Tests": {
+      "external_connectivity": {
+        "status": "pass",
+        "can_reach_external": true
+      },
+      "local_connectivity": {
+        "status": "pass",
+        "local_accessible": true
+      }
+    },
+    "Authentication": {
+      "admin_auth": {
+        "status": "fail",
+        "protected": false
+      },
+      "session_handling": {
+        "status": "pass",
+        "manages_sessions": true
+      }
+    }
+  },
+  "summary": {
+    "total": 46,
+    "passed": 41,
+    "failed": 4,
+    "warnings": 1
+  },
+  "deployment_assessment": {
+    "readiness": "NEEDS ATTENTION",
+    "confidence": "LOW",
+    "success_rate": 89.1,
+    "total_tests": 46,
+    "passed_tests": 41,
+    "failed_tests": 4,
+    "warnings": 1
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "original_filename": "test_deploy.txt",
+  "stored_filename": "20250620_105732_test_deploy.txt",
+  "upload_time": "2025-06-20T10:57:33.766542",
+  "file_type": "text/plain",
+  "file_size": 28,
+  "content_preview": "Deployment test file content",
+  "analysis": "Based on the filename \"test_deploy.txt,\" the file appears to be a deployment test file. The key information contained likely includes configurations, instructions, or data relevant to deploying a specific application or system. For AI learning, this file could be valuable for training AI models on deployment processes, understanding deployment best practices, or automating deployment workflows. \n\nSuggested knowledge categories:\n1. Deployment processes\n2. Configuration management\n3. Automation techniques\n4. Version control integration\n\nThis file provides practical insights into the deployment phase of software development, which is crucial for AI systems to be effectively implemented and maintained.",
+  "learned": false
+}

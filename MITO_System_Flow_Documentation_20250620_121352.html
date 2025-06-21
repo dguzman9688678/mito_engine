@@ -1,0 +1,495 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MITO Engine - Complete System Flow</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+        }
+        .header h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin: 0;
+            font-weight: 300;
+        }
+        .section {
+            margin: 30px 0;
+            padding: 20px;
+            background: #f8f9ff;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+        }
+        .section h2 {
+            color: #667eea;
+            margin-top: 0;
+            font-size: 1.5em;
+        }
+        .flow-item {
+            background: white;
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .flow-item h3 {
+            color: #764ba2;
+            margin: 0 0 10px 0;
+            font-size: 1.2em;
+        }
+        .api-list {
+            background: #e8f5e8;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: monospace;
+            font-size: 0.9em;
+        }
+        .user-step {
+            background: #fff3e0;
+            padding: 8px 12px;
+            margin: 5px 0;
+            border-radius: 5px;
+            border-left: 3px solid #ff9800;
+        }
+        .mermaid-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .integration-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .integration-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .timestamp {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>MITO Engine v1.2.0</h1>
+            <p>Complete System Flow & User Journey Documentation</p>
+            <p><strong>Created by:</strong> Daniel Guzman | <strong>Contact:</strong> guzman.danield@outlook.com</p>
+        </div>
+
+        <div class="section">
+            <h2>System Architecture Overview</h2>
+            <div class="mermaid-container">
+                <div class="mermaid">
+                    
+graph TD
+    %% Entry Points
+    A[User Visits MITO Engine] --> B{Select Interface}
+    B --> C[Main Workbench /]
+    B --> D[Agent Lab /agent-lab]
+    B --> E[API Key Lab /api-key-lab]
+    B --> F[Tool Lab /tool-lab]
+    B --> G[Unified Lab /unified-lab]
+    
+    %% Main Workbench Flow
+    C --> H[Giant Workbench Interface]
+    H --> I{Choose Feature}
+    
+    %% File Management Flow
+    I --> J[File Browser]
+    J --> K[file_manager.py]
+    K --> L[/api/files/*]
+    L --> M[Browse/Edit/Upload Files]
+    M --> N[Code Editor Opens]
+    N --> O[Syntax Highlighting]
+    O --> P[Save Changes]
+    
+    %% Terminal Operations Flow
+    I --> Q[Terminal Access]
+    Q --> R[terminal_manager.py]
+    R --> S[/api/terminal/*]
+    S --> T[Command Execution]
+    T --> U[Real-time Results]
+    U --> V[Command History]
+    
+    %% Project Management Flow
+    I --> W[New Project]
+    W --> X[project_manager.py]
+    X --> Y[/api/projects/*]
+    Y --> Z[Template Selection]
+    Z --> AA[Project Scaffolding]
+    AA --> BB[Auto-generated Structure]
+    
+    %% Database Operations Flow
+    I --> CC[Database Manager]
+    CC --> DD[database_manager.py]
+    DD --> EE[/api/database/*]
+    EE --> FF[Connection Setup]
+    FF --> GG[Query Interface]
+    GG --> HH[Results Visualization]
+    
+    %% AI Interactions Flow
+    I --> II[AI Chat Interface]
+    II --> JJ[ai_providers.py]
+    JJ --> KK[/api/ai/*]
+    KK --> LL{Select AI Model}
+    LL --> MM[OpenAI GPT]
+    LL --> NN[Local Models]
+    LL --> OO[Claude API]
+    MM --> PP[AI Response]
+    NN --> PP
+    OO --> PP
+    PP --> QQ[Code Generation]
+    QQ --> RR[Analysis Results]
+    
+    %% Web Scraping Flow
+    I --> SS[Web Scraper]
+    SS --> TT[web_scraper_manager.py]
+    TT --> UU[/api/scraper/*]
+    UU --> VV[URL Input]
+    VV --> WW[Content Extraction]
+    WW --> XX[Data Processing]
+    XX --> YY[Export Options]
+    
+    %% Visualization Flow
+    I --> ZZ[Data Visualization]
+    ZZ --> AAA[visualization_manager.py]
+    AAA --> BBB[/api/viz/*]
+    BBB --> CCC[Chart Creation]
+    CCC --> DDD[Dashboard Building]
+    DDD --> EEE[Report Generation]
+    
+    %% Deployment Flow
+    I --> FFF[Deploy Project]
+    FFF --> GGG[deployment_manager.py]
+    GGG --> HHH[/api/deployment/*]
+    HHH --> III{Select Platform}
+    III --> JJJ[Replit Deploy]
+    III --> KKK[AWS Deploy]
+    III --> LLL[Docker Deploy]
+    JJJ --> MMM[Build Process]
+    KKK --> MMM
+    LLL --> MMM
+    MMM --> NNN[Live Application]
+    
+    %% Authentication Flow
+    A --> OOO{User Authenticated?}
+    OOO -->|No| PPP[Login/Register]
+    PPP --> QQQ[authentication_manager.py]
+    QQQ --> RRR[/api/auth/*]
+    RRR --> SSS[Session Created]
+    SSS --> C
+    OOO -->|Yes| C
+    
+    %% Specialized Labs Flow
+    D --> TTT[Agent Development]
+    TTT --> UUU[AI Model Configuration]
+    UUU --> VVV[Agent Testing]
+    VVV --> WWW[Deployment]
+    
+    E --> XXX[API Key Management]
+    XXX --> YYY[Service Testing]
+    YYY --> ZZZ[Usage Monitoring]
+    
+    F --> AAAA[Tool Creation]
+    AAAA --> BBBB[Integration Testing]
+    BBBB --> CCCC[Workflow Automation]
+    
+    %% Styling
+    classDef entryPoint fill:#e1f5fe
+    classDef backend fill:#f3e5f5
+    classDef api fill:#e8f5e8
+    classDef feature fill:#fff3e0
+    classDef output fill:#fce4ec
+    
+    class A,B,C,D,E,F,G entryPoint
+    class K,R,X,DD,JJ,TT,AAA,GGG,QQQ backend
+    class L,S,Y,EE,KK,UU,BBB,HHH,RRR api
+    class M,T,Z,FF,LL,VV,CCC,III feature
+    class P,U,BB,HH,PP,YY,EEE,NNN output
+
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Entry Points & User Access</h2>
+            <div class="flow-item">
+                <h3>Main Interface (/) - Primary Entry Point</h3>
+                <p>The main MITO Engine interface featuring the Giant Workbench with all core functionalities accessible from a single dashboard.</p>
+                <div class="user-step">User lands on homepage → Sees integrated workbench → Accesses all features seamlessly</div>
+            </div>
+            <div class="flow-item">
+                <h3>Specialized Laboratory Interfaces</h3>
+                <ul>
+                    <li><strong>Agent Lab (/agent-lab)</strong> - AI agent development and testing environment</li>
+                    <li><strong>API Key Lab (/api-key-lab)</strong> - Secure API key management and service testing</li>
+                    <li><strong>Tool Lab (/tool-lab)</strong> - Custom tool creation and workflow automation</li>
+                    <li><strong>Unified Lab (/unified-lab)</strong> - Combined laboratory features in one interface</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Core Feature Flows</h2>
+
+            <div class="flow-item">
+                <h3>File Management</h3>
+                <p><strong>Backend:</strong> file_manager.py</p>
+                <div class="api-list">
+                    <strong>API Endpoints:</strong><br>
+                    /api/files | /api/files/read | /api/files/write | /api/files/delete | /api/files/search
+                </div>
+                <p><strong>User Journey:</strong></p>
+                <div>
+<div class="user-step">User clicks 'File Browser' button</div><div class="user-step">System loads file_manager backend</div><div class="user-step">User navigates directory structure</div><div class="user-step">User selects file for editing/viewing</div><div class="user-step">Code editor opens with syntax highlighting</div><div class="user-step">User makes changes and saves</div>
+                </div>
+                <p><strong>Capabilities:</strong> browse_files, edit_files, upload_files, download_files, search_content</p>
+            </div>
+
+            <div class="flow-item">
+                <h3>Terminal Operations</h3>
+                <p><strong>Backend:</strong> terminal_manager.py</p>
+                <div class="api-list">
+                    <strong>API Endpoints:</strong><br>
+                    /api/terminal/execute | /api/terminal/history | /api/terminal/sessions
+                </div>
+                <p><strong>User Journey:</strong></p>
+                <div>
+<div class="user-step">User clicks 'Terminal' button</div><div class="user-step">System initializes terminal_manager</div><div class="user-step">Terminal interface opens</div><div class="user-step">User types commands</div><div class="user-step">System executes via subprocess</div><div class="user-step">Results displayed in real-time</div>
+                </div>
+                <p><strong>Capabilities:</strong> command_execution, session_management, command_history, system_info</p>
+            </div>
+
+            <div class="flow-item">
+                <h3>Code Editing</h3>
+                <p><strong>Backend:</strong> code_editor.py</p>
+                <div class="api-list">
+                    <strong>API Endpoints:</strong><br>
+                    /api/editor/open | /api/editor/save | /api/editor/format | /api/editor/open-files
+                </div>
+                <p><strong>User Journey:</strong></p>
+                <div>
+<div class="user-step">User opens file from browser</div><div class="user-step">Code editor loads with syntax detection</div><div class="user-step">User edits with highlighting and completion</div><div class="user-step">Auto-save triggers on changes</div><div class="user-step">Format code on demand</div>
+                </div>
+                <p><strong>Capabilities:</strong> syntax_highlighting, code_formatting, multi_file_editing, auto_completion</p>
+            </div>
+
+            <div class="flow-item">
+                <h3>Project Management</h3>
+                <p><strong>Backend:</strong> project_manager.py</p>
+                <div class="api-list">
+                    <strong>API Endpoints:</strong><br>
+                    /api/projects/templates | /api/projects/create | /api/projects | /api/projects/<id>/structure
+                </div>
+                <p><strong>User Journey:</strong></p>
+                <div>
+<div class="user-step">User clicks 'New Project'</div><div class="user-step">Template gallery loads</div><div class="user-step">User selects framework/template</div><div class="user-step">Project scaffolding generated</div><div class="user-step">Files and structure created automatically</div>
+                </div>
+                <p><strong>Capabilities:</strong> template_selection, project_creation, structure_analysis, dependency_management</p>
+            </div>
+
+            <div class="flow-item">
+                <h3>Database Operations</h3>
+                <p><strong>Backend:</strong> database_manager.py</p>
+                <div class="api-list">
+                    <strong>API Endpoints:</strong><br>
+                    /api/database/connections | /api/database/query | /api/database/tables | /api/database/stats
+                </div>
+                <p><strong>User Journey:</strong></p>
+                <div>
+<div class="user-step">User accesses 'Database' section</div><div class="user-step">Connection manager loads</div><div class="user-step">User selects/configures database</div><div class="user-step">Query interface opens</div><div class="user-step">Results displayed in tables/charts</div>
+                </div>
+                <p><strong>Capabilities:</strong> multi_db_support, query_execution, schema_management, data_visualization</p>
+            </div>
+
+            <div class="flow-item">
+                <h3>Deployment Tools</h3>
+                <p><strong>Backend:</strong> deployment_manager.py</p>
+                <div class="api-list">
+                    <strong>API Endpoints:</strong><br>
+                    /api/deployment/targets | /api/deployment/deploy | /api/deployment/status/<id> | /api/deployment/list
+                </div>
+                <p><strong>User Journey:</strong></p>
+                <div>
+<div class="user-step">User clicks 'Deploy' button</div><div class="user-step">Deployment targets load</div><div class="user-step">User selects platform (Replit/AWS/Docker)</div><div class="user-step">Build process initiates</div><div class="user-step">Real-time status updates</div><div class="user-step">Deployment completion notification</div>
+                </div>
+                <p><strong>Capabilities:</strong> multi_platform_deployment, status_monitoring, rollback_support, automated_builds</p>
+            </div>
+
+            <div class="flow-item">
+                <h3>Ai Interactions</h3>
+                <p><strong>Backend:</strong> ai_providers.py</p>
+                <div class="api-list">
+                    <strong>API Endpoints:</strong><br>
+                    /api/ai/chat | /api/ai/generate | /api/ai/analyze
+                </div>
+                <p><strong>User Journey:</strong></p>
+                <div>
+<div class="user-step">User types in AI chat interface</div><div class="user-step">System selects best available model</div><div class="user-step">Request processed through provider</div><div class="user-step">AI response with code/analysis</div><div class="user-step">User can iterate and refine</div>
+                </div>
+                <p><strong>Capabilities:</strong> multi_model_support, code_generation, analysis, conversation</p>
+            </div>
+
+            <div class="flow-item">
+                <h3>Web Scraping</h3>
+                <p><strong>Backend:</strong> web_scraper_manager.py</p>
+                <div class="api-list">
+                    <strong>API Endpoints:</strong><br>
+                    /api/scraper/scrape | /api/scraper/scrape-multiple | /api/scraper/search | /api/scraper/jobs
+                </div>
+                <p><strong>User Journey:</strong></p>
+                <div>
+<div class="user-step">User enters URL to scrape</div><div class="user-step">Scraper manager validates URL</div><div class="user-step">Content extraction begins</div><div class="user-step">Clean data displayed</div><div class="user-step">Export options provided</div>
+                </div>
+                <p><strong>Capabilities:</strong> single_url_scraping, batch_scraping, search_integration, data_extraction</p>
+            </div>
+
+            <div class="flow-item">
+                <h3>Data Visualization</h3>
+                <p><strong>Backend:</strong> visualization_manager.py</p>
+                <div class="api-list">
+                    <strong>API Endpoints:</strong><br>
+                    /api/viz/charts | /api/viz/charts/create | /api/viz/dashboards | /api/viz/reports/analytics
+                </div>
+                <p><strong>User Journey:</strong></p>
+                <div>
+<div class="user-step">User uploads/selects data</div><div class="user-step">Chart type selection interface</div><div class="user-step">Data mapping and configuration</div><div class="user-step">Chart generation and preview</div><div class="user-step">Dashboard assembly and sharing</div>
+                </div>
+                <p><strong>Capabilities:</strong> chart_creation, dashboard_building, report_generation, data_analysis</p>
+            </div>
+
+            <div class="flow-item">
+                <h3>Authentication</h3>
+                <p><strong>Backend:</strong> authentication_manager.py</p>
+                <div class="api-list">
+                    <strong>API Endpoints:</strong><br>
+                    /api/auth/register | /api/auth/login | /api/auth/logout | /api/auth/validate
+                </div>
+                <p><strong>User Journey:</strong></p>
+                <div>
+<div class="user-step">User accesses protected feature</div><div class="user-step">Login prompt appears</div><div class="user-step">Credentials validated</div><div class="user-step">Session established</div><div class="user-step">Access granted to features</div>
+                </div>
+                <p><strong>Capabilities:</strong> user_registration, secure_login, session_management, role_based_access</p>
+            </div>
+
+        </div>
+
+        <div class="section">
+            <h2>Specialized Laboratory Workflows</h2>
+
+            <div class="flow-item">
+                <h3>Agent Lab</h3>
+                <p><strong>Purpose:</strong> AI Agent Development and Testing</p>
+                <p><strong>Features:</strong> agent_creation, behavior_configuration, testing_environment, performance_monitoring</p>
+                <p><strong>User Journey:</strong></p>
+                <div>
+<div class="user-step">Enter Agent Lab interface</div><div class="user-step">Select agent template or create custom</div><div class="user-step">Configure AI model and parameters</div><div class="user-step">Define agent goals and constraints</div><div class="user-step">Test agent in sandbox environment</div><div class="user-step">Deploy to production with monitoring</div>
+                </div>
+            </div>
+
+            <div class="flow-item">
+                <h3>Api Key Lab</h3>
+                <p><strong>Purpose:</strong> API Key Management and Testing</p>
+                <p><strong>Features:</strong> key_storage, service_testing, usage_monitoring, security_validation</p>
+                <p><strong>User Journey:</strong></p>
+                <div>
+<div class="user-step">Access API Key Lab</div><div class="user-step">Add API keys for various services</div><div class="user-step">Test connectivity and permissions</div><div class="user-step">Monitor usage and quotas</div><div class="user-step">Manage key rotation and security</div>
+                </div>
+            </div>
+
+            <div class="flow-item">
+                <h3>Tool Lab</h3>
+                <p><strong>Purpose:</strong> Custom Tool Development</p>
+                <p><strong>Features:</strong> tool_creation, integration_testing, workflow_automation, tool_marketplace</p>
+                <p><strong>User Journey:</strong></p>
+                <div>
+<div class="user-step">Open Tool Lab interface</div><div class="user-step">Design custom tool or select template</div><div class="user-step">Configure inputs/outputs and logic</div><div class="user-step">Test tool functionality</div><div class="user-step">Integrate with main workflow</div><div class="user-step">Share or publish to marketplace</div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="section">
+            <h2>Data Flow & Processing</h2>
+            <div class="integration-grid">
+                <div class="integration-card">
+                    <h3>User Input Methods</h3>
+                    <ul>
+<li>Mouse clicks and keyboard input</li><li>File uploads and drag-drop</li><li>API requests and webhook calls</li><li>Voice commands (if enabled)</li><li>Touch gestures (mobile)</li>
+                    </ul>
+                </div>
+                <div class="integration-card">
+                    <h3>Processing Layers</h3>
+                    <ul>
+<li>Frontend JavaScript handlers</li><li>Flask route processing</li><li>Manager class methods</li><li>Database operations</li><li>External API calls</li><li>AI model inference</li>
+                    </ul>
+                </div>
+                <div class="integration-card">
+                    <h3>Output Channels</h3>
+                    <ul>
+<li>Real-time UI updates</li><li>WebSocket notifications</li><li>File downloads</li><li>Email notifications</li><li>API responses</li><li>Generated reports</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Integration Ecosystem</h2>
+            <div class="integration-grid">
+                <div class="integration-card">
+                    <h3>External Service Integrations</h3>
+                    <ul>
+<li>OpenAI GPT models</li><li>Cloud storage providers</li><li>Database systems</li><li>Deployment platforms</li><li>Authentication providers</li><li>Monitoring services</li>
+                    </ul>
+                </div>
+                <div class="integration-card">
+                    <h3>Internal System Connections</h3>
+                    <ul>
+<li>Cross-manager communication</li><li>Shared database access</li><li>Event system notifications</li><li>Cache layer coordination</li><li>Session state management</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="timestamp">
+            Generated on: 2025-06-20 12:13:52
+        </div>
+    </div>
+
+    <script>
+        mermaid.initialize({ startOnLoad: true, theme: 'default' });
+    </script>
+</body>
+</html>
