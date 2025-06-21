@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MITO Mobile Test</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0f172a;
+            color: #f1f5f9;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        
+        .header {
+            background: #1e293b;
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #334155;
+        }
+        
+        .nav {
+            background: #334155;
+            padding: 10px;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+        
+        .nav button {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            margin-right: 8px;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        
+        .main {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        
+        .card {
+            background: #1e293b;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>MITO Engine Mobile Test</h1>
+        </div>
+        <div class="nav">
+            <button>Dashboard</button>
+            <button>AI Factory</button>
+            <button>Code Gen</button>
+            <button>Projects</button>
+            <button>Chat</button>
+        </div>
+        <div class="main">
+            <div class="card">
+                <h3>Mobile Layout Test</h3>
+                <p>This is a simple mobile test page to verify the layout works properly on mobile devices.</p>
+            </div>
+            <div class="card">
+                <h3>Touch Test</h3>
+                <button onclick="alert('Touch working!')" style="background: #10b981; color: white; border: none; padding: 12px 20px; border-radius: 6px; font-size: 16px;">Test Touch</button>
+            </div>
+            <div class="card">
+                <h3>Scrolling Test</h3>
+                <div style="height: 200px; background: #334155; border-radius: 6px; padding: 10px; overflow-y: auto;">
+                    <p>This area should scroll smoothly on mobile devices.</p>
+                    <p>Line 1</p>
+                    <p>Line 2</p>
+                    <p>Line 3</p>
+                    <p>Line 4</p>
+                    <p>Line 5</p>
+                    <p>Line 6</p>
+                    <p>Line 7</p>
+                    <p>Line 8</p>
+                    <p>Line 9</p>
+                    <p>Line 10</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
