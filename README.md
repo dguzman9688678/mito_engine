@@ -23,8 +23,6 @@ MITO DEV Engine is a fully autonomous AI development platform designed to create
 - **Tool Lab** - Comprehensive development toolkit
 - **Code Generator** - Full application creation
 - **Visual UI Designer** - Drag & drop interface builder with live code preview
-- **Terminal Interface** - 31+ build options for any project type
-- **API Generator** - Create and test APIs instantly
 
 ### Platform Features
 
