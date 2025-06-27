@@ -68,15 +68,6 @@ MITO can create complete systems for:
 - Live code preview and editing
 - Instant deployment capabilities
 
-##  Usage
-
-### Quick Start
-
-```bash
-git clone https://github.com/dguzman9688678/mito_engine.git
-cd mito_engine
-python app.py
-```
 
 ### Terminal Interface
 
