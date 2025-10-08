@@ -1,18 +1,41 @@
 {
-  "timestamp": "2025-06-20T06:22:25.579472",
+  "timestamp": "2025-10-08T13:06:37.501955",
   "version": "1.2.0",
-  "tests_run": 65,
-  "tests_passed": 64,
-  "tests_failed": 1,
+  "tests_run": 61,
+  "tests_passed": 36,
+  "tests_failed": 25,
   "errors": [
-    "AI Provider claude: missing_api_key"
+    "Import app: No module named 'flask'",
+    "Import models: No module named 'flask_sqlalchemy'",
+    "Import admin_auth: No module named 'flask'",
+    "ENV DATABASE_URL: Length: 0",
+    "ENV OPENAI_API_KEY: Length: 0",
+    "ENV PGDATABASE: Length: 0",
+    "ENV PGHOST: Length: 0",
+    "ENV PGUSER: Length: 0",
+    "ENV PGPASSWORD: Length: 0",
+    "ENV PGPORT: Length: 0",
+    "Package flask: No module named 'flask'",
+    "Package flask_sqlalchemy: No module named 'flask_sqlalchemy'",
+    "Package psycopg2: No module named 'psycopg2'",
+    "Package openai: No module named 'openai'",
+    "Package anthropic: No module named 'anthropic'",
+    "Package gunicorn: No module named 'gunicorn'",
+    "Package werkzeug: No module named 'werkzeug'",
+    "Package marshmallow: No module named 'marshmallow'",
+    "AI Provider openai: missing_api_key",
+    "AI Provider llama: missing_api_key",
+    "AI Provider claude: missing_api_key",
+    "Database Connection: No module named 'psycopg2'",
+    "Memory System: cannot import name 'MemoryManager' from 'memory_manager' (/home/runner/work/mito_engine/mito_engine/memory_manager.py)",
+    "Admin Auth: No module named 'flask'",
+    "Performance Import: No module named 'flask'"
   ],
   "warnings": [],
   "modules": {
     "app": {
-      "importable": true,
-      "attributes": 164,
-      "docstring": "\nMITO Engine - AI Agent & Tool Creator\nName: MITO Engine\nVersion: 1.2.0\nCreated by: Daniel Guzman\nContact: guzman.danield@outlook.com\nDescription: AI Agent & Tool Creator\n"
+      "importable": false,
+      "error": "No module named 'flask'"
     },
     "config": {
       "importable": true,
@@ -20,9 +43,8 @@
       "docstring": "\nMITO Engine - AI Agent & Tool Creator\nName: MITO Engine\nVersion: 1.2.0\nCreated by: Daniel Guzman\nContact: guzman.danield@outlook.com\nDescription: AI Agent & Tool Creator\n"
     },
     "models": {
-      "importable": true,
-      "attributes": 16,
-      "docstring": "\nMITO Engine - AI Agent & Tool Creator\nName: MITO Engine\nVersion: 1.2.0\nCreated by: Daniel Guzman\nContact: guzman.danield@outlook.com\nDescription: AI Agent & Tool Creator\n"
+      "importable": false,
+      "error": "No module named 'flask_sqlalchemy'"
     },
     "ai_providers": {
       "importable": true,
@@ -36,13 +58,13 @@
     },
     "mito_weights": {
       "importable": true,
-      "attributes": 18,
+      "attributes": 19,
       "docstring": "\nMITO Engine - AI Agent & Tool Creator\nName: MITO Engine\nVersion: 1.2.0\nCreated by: Daniel Guzman\nContact: guzman.danield@outlook.com\nDescription: AI Agent & Tool Creator\n"
     },
     "memory_manager": {
       "importable": true,
-      "attributes": 22,
-      "docstring": "\nMITO Memory Management System\nHandles conversation memory, context retention, and memory adjustment\n"
+      "attributes": 28,
+      "docstring": "\nMITO Engine - Memory Management System\nProvides intelligent memory management for AI conversations and system operations\n"
     },
     "notification_manager": {
       "importable": true,
@@ -50,9 +72,8 @@
       "docstring": "\nMITO Engine - AI Agent & Tool Creator\nName: MITO Engine\nVersion: 1.2.0\nCreated by: Daniel Guzman\nContact: guzman.danield@outlook.com\nDescription: AI Agent & Tool Creator\n"
     },
     "admin_auth": {
-      "importable": true,
-      "attributes": 20,
-      "docstring": "\nMITO Engine - Admin Authentication System\nProtects administrative functions with password authentication\n"
+      "importable": false,
+      "error": "No module named 'flask'"
     },
     "api_usage": {
       "importable": true,
@@ -63,7 +84,7 @@
   "files": {
     "app.py": {
       "exists": true,
-      "size": 153802,
+      "size": 285588,
       "readable": true
     },
     "main.py": {
@@ -83,12 +104,12 @@
     },
     "ai_providers.py": {
       "exists": true,
-      "size": 13021,
+      "size": 13667,
       "readable": true
     },
     "mito_agent.py": {
       "exists": true,
-      "size": 29591,
+      "size": 44621,
       "readable": true
     },
     "mito_weights.py": {
@@ -98,7 +119,7 @@
     },
     "memory_manager.py": {
       "exists": true,
-      "size": 17788,
+      "size": 25033,
       "readable": true
     },
     "notification_manager.py": {
@@ -108,7 +129,7 @@
     },
     "admin_auth.py": {
       "exists": true,
-      "size": 5613,
+      "size": 5557,
       "readable": true
     },
     "api_usage.py": {
@@ -126,15 +147,15 @@
     "ai_providers": {
       "openai": {
         "name": "OpenAI GPT-3.5",
-        "available": true,
+        "available": false,
         "model": "gpt-3.5-turbo",
-        "status": "configured"
+        "status": "missing_api_key"
       },
       "llama": {
         "name": "LLaMA 3",
-        "available": true,
+        "available": false,
         "model": "llama-3-70b-8192",
-        "status": "configured"
+        "status": "missing_api_key"
       },
       "claude": {
         "name": "Claude",
@@ -151,14 +172,13 @@
     }
   },
   "database": {
-    "connected": true,
-    "version": "PostgreSQL 16.9 on x86_64-pc-linux-gnu, compiled by gcc (Debian 10.2.1-6) 10.2.1 20210110, 64-bit"
+    "connected": false,
+    "error": "No module named 'psycopg2'"
   },
   "performance": {
-    "import_time": 1.6689300537109375e-06,
-    "file_io_time": 0.0015759468078613281
+    "file_io_time": 0.0001494884490966797
   },
   "security": {},
-  "total_time": 9.889324426651001,
-  "success_rate": 98.46153846153847
+  "total_time": 0.19012188911437988,
+  "success_rate": 59.01639344262295
 }

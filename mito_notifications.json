@@ -20300,6 +20300,16 @@
       "priority": "medium",
       "read": false,
       "data": {}
+    },
+    {
+      "id": "notif_1759928797_1620",
+      "type": "system_alert",
+      "title": "Audit Test",
+      "message": "Test notification from audit",
+      "timestamp": "2025-10-08T13:06:37.669332",
+      "priority": "medium",
+      "read": false,
+      "data": {}
     }
   ],
   "preferences": {
